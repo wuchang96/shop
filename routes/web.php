@@ -24,6 +24,8 @@ Route::group([],function(){
 	Route::any('admin/index','admin\IndexController@index');
 	Route::resource('admin/user','admin\UserController');
 	
+	Route::resource('admin/lunbo','admin\LunboController');
+
 });
 
 //商品
