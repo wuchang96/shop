@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Orders;
+use DB;
 
 class OrderController extends Controller
 {
@@ -12,9 +14,13 @@ class OrderController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+          $order = Orders::paginate(1);
+         return view('admin.order.index',[
+            'title'=>'订单列表',
+            'order'=>$order
+            ]);
     }
 
     /**
@@ -57,7 +63,8 @@ class OrderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $res = Orders::find($id);
+        return view('admin.order.edit',['title'=>'修改订单']);
     }
 
     /**
@@ -81,5 +88,15 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function details($id)
+    {   
+        $deta=DB::table('odetails')->where('o_id',$id)->get();
+        
+        return view('admin.order.details',[
+            'title'=>'订单详情',
+            'deta'=>$deta
+            ]);
     }
 }

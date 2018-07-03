@@ -19,7 +19,12 @@ Route::get('/', function () {
  * 后台路由
  */
 //用户
-Route::resource('/users','admin\UserController');
+Route::group([],function(){
+
+	Route::any('admin/index','admin\IndexController@index');
+	Route::resource('admin/user','admin\UserController');
+	
+});
 
 //商品
 Route::resource('goods','admin\GoodsController');
@@ -28,6 +33,7 @@ Route::resource('goods','admin\GoodsController');
 Route::resource('cate','admin\CateController');
 
 //订单
-Route::resource('/order','admin\OrderController');
+Route::resource('/admin/order','admin\OrderController');
+Route::get('/admin/details/{id}','admin\OrderController@details');
 
 //
