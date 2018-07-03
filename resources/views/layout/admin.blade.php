@@ -40,16 +40,16 @@
 </head>
 
 <body>
-	<!-- Header -->
-	<div id="mws-header" class="clearfix">
+    <!-- Header -->
+    <div id="mws-header" class="clearfix">
     
-    	<!-- Logo Container -->
-    	<div id="mws-logo-container">
+        <!-- Logo Container -->
+        <div id="mws-logo-container">
         
-        	<!-- Logo Wrapper, images put within this wrapper will always be vertically centered -->
-        	<div id="mws-logo-wrap">
-            	<a href="/admin/index" style="text-decoration: none;"><h3 style='color:white'>lamp203商城</h3></a>
-			</div>
+            <!-- Logo Wrapper, images put within this wrapper will always be vertically centered -->
+            <div id="mws-logo-wrap">
+                <a href="/admin/index" style="text-decoration: none;"><h3 style='color:white'>lamp203商城</h3></a>
+            </div>
         </div>
         
         <!-- User Tools (notifications, logout, profile, change password) -->
@@ -58,9 +58,9 @@
             <!-- User Information and functions section -->
             <div id="mws-user-info" class="mws-inset">
             
-            	<!-- User Photo -->
-            	<div id="mws-user-photo">
-                	<img src="/admin/example/profile.jpg" alt="User Photo">
+                <!-- User Photo -->
+                <div id="mws-user-photo">
+                    <img src="/admin/example/profile.jpg" alt="User Photo">
                 </div>
                 
                 <!-- Username and Functions -->
@@ -69,7 +69,7 @@
                         昵称
                     </div>
                     <ul>
-                    	<li><a href="#">修改头像</a></li>
+                        <li><a href="#">修改头像</a></li>
                         <li><a href="#">修改密码</a></li>
                         <li><a href="index.html">退出</a></li>
                     </ul>
@@ -81,9 +81,9 @@
     <!-- Start Main Wrapper -->
     <div id="mws-wrapper">
     
-    	<!-- Necessary markup, do not remove -->
-		<div id="mws-sidebar-stitch"></div>
-		<div id="mws-sidebar-bg"></div>
+        <!-- Necessary markup, do not remove -->
+        <div id="mws-sidebar-stitch"></div>
+        <div id="mws-sidebar-bg"></div>
         
         <!-- Sidebar Wrapper -->
         <div id="mws-sidebar">
@@ -95,10 +95,10 @@
                 <span></span>
             </div>
             
-        	<!-- Searchbox -->
-        	<div id="mws-searchbox" class="mws-inset">
-            	<form action="typography.html">
-                	<input type="text" class="mws-search-input" placeholder="Search...">
+            <!-- Searchbox -->
+            <div id="mws-searchbox" class="mws-inset">
+                <form action="typography.html">
+                    <input type="text" class="mws-search-input" placeholder="Search...">
                     <button type="submit" class="mws-search-submit"><i class="icon-search"></i></button>
                 </form>
             </div>
@@ -113,14 +113,43 @@
                             <li><a href="/admin/user">浏览用户</a></li>
                         </ul>
                     </li>
+
+                
+                    <li>
+                        <a href="#"><i class="icon-list"></i>轮播图管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/lunbo/create">轮播图添加</a></li>
+                            <li><a href="/admin/lunbo">轮播图列表</a></li>
+                        </ul>
+                    </li>
+                
+
+                    <li>
+                        <a href="#"><i class="icon-list"></i>广告管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/user/create">广告添加</a></li>
+                            <li><a href="/admin/user">广告列表</a></li>
+                        </ul>
+                    </li>
+                
+
+                    <li>
+                        <a href="#"><i class="icon-list"></i>友情链接管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/user/create">友情链接添加</a></li>
+                            <li><a href="/admin/user">友情链接列表</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </div>         
+            </div>
+            
+                    
         </div>
         
         <!-- Main Container Start -->
         <div id="mws-container" class="clearfix">
         
-        	<!-- Inner Container Start -->
+            <!-- Inner Container Start -->
             <div class="container">
 
             @if(session('success'))
@@ -145,7 +174,7 @@
                        
             <!-- Footer -->
             <div id="mws-footer">
-            	Copyright Your Website 2012. All Rights Reserved.
+                Copyright Your Website 2012. All Rights Reserved.
             </div>
             
         </div>
