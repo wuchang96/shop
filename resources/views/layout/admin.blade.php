@@ -60,18 +60,18 @@
             
             	<!-- User Photo -->
             	<div id="mws-user-photo">
-                	<img src="/admin/example/profile.jpg" alt="User Photo">
+                	<img src="{{session('header')}}" alt="User Photo" width="50px">
                 </div>
                 
                 <!-- Username and Functions -->
                 <div id="mws-user-functions">
                     <div id="mws-username">
-                        昵称
+                        {{session('uname')}}
                     </div>
                     <ul>
                     	<li><a href="#">修改头像</a></li>
                         <li><a href="#">修改密码</a></li>
-                        <li><a href="index.html">退出</a></li>
+                        <li><a href="/admin/logout">退出</a></li>
                     </ul>
                 </div>
             </div>
