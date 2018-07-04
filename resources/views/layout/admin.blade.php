@@ -141,7 +141,6 @@
                         </ul>
                     </li>
                 </ul>
-<<<<<<< HEAD
             </div>   
              <div id="mws-navigation">
                 <ul>
@@ -153,11 +152,9 @@
                     </li>
                 </ul>
             </div>       
-=======
             </div>
             
                     
->>>>>>> origin/lz
         </div>
         
         <!-- Main Container Start -->
