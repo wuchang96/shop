@@ -18,11 +18,17 @@ Route::get('/', function () {
 /**
  * 后台路由
  */
+
+Route::any('admin/login','admin\LoginController@login');
+Route::any('admin/dologin','admin\LoginController@dologin');
+Route::any('admin/captcha','admin\LoginController@captcha');
+
 //用户
-Route::group([],function(){
+Route::group(['middleware'=>'login'],function(){
 
 	Route::any('admin/index','admin\IndexController@index');
 	Route::resource('admin/user','admin\UserController');
+	Route::any('admin/logout','admin\LoginController@logout');
 	
 	Route::resource('admin/lunbo','admin\LunboController');
 
