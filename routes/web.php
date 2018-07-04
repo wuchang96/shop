@@ -24,7 +24,6 @@ Route::group([],function(){
 	Route::any('admin/index','admin\IndexController@index');
 	Route::resource('admin/user','admin\UserController');
 	
-	Route::resource('admin/lunbo','admin\LunboController');
 
 });
 
@@ -38,4 +37,5 @@ Route::resource('cate','admin\CateController');
 Route::resource('/admin/order','admin\OrderController');
 Route::get('/admin/details/{id}','admin\OrderController@details');
 
-//
+// 轮播图
+Route::resource('admin/lunbo','admin\LunboController');
