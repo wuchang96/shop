@@ -113,8 +113,24 @@
                             <li><a href="/admin/user">浏览用户</a></li>
                         </ul>
                     </li>
+                    <li>
+                        <a href="#"><i class="icon-list"></i>类别管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/cate/create">添加类别</a></li>
+                            <li><a href="/admin/cate">浏览类别</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-list"></i>商品管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/">添加商品</a></li>
+                            <li><a href="/admin/cate/index">浏览商品</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </div>         
+            </div>
+            
+                    
         </div>
         
         <!-- Main Container Start -->
