@@ -14,7 +14,8 @@ class GoodsController extends Controller
      */
     public function index()
     {
-        
+        //加载页面
+        return view('admin.goods.index');
     }
 
     /**

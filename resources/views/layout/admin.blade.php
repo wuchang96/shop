@@ -123,7 +123,7 @@
                     <li>
                         <a href="#"><i class="icon-list"></i>商品管理</a>
                         <ul class='closed'>
-                            <li><a href="/admin/">添加商品</a></li>
+                            <li><a href="/admin/goods">添加商品</a></li>
                             <li><a href="/admin/cate/index">浏览商品</a></li>
                         </ul>
                     </li>
