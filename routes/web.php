@@ -30,7 +30,6 @@ Route::group(['middleware'=>'login'],function(){
 	Route::resource('admin/user','admin\UserController');
 	Route::any('admin/logout','admin\LoginController@logout');
 	
-	Route::resource('admin/lunbo','admin\LunboController');
 
 });
 
@@ -44,4 +43,5 @@ Route::resource('admin/cate','admin\CateController');
 Route::resource('/admin/order','admin\OrderController');
 Route::get('/admin/details/{id}','admin\OrderController@details');
 
-//
+// 轮播图
+Route::resource('admin/lunbo','admin\LunboController');

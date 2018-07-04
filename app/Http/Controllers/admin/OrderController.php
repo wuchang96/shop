@@ -64,7 +64,7 @@ class OrderController extends Controller
     public function edit($id)
     {
         $res = Orders::find($id);
-        return view('admin.order.edit',['title'=>'修改订单']);
+        return view('admin.order.edit',['title'=>'修改订单','res'=>$res]);
     }
 
     /**

@@ -122,7 +122,7 @@ class LunboController extends Controller
             //执行上传
             $a1 = $pic -> move('./admin/imglunbo',$filename);
             $data['pic'] = $a1;
-         }
+        }
    
         $res = lunbo::find($id)->update(['pic' => $data['pic']]);
         if($res){
