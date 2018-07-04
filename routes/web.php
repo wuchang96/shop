@@ -38,7 +38,7 @@ Route::group(['middleware'=>'login'],function(){
 Route::resource('goods','admin\GoodsController');
 
 //商品类别
-Route::resource('cate','admin\CateController');
+Route::resource('admin/cate','admin\CateController');
 
 //订单
 Route::resource('/admin/order','admin\OrderController');
