@@ -92,8 +92,8 @@
                     </tr>
                 </thead>
                 <tbody role="alert" aria-live="polite" aria-relevant="all">
-                   @foreach ($order as $v)
-                    <tr>
+                   @foreach ($order as $k => $v)
+                    <tr class="@if($k % 2 == 1)  odd   @else even  @endif">
                         
                         <td class=" ">
                             {{$v->id}}
