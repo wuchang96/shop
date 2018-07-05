@@ -48,7 +48,7 @@
         
             <!-- Logo Wrapper, images put within this wrapper will always be vertically centered -->
             <div id="mws-logo-wrap">
-                <a href="/admin/index" style="text-decoration: none;"><h3 style='color:white'>lamp203商城</h3></a>
+                <a href="/admin/index" style="text-decoration: none;"><img src="/admin\images\timg.jpg" style="opacity:0.5;" alt=""></a>
             </div>
         </div>
         
@@ -70,8 +70,6 @@
                         {{session('uname')}}
                     </div>
                     <ul>
-                        <li><a href="#">修改头像</a></li>
-                        <li><a href="#">修改密码</a></li>
                         <li><a href="/admin/logout">退出</a></li>
                     </ul>
                 </div>
@@ -109,7 +107,7 @@
             <div id="mws-navigation">
                 <ul>
                     <li>
-                        <a href="#"><i class="icon-list"></i>用户管理</a>
+                        <a href="#"><i class="icon-user"></i>用户管理</a>
                         <ul class='closed'>
                             <li><a href="/admin/user/create">添加用户</a></li>
                             <li><a href="/admin/user">浏览用户</a></li>
@@ -125,7 +123,7 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="icon-list"></i>商品管理</a>
+                        <a href="#"><i class="icon-shopping-cart"></i>商品管理</a>
                         <ul class='closed'>
                             <li><a href="/admin/goods">添加商品</a></li>
                             <li><a href="/admin/cate/index">浏览商品</a></li>
@@ -133,14 +131,14 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="icon-list"></i>订单管理</a>
+                        <a href="#"><i class="icon-briefcase"></i>订单管理</a>
                         <ul class='closed'>
                             <li><a href="/admin/order">浏览订单</a></li>
                         </ul>
                     </li>
 
                     <li>
-                        <a href="#"><i class="icon-list"></i>友情链接管理</a>
+                        <a href="#"><i class="icon-heart"></i>友情链接管理</a>
                         <ul class='closed'>
                             <li><a href="/admin/user/create">友情链接添加</a></li>
                             <li><a href="/admin/user">友情链接列表</a></li>
@@ -148,10 +146,16 @@
                     </li>
 
                     <li>
-                        <a href="#"><i class="icon-list"></i>轮播图管理</a>
+                        <a href="#"><i class="icon-pictures"></i>轮播图管理</a>
                         <ul class='closed'>
                             <li><a href="/admin/lunbo/create">轮播图添加</a></li>
                             <li><a href="/admin/lunbo">轮播图列表</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="icon-home"></i>站点管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/site">站点信息</a></li>
                         </ul>
                     </li>
                     

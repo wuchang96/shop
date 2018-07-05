@@ -18,7 +18,7 @@ Route::get('/', function () {
 /**
  * 后台路由
  */
-
+//后台登录
 Route::any('admin/login','admin\LoginController@login');
 Route::any('admin/dologin','admin\LoginController@dologin');
 Route::any('admin/captcha','admin\LoginController@captcha');
@@ -26,22 +26,32 @@ Route::any('admin/captcha','admin\LoginController@captcha');
 //用户
 Route::group(['middleware'=>'login'],function(){
 
+	//用户
 	Route::any('admin/index','admin\IndexController@index');
 	Route::resource('admin/user','admin\UserController');
-	Route::any('admin/logout','admin\LoginController@logout');
 	
+	//退出登录
+	Route::any('admin/logout','admin\LoginController@logout');
+
+	// 轮播图
+	Route::resource('admin/lunbo','admin\LunboController');
+	
+	//商品
+	Route::resource('goods','admin\GoodsController');
+
+
+	//商品类别
+	Route::resource('admin/cate','admin\CateController');
+
+	//订单
+	Route::resource('/admin/order','admin\OrderController');
+	Route::get('/admin/details/{id}','admin\OrderController@details');
+
+	//站点
+	Route::resource('admin/site','admin\SiteController');
+	Route::get('admin/detail/{id}','admin\SiteController@detail');
 
 });
 
-//商品
-Route::resource('goods','admin\GoodsController');
 
-//商品类别
-Route::resource('admin/cate','admin\CateController');
 
-//订单
-Route::resource('/admin/order','admin\OrderController');
-Route::get('/admin/details/{id}','admin\OrderController@details');
-
-// 轮播图
-Route::resource('admin/lunbo','admin\LunboController');
