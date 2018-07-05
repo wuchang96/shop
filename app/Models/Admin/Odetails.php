@@ -4,14 +4,14 @@ namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Orders extends Model
+class Odetails extends Model
 {
     /**
      * 与模型关联的数据表
      *
      * @var string
      */
-    protected $table = 'orders';
+    protected $table = 'odetails';
 
     protected $primaryKey = 'id';
 
@@ -23,11 +23,5 @@ class Orders extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','u_id','addr','tel','cnt','sum','umsg','status'];
-
-
-    public function odeta()
-    {
-        return $this->hasMany('App\Models\Admin\Odetails','o_id');
-    }
+    protected $fillable = ['o_id','g_id','gname','price','num','pic'];
 }
