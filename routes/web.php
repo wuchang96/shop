@@ -65,12 +65,13 @@ Route::group([],function(){
 
 	Route::resource('/home/goods','home\GoodsController');
 
+
 });
+
 /**
  * 前台登录
  */
 Route::any('home/login','home\LoginController@login');
 Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
-
 
