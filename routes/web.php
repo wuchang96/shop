@@ -63,8 +63,9 @@ Route::group([],function(){
 	//前台路由
 	Route::resource('/','home\IndexController');
 
-});
+	Route::resource('/home/goods','home\GoodsController');
 
+});
 /**
  * 前台登录
  */
