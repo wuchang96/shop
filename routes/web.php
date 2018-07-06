@@ -45,3 +45,6 @@ Route::get('/admin/details/{id}','admin\OrderController@details');
 
 // 轮播图
 Route::resource('admin/lunbo','admin\LunboController');
+
+// 广告
+Route::resource('admin/guanggao','admin\GuangController');

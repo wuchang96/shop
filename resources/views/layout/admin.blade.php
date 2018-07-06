@@ -154,6 +154,14 @@
                             <li><a href="/admin/lunbo">轮播图列表</a></li>
                         </ul>
                     </li>
+
+                    <li>
+                        <a href="#"><i class="icon-list"></i>广告管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/guanggao/create">广告添加</a></li>
+                            <li><a href="/admin/guanggao">广告列表</a></li>
+                        </ul>
+                    </li>
                     
                 </ul>
             </div>  
