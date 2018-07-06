@@ -56,6 +56,8 @@ Route::group(['middleware'=>'login'],function(){
 //前台路由
 	Route::resource('/','home\IndexController');
 
+	Route::resource('/home/goods','home\GoodsController');
+
 
 
 
