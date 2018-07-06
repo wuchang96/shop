@@ -49,8 +49,24 @@ Route::group(['middleware'=>'login'],function(){
 	Route::resource('admin/site','admin\SiteController');
 	Route::get('admin/detail/{id}','admin\SiteController@detail');
 
+	Route::resource('admin/gcate','admin\GcateController');
+
 });
 
 
 
-//
+/**
+ * 前台登录
+ */
+Route::any('home/login','home\LoginController@login');
+Route::any('home/regist','home\RegistController@regist');
+Route::any('home/store','home\RegistController@store');
+
+
+//前台登录路由
+Route::group([],function(){
+
+
+
+	
+});
