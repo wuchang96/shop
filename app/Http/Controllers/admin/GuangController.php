@@ -128,9 +128,7 @@ class GuangController extends Controller
     {
         //获取所有修改信息
         $data = Guanggao::find($id);
-        //处理时间戳
-        $data->created_at = date('Y-m-d',$data->created_at);
-        $data->updated_at = date('Y-m-d',$data->updated_at);
+        
 
         // dd($data);
         return view('admin.guanggao.update',['data'=>$data,'title'=>'修改广告']);
