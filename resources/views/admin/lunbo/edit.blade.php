@@ -10,39 +10,37 @@
     </div>
     <div class="mws-panel-body no-padding">
 
-    		@if (count($errors) > 0)
-			    <div class="mws-form-message error">
-			        <ul>
-			            @foreach ($errors->all() as $error)
-			                <li style='font-size:16px;list-style:none'>{{ $error }}</li>
-			            @endforeach
-			        </ul>
-			    </div>
-			@endif
+       <form class="layui-form" method="post" action="/admin/lunbo/{{$data['id']}}" enctype="multipart/form-data">
+        {{csrf_field()}}
+        {{method_field('PUT')}}
+            <div class="layui-form-item">
+            <ul>
 
+                <label  class="layui-form-label">
+                   轮播图
+                </label>
+                <div class="layui-input-inline">
+                    <img src="{{URL::asset($data['pic'])}}" style="width: 150px;height: 150px;">
+                    <input type="file"  name="pic" value="" class="layui-input">
+                </div>
+            </ul>
+            </div> 
 
-    	<form action="/admin/lunbo" method='post' class="mws-form" enctype='multipart/form-data'>
-    		<div class="mws-form-inline">
-
-
-    			<div class="mws-form-row">
-    				<label class="mws-form-label">轮播图</label>
-    				<div class="mws-form-item">
-    					<input type="file" name='pic' class="fileinput-preview">
-    				</div>
-    			</div>
-
-    			<div class="mws-form-row">
-    				<label class="mws-form-label">跳转地址</label>
-    				<div class="mws-form-item clearfix">
-                        <input id="myform" type="text"  name="url" class="layui-input">
-    				</div>
-    			</div>
-    		</div>
-    		<div class="layui-input-inline">
-                        <input type="submit" value="确认修改" class="layui-btn layui-btn-normal layui-btn-radius" style="margin-left: 110px;">
+            <ul>
+            <div class="layui-form-item">
+                <label  class="layui-form-label">
+                   跳转地址
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text"  name="url" value="{{$data['url']}}" class="layui-input">
+                </div>
             </div>
-    	</form>
+            </ul>
+
+            <div class="layui-input-inline">
+                    <input type="submit" value="确认修改" class="btn btn-info" style="margin-left: 80px;">
+            </div>
+        </form>
     </div>    	
 </div>
 

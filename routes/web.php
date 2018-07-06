@@ -32,11 +32,13 @@ Route::group(['middleware'=>'login'],function(){
 	
 	//退出登录
 	Route::any('admin/logout','admin\LoginController@logout');
-	
 
+	// 轮播图
 	Route::resource('admin/lunbo','admin\LunboController');
+	
 	//商品
-	Route::resource('goods','admin\GoodsController');
+	Route::resource('admin/goods','admin\GoodsController');
+
 
 	//商品类别
 	Route::resource('admin/cate','admin\CateController');
@@ -48,8 +50,18 @@ Route::group(['middleware'=>'login'],function(){
 	//站点
 	Route::resource('admin/site','admin\SiteController');
 	Route::get('admin/detail/{id}','admin\SiteController@detail');
+	
+	// 广告
+	Route::resource('admin/guanggao','admin\GuangController');
 
 	Route::resource('admin/gcate','admin\GcateController');
+
+});
+
+
+Route::group([],function(){
+	//前台路由
+	Route::resource('/','home\IndexController');
 
 });
 
@@ -70,3 +82,4 @@ Route::group([],function(){
 
 	
 });
+
