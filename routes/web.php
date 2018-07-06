@@ -54,6 +54,8 @@ Route::group(['middleware'=>'login'],function(){
 	// 广告
 	Route::resource('admin/guanggao','admin\GuangController');
 
+	Route::resource('admin/gcate','admin\GcateController');
+
 });
 
 
@@ -62,5 +64,12 @@ Route::group([],function(){
 	Route::resource('/','home\IndexController');
 
 });
+
+/**
+ * 前台登录
+ */
+Route::any('home/login','home\LoginController@login');
+Route::any('home/regist','home\RegistController@regist');
+Route::any('home/store','home\RegistController@store');
 
 

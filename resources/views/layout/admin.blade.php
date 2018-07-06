@@ -154,6 +154,14 @@
                     </li>
 					
                     <li>
+                        <a href="#"><i class="icon-home"></i>广告类别管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/gcate/create">广告类别添加</a></li>
+                            <li><a href="/admin/gcate">广告类别列表</a></li>
+                        </ul>
+                    </li>
+					
+                    <li>
                         <a href="#"><i class="icon-home"></i>站点管理</a>
                         <ul class='closed'>
                             <li><a href="/admin/site">站点信息</a></li>
