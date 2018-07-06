@@ -37,7 +37,7 @@ Route::group(['middleware'=>'login'],function(){
 	Route::resource('admin/lunbo','admin\LunboController');
 	
 	//商品
-	Route::resource('goods','admin\GoodsController');
+	Route::resource('admin/goods','admin\GoodsController');
 
 
 	//商品类别
@@ -52,6 +52,7 @@ Route::group(['middleware'=>'login'],function(){
 	Route::get('admin/detail/{id}','admin\SiteController@detail');
 
 });
+
 
 
 
