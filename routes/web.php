@@ -50,12 +50,17 @@ Route::group(['middleware'=>'login'],function(){
 	//站点
 	Route::resource('admin/site','admin\SiteController');
 	Route::get('admin/detail/{id}','admin\SiteController@detail');
+	
+	// 广告
+	Route::resource('admin/guanggao','admin\GuangController');
 
 });
 
-//前台路由
+
+Route::group([],function(){
+	//前台路由
 	Route::resource('/','home\IndexController');
 
-
+});
 
 
