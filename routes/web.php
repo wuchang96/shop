@@ -50,36 +50,17 @@ Route::group(['middleware'=>'login'],function(){
 	//站点
 	Route::resource('admin/site','admin\SiteController');
 	Route::get('admin/detail/{id}','admin\SiteController@detail');
-	
-	// 广告
-	Route::resource('admin/guanggao','admin\GuangController');
-
-	Route::resource('admin/gcate','admin\GcateController');
-<<<<<<< HEAD
-=======
-
-	// 友情链接
-	Route::resource('admin/link','admin\LinksController');
->>>>>>> origin/lz
 
 });
 
-
-Route::group([],function(){
-	//前台路由
+//前台路由
 	Route::resource('/','home\IndexController');
 
-	Route::resource('/home/goods','home\GoodsController');
 
+//前台购物车
+Route::resource('/home/cart','home\CartController');
+Route::any('/home/ajaxcart','home\CartController@ajaxcart');
 
-});
+//前台订单
+Route::resource('/home/order','home\OrderController');
 
-/**
- * 前台登录
- */
-Route::any('home/login','home\LoginController@login');
-Route::any('home/dologin','home\LoginController@dologin');
-Route::any('home/regist','home\RegistController@regist');
-Route::any('home/store','home\RegistController@store');
-Route::any('home/captcha','home\RegistController@captcha');
-Route::any('home/jihuo','home\RegistController@jihuo');

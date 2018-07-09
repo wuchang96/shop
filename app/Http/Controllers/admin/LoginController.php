@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Gregwar\Captcha\CaptchaBuilder; 
 use Gregwar\Captcha\PhraseBuilder;
-
 use Session;
 use Hash;
 use App\Models\Admin\User;

@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\admin;
+namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Gcate;
-class GcateController extends Controller
+use App\Models\Home\Cart;
+use Session;
+use DB;
+
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,14 +16,10 @@ class GcateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        //
-        $res = Gcate::get();
-
-        return view('admin.gcate.index',[
-                'title'=>'广告列表页面',
-                'res'=> $res
-        ]);
+    {   
+       
+        $res = Cart::get();
+        return view('home.cart.index',['title'=>'购物车','res'=>$res]);
     }
 
     /**
@@ -29,8 +28,9 @@ class GcateController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('admin.gcate.add',['title'=>'广告类别添加']);
+    {   
+
+
     }
 
     /**
@@ -42,19 +42,6 @@ class GcateController extends Controller
     public function store(Request $request)
     {
         //
-        $res = $request->except(['_token']);
-
-        try{
-            $data = Gcate::create($res);
-
-            if($data){
-                return redirect('/admin/gcate')->with('success','添加成功');
-            }
-        }catch(\Exception $e){
-
-            return back();
-
-        }
     }
 
     /**
@@ -76,12 +63,7 @@ class GcateController extends Controller
      */
     public function edit($id)
     {
-        $res = Gcate::find($id);
-
-        return view('admin.gcate.edit',[
-            'title'=>'修改用户',
-            'res'=>$res
-            ]);
+        //
     }
 
     /**
@@ -93,22 +75,7 @@ class GcateController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $res = $request->except(['_token','_method']);
-
-
-        try{
-
-            $data = Gcate::where('id',$id)->update($res);
-
-            if($data){
-                return redirect('/admin/gcate')->with('success','修改成功');
-            }
-
-        } catch(\Exception $e){ 
-
-            return back()->with('error');
-
-        }
+        //
     }
 
     /**
@@ -119,12 +86,25 @@ class GcateController extends Controller
      */
     public function destroy($id)
     {
-        $res = Gcate::destroy($id);
+        //
+    }
 
-        if($res){
+    public function ajaxcart(Request $request)
+    {
+        $id = $request->input('id');
+        //构造器删除
+        $data = Cart::where('id',$id)->delete();
 
-            return redirect('/admin/gcate')->with('success','删除成功');
+        $count = Cart::count();
 
-        }
+        echo $count;
+
+
+    }
+
+
+    public function sess()
+    {
+        session('ses') == session('username');
     }
 }

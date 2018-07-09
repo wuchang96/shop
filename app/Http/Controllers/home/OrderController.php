@@ -4,8 +4,9 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Home\Cart;
 
-class GoodsController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +14,17 @@ class GoodsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        return view('home.goods.index',['title'=>'商品的列表页']);
+    {   
+        $res = Cart::get();
+        $sum = 0;
+        foreach ($res as $key => $value) {
+           $sum += $value->price * $value->cnt;
+        }
+        return view('home.order.index',[
+            'title'=>'订单信息',
+            'res'=>$res,
+            'sum'=>$sum
+            ]);
     }
 
     /**
@@ -22,9 +32,8 @@ class GoodsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
     }
 
     /**

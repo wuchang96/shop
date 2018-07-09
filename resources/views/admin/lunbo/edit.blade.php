@@ -10,46 +10,35 @@
     </div>
     <div class="mws-panel-body no-padding">
 
-        @if (count($errors) > 0)
-            <div class="mws-form-message error">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li style='font-size:16px;list-style:none'>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+       <form class="layui-form" method="post" action="/admin/lunbo/{{$data['id']}}" enctype="multipart/form-data">
+        {{csrf_field()}}
+        {{method_field('PUT')}}
+            <div class="layui-form-item">
+            <ul>
 
-        <form class="mws-form" method="post" action="/admin/lunbo/{{$data['id']}}" enctype="multipart/form-data">
-
-        <div class="mws-form-inline">
-
-            <div class="mws-form-row">
-                <label  class="mws-form-label">
-                   轮播图:
+                <label  class="layui-form-label">
+                   轮播图
                 </label>
-                <div class="mws-form-item">
+                <div class="layui-input-inline">
                     <img src="{{URL::asset($data['pic'])}}" style="width: 150px;height: 150px;">
                     <input type="file"  name="pic" value="" class="layui-input">
                 </div>
-            </div>
+            </ul>
+            </div> 
 
-            <div class="mws-form-row">
-                <label  class="mws-form-label">
-                   跳转地址:
+            <ul>
+            <div class="layui-form-item">
+                <label  class="layui-form-label">
+                   跳转地址
                 </label>
-                <div class="mws-form-item">
+                <div class="layui-input-inline">
                     <input type="text"  name="url" value="{{$data['url']}}" class="layui-input">
                 </div>
             </div>
+            </ul>
 
-        </div>
-            <div class="mws-button-row">
-
-                {{csrf_field()}}
-
-                {{method_field('PUT')}}
-                <input type="submit" class="btn btn-info" value="确认修改">
+            <div class="layui-input-inline">
+                    <input type="submit" value="确认修改" class="btn btn-info" style="margin-left: 80px;">
             </div>
         </form>
     </div>    	

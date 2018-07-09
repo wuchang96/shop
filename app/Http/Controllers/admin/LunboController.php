@@ -46,7 +46,7 @@ class LunboController extends Controller
     {
         //获取输入的值
         $data = $request ->except('_token');
-         //创建轮播图上传对象
+         //创建第一张轮播图上传对象
          if($request->hasFile('pic') == true){
             $pic = $request -> file('pic');
             $temp_name = time()+rand(10000,99999);

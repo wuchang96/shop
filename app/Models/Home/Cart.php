@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models\Admin;
+namespace App\Models\Home;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Gcate extends Model
+class cart extends Model
 {
     /**
      * 与模型关联的数据表
      *
      * @var string
      */
-    protected $table = 'ggcate';
+    protected $table = 'cart';
 
     protected $primaryKey = 'id';
 
@@ -23,5 +23,5 @@ class Gcate extends Model
      *
      * @var array
      */
-    protected $fillable = ['title'];
+    protected $fillable = ['name','color','size','price','gimg','cnt','status'];
 }
