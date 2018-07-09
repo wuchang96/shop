@@ -23,5 +23,11 @@ class Orders extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','addr','tel','cnt','sum','umsg','status'];
+    protected $fillable = ['name','u_id','addr','tel','cnt','sum','umsg','status'];
+
+
+    public function odeta()
+    {
+        return $this->hasMany('App\Models\Admin\Odetails','o_id');
+    }
 }

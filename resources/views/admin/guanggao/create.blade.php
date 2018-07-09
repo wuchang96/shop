@@ -16,7 +16,7 @@
     			<div class="mws-form-row">
     				<label class="mws-form-label">广告类别</label>
     				<div class="mws-form-item">
-    					<select name="cate" lay-filter="aihao">
+    					<select name="cid" lay-filter="aihao">
 				        <option value="0">----请选择----</option>
 				        <option value="1">商品推广</option>
 				        <option value="2">公益广告</option>
@@ -66,6 +66,16 @@
                         <input type="text" name="aprice" lay-verify="required" placeholder="￥" autocomplete="off" class="layui-input">
     				</div>
     			</div>
+
+                <div class="mws-form-row">
+                    <label class="mws-form-label">状态</label>
+                    <div class="mws-form-item clearfix">
+                        <ul class="mws-form-list inline">
+                            <li><input type="radio" name='astatus' value='1' checked='checked'> <label>上架</label></li>
+                            <li><input type="radio" name='astatus' value='0'> <label>下架</label></li>
+                        </ul>
+                    </div>
+                </div>
 
     		</div>
     		{{csrf_field()}}
