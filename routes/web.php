@@ -72,6 +72,8 @@ Route::group([],function(){
  * 前台登录
  */
 Route::any('home/login','home\LoginController@login');
+Route::any('home/dologin','home\LoginController@dologin');
 Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
-
+Route::any('home/captcha','home\RegistController@captcha');
+Route::any('home/jihuo','home\RegistController@jihuo');
