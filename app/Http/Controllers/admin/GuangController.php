@@ -22,6 +22,8 @@ class GuangController extends Controller
        $search = $request -> input('search','');//接收的广告名称
        $cid = $request -> input('cid','');//接收广告类别
        $count = DB::table('advresing')->count();
+       $page_count = $request->input('page_count',5);
+
        $Guanggao =new Guanggao(); //创建数据对象
         if(isset($search) && !empty($search)){
           $Guanggao =  $Guanggao::where('acustomer','like','%'.$search.'%');
@@ -30,7 +32,7 @@ class GuangController extends Controller
           $Guanggao =  $Guanggao->where('cid',$cid);
         }
 
-        $data = Guanggao::paginate($request->input('num',5));
+        $data = $Guanggao->paginate($page_count);
 
         return view('admin.guanggao.index',['title'=>'广告位','count'=>$count,'data'=>$data,'search'=>$request->all(),'cid'=>$cid,'request'=>$request]);
 
