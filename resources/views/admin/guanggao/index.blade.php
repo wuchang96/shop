@@ -1,5 +1,54 @@
 @extends('layout.admin')
 
+<style>
+    .pagination li{
+    float: left;
+    height: 20px;
+    padding: 0 10px;
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    background-color: #444444;
+
+
+  
+    text-decoration: none;
+    border-right: 1px solid #232323;
+    border-left: 1px solid #666666;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.15);
+    -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+    -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+}
+
+.pagination li a{
+      color: #fff;
+}
+
+
+.pagination .active{
+    background-color: #88a9eb;
+    color: #323232;
+    border: none;
+    background-image: none;
+    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+}
+
+.pagination .disabled{
+        color: #666666;
+        cursor: default;
+}
+
+#paginate ul{
+    
+    margin:0px;
+}
+</style>
+
 @section('title',$title)
 
 @section('content')
@@ -20,15 +69,15 @@
                 <div id="DataTables_Table_1_length" class="dataTables_length">
                     <label>
                         显示
-                        <select name="num" size="1" aria-controls="DataTables_Table_1">
+                        <select name="page_count" size="1" aria-controls="DataTables_Table_1">
 
-                            <option value="2" @if($request->num == 2)   selected="selected" @endif>
+                            <option value="2" @if($request->page_count == 2)   selected="selected" @endif>
                                 2
                             </option>
-                            <option value="4" @if($request->num == 4)   selected="selected" @endif>
+                            <option value="4" @if($request->page_count == 4)   selected="selected" @endif>
                                 4
                             </option>
-                            <option value="6" @if($request->num == 6)   selected="selected" @endif>
+                            <option value="6" @if($request->page_count == 6)   selected="selected" @endif>
                                 6
                             </option>
                            
@@ -76,7 +125,7 @@
                         
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
-                           下架日期
+                           上架日期
                         </th>
 
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
@@ -152,54 +201,7 @@
             <div class="dataTables_info" id="DataTables_Table_1_info">
                 Showing 1 to 10 of 57 entries
             </div>
-        <style>
-                .pagination li{
-                float: left;
-                height: 20px;
-                padding: 0 10px;
-                display: block;
-                font-size: 12px;
-                line-height: 20px;
-                text-align: center;
-                cursor: pointer;
-                outline: none;
-                background-color: #444444;
-
-
-              
-                text-decoration: none;
-                border-right: 1px solid #232323;
-                border-left: 1px solid #666666;
-                border-right: 1px solid rgba(0, 0, 0, 0.5);
-                border-left: 1px solid rgba(255, 255, 255, 0.15);
-                -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
-                -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
-                box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
-            }
-
-            .pagination li a{
-                  color: #fff;
-            }
-
-
-            .pagination .active{
-                background-color: #88a9eb;
-                color: #323232;
-                border: none;
-                background-image: none;
-                box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-            }
-
-            .pagination .disabled{
-                    color: #666666;
-                    cursor: default;
-            }
-
-            #paginate ul{
-                
-                margin:0px;
-            }
-        </style>
+        
             <div class="dataTables_paginate paging_full_numbers" id="paginate">
 
 

@@ -56,7 +56,7 @@
             <tr>
                 <td>{{$v['id']}}</td>
                 <td><img src="{{URL::asset($v['pic'])}}" style="width: 150px;height: 150px;"></td>
-                <td>{{$v['url']}}</td>
+                <td><a>{{$v['url']}}</a></td>
                 <td>{{$v['updated_at']}}</td>
                 <td>{{$v['created_at']}}</td>
                   <td class=" ">

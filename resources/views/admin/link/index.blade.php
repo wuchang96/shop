@@ -63,7 +63,7 @@
                 <td>{{$v->id}}</td>
                 <td>{{$v->name}}</td>
                 <td><img src="{{$v->img}}" style="width: 150px;height: 150px;"></td>
-                <td>{{$v->url}}</td>
+                <td><a>{{$v->url}}</a></td>
                 <td>{{$v->created_at}}</td>
                 <td>{{$v->updated_at}}</td>
                   <td class=" ">
