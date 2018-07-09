@@ -4,9 +4,13 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use DB;
+
 
 class GoodsController extends Controller
 {
+
+   
     /**
      * Display a listing of the resource.
      *
@@ -14,6 +18,12 @@ class GoodsController extends Controller
      */
     public function index()
     {
+        // $data = $request->all();
+        // $id=$data['id'];
+        //处理左侧数据分类
+        
+
+      
         return view('home.goods.index',['title'=>'商品的列表页']);
     }
 

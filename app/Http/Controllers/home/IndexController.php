@@ -4,9 +4,14 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+use DB;
+use App\Http\Controllers\home;
+use App\Models\Admin\Cate;
 class IndexController extends Controller
 {
+    
+
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,22 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view('home.index.index',['title'=>'尤洪']);
+         $data= DB::table('goods')->get();
+        // dd($goods);
+
+        //递归处理数据
+        // $good=$this->checkGoods($goods);
+        // dd($good);
+        // //格式化数据
+        // $data=array(
+        //     'good'=>$good
+        // );
+         $data=Cate::getsubcate(0); 
+         //处理右侧广告
+
+        return view('home.index.index',['title'=>'尤洪','data'=>$data]);
+
+       
     }
 
     /**

@@ -25,4 +25,26 @@ class Cate extends Model
      * @var array
      */
     protected $fillable = ['title','pid','path'];
+
+
+
+
+   public static function getsubcate($pid)
+    {
+
+        $cate = Cate::where('pid',$pid)->get();
+        
+        $arr = [];
+
+        foreach($cate as $k=>$v){
+
+            if($v->pid==$pid){
+
+                $v->sub=self::getsubcate($v->id);
+
+                $arr[]=$v;
+            }
+        }  
+        return $arr;
+    }
 }
