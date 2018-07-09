@@ -28,7 +28,29 @@
     <script type="text/javascript" src="/home/js/tban.js"></script>
     
 	<script type="text/javascript" src="/home/js/lrscroll_1.js"></script>
-    
+    <style>
+      .mws-form-message {
+          font-size: 12px;
+          cursor: pointer;
+          padding: 0px 8px 0px 45px;
+          position: relative;
+          vertical-align: middle;
+          background-color: #f8f8f8;
+          background-position: 12px 12px;
+          background-repeat: no-repeat;
+          margin-bottom: 12px;
+          -webkit-border-radius: 3px;
+          -moz-border-radius: 3px;
+          border-radius: 3px;
+      }
+
+      .mws-form-message.warning {
+        background-color: #fef0b1;
+        border-color: #ddca76;
+        color: #a98b15;
+        }
+
+    </style>
     
   <title>{{$title}}</title>
 </head>
@@ -37,7 +59,7 @@
 <div class="soubg">
 	<div class="sou">
         <span class="fr">
-        	<span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="/home/regist" style="color:#ff4e00;">免费注册</a></span>
+        	<span class="fl">你好，请{{session('UserInfo.uname')}}<a href="Login.html">登录</a>&nbsp; <a href="/home/regist" style="color:#ff4e00;">免费注册</a></span>
             <span class="fl">&nbsp;|&nbsp;关注我们：</span>
             <span class="s_sh"><a href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span>
             <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="/home/images/s_tel.png" align="absmiddle" /></a></span>
@@ -53,7 +75,7 @@
 	<div class="login">
     	<div class="log_img"><img src="/home/images/l_img.png" width="611" height="425" /></div>
 		<div class="log_c">
-        	<form>
+        	<form action="/home/dologin" method="post">
             <table border="0" style="width:370px; font-size:14px; margin-top:30px;" cellspacing="0" cellpadding="0">
               <tr height="50" valign="top">
               	<td width="55">&nbsp;</td>
@@ -61,25 +83,32 @@
                 	<span class="fl" style="font-size:24px;">登录</span>
                     <span class="fr">还没有商城账号，<a href="/home/regist" style="color:#ff4e00;">立即注册</a></span>
                 </td>
+                <div class="mws-form-message error">
+                    <ul>
+                    @if(session('error'))
+                        <div class="mws-form-message warning" id="error">
+                            {{session('error')}}
+                        </div>
+                    @endif
+                    </ul>
+                </div>
               </tr>
               <tr height="70">
                 <td>用户名</td>
-                <td><input type="text" value="" class="l_user" /></td>
+                <td><input type="text" value="" class="l_user" name="uname" /></td>
               </tr>
               <tr height="70">
                 <td>密&nbsp; &nbsp; 码</td>
-                <td><input type="password" value="" class="l_pwd" /></td>
+                <td><input type="password" value="" class="l_pwd" name="password" /></td>
               </tr>
               <tr>
               	<td>&nbsp;</td>
                 <td style="font-size:12px; padding-top:20px;">
-                	<span style="font-family:'宋体';" class="fl">
-                    	<label class="r_rad"><input type="checkbox" /></label><label class="r_txt">请保存我这次的登录信息</label>
-                    </span>
                     <span class="fr"><a href="#" style="color:#ff4e00;">忘记密码</a></span>
                 </td>
               </tr>
               <tr height="60">
+              {{csrf_field()}}
               	<td>&nbsp;</td>
                 <td><input type="submit" value="登录" class="log_btn" /></td>
               </tr>
@@ -96,8 +125,12 @@
         <img src="/home/images/b_1.gif" width="98" height="33" /><img src="/home/images/b_2.gif" width="98" height="33" /><img src="/home/images/b_3.gif" width="98" height="33" /><img src="/home/images/b_4.gif" width="98" height="33" /><img src="/home/images/b_5.gif" width="98" height="33" /><img src="/home/images/b_6.gif" width="98" height="33" />
     </div>    	
 </div>
-<!--End Footer End -->    
+<!--End Footer End --> 
+<script>
+    
+    $('.mws-form-message').fadeOut(5000);
 
+</script>   
 </body>
 
 
