@@ -140,8 +140,8 @@
                     <li>
                         <a href="#"><i class="icon-heart"></i>友情链接管理</a>
                         <ul class='closed'>
-                            <li><a href="/admin/user/create">友情链接添加</a></li>
-                            <li><a href="/admin/user">友情链接列表</a></li>
+                            <li><a href="/admin/link/create">友情链接添加</a></li>
+                            <li><a href="/admin/link">友情链接列表</a></li>
                         </ul>
                     </li>
 

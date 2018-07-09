@@ -174,7 +174,7 @@
             <div class="dataTables_paginate paging_full_numbers" id="paginate">
 
                
-                {{$res->links()}}
+                {{$count->links()}}
 
                
             </div>

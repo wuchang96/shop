@@ -1,54 +1,5 @@
 @extends('layout.admin')
 
-<style>
-    .pagination li{
-    float: left;
-    height: 20px;
-    padding: 0 10px;
-    display: block;
-    font-size: 12px;
-    line-height: 20px;
-    text-align: center;
-    cursor: pointer;
-    outline: none;
-    background-color: #444444;
-
-
-  
-    text-decoration: none;
-    border-right: 1px solid #232323;
-    border-left: 1px solid #666666;
-    border-right: 1px solid rgba(0, 0, 0, 0.5);
-    border-left: 1px solid rgba(255, 255, 255, 0.15);
-    -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
-    -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
-    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
-}
-
-.pagination li a{
-      color: #fff;
-}
-
-
-.pagination .active{
-    background-color: #88a9eb;
-    color: #323232;
-    border: none;
-    background-image: none;
-    box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
-}
-
-.pagination .disabled{
-        color: #666666;
-        cursor: default;
-}
-
-#paginate ul{
-    
-    margin:0px;
-}
-</style>
-
 @section('title',$title)
 
 @section('content')
@@ -91,10 +42,10 @@
                     <input type="text" class="layui-input" placeholder="请输入顾客姓名" value="{{$search['search'] or ''}}" name="search" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
                     <label class="layui-form-label"></font>广告分类:　</label>
-                        <select name="cate" lay-filter="aihao">
-                        <option value="0" @if($cate==0) selected @endif>----请选择----</option>
-                        <option value="1" @if($cate==1) selected @endif>商品推广</option>
-                        <option value="2" @if($cate==2) selected @endif>公益广告</option>
+                        <select name="cid" lay-filter="aihao">
+                        <option value="0" @if($cid==0) selected @endif>----请选择----</option>
+                        <option value="1" @if($cid==1) selected @endif>商品推广</option>
+                        <option value="2" @if($cid==2) selected @endif>公益广告</option>
                         </select>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button class='btn btn-info'>搜索</button>
@@ -154,9 +105,9 @@
                     <tr>
                         <td class="td">{{$v->id}}</td>
                         <td>
-                            @if($v->cate==1)
+                            @if($v->cid==1)
                             商品推广
-                            @elseif($v->cate==2)
+                            @elseif($v->cid==2)
                             公益广告
                             @endif
                         </td>
@@ -167,7 +118,7 @@
                             {{$v->aprice}}
                         </td>
                         <td >
-                            {{$v->created_at}}
+                            {{$v->updated_at}}
                         </td>
                         <td >
                             <img src="{{$v->pic}}" alt="" width="100px">
@@ -175,7 +126,7 @@
                         <td><a>{{$v['url']}}</a></td>
                         <td class="status" status="{{$v->astatus}}">
                             @if($v->astatus==1)上架
-                            @elseif($v->astatus==2)下架
+                            @elseif($v->astatus==0)下架
                             @endif
                         </td>
                        
@@ -200,6 +151,59 @@
 
             <div class="dataTables_info" id="DataTables_Table_1_info">
                 Showing 1 to 10 of 57 entries
+            </div>
+        <style>
+                .pagination li{
+                float: left;
+                height: 20px;
+                padding: 0 10px;
+                display: block;
+                font-size: 12px;
+                line-height: 20px;
+                text-align: center;
+                cursor: pointer;
+                outline: none;
+                background-color: #444444;
+
+
+              
+                text-decoration: none;
+                border-right: 1px solid #232323;
+                border-left: 1px solid #666666;
+                border-right: 1px solid rgba(0, 0, 0, 0.5);
+                border-left: 1px solid rgba(255, 255, 255, 0.15);
+                -webkit-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+                -moz-box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+                box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.5), inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+            }
+
+            .pagination li a{
+                  color: #fff;
+            }
+
+
+            .pagination .active{
+                background-color: #88a9eb;
+                color: #323232;
+                border: none;
+                background-image: none;
+                box-shadow: inset 0px 0px 4px rgba(0, 0, 0, 0.25);
+            }
+
+            .pagination .disabled{
+                    color: #666666;
+                    cursor: default;
+            }
+
+            #paginate ul{
+                
+                margin:0px;
+            }
+        </style>
+            <div class="dataTables_paginate paging_full_numbers" id="paginate">
+
+
+             {{ $data->links()}}
             </div>
 
         </div>

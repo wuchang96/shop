@@ -55,6 +55,12 @@ Route::group(['middleware'=>'login'],function(){
 	Route::resource('admin/guanggao','admin\GuangController');
 
 	Route::resource('admin/gcate','admin\GcateController');
+<<<<<<< HEAD
+=======
+
+	// 友情链接
+	Route::resource('admin/link','admin\LinksController');
+>>>>>>> origin/lz
 
 });
 

@@ -204,7 +204,7 @@
 
             <div class="dataTables_paginate paging_full_numbers" id="paginate">
 				
-				{{ $res->appends($req->all())->links() }}
+				{{ $res->links() }}
                
             </div>
         </div>
