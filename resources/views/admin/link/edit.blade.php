@@ -5,8 +5,8 @@
 @section('content')
 
 <div class="mws-panel grid_8">
-	<div class="mws-panel-header">
-    	<span>{{$title}}</span>
+    <div class="mws-panel-header">
+        <span>{{$title}}</span>
     </div>
     <div class="mws-panel-body no-padding">
 
@@ -20,17 +20,26 @@
             </div>
         @endif
 
-        <form class="mws-form" method="post" action="/admin/lunbo/{{$data['id']}}" enctype="multipart/form-data">
+        <form class="mws-form" method="post" action="/admin/link/{{$data['id']}}" enctype="multipart/form-data">
 
-        <div class="mws-form-inline">
+        <div class="mws--inline">
+
+            <div class="mws-form-row">
+                <label class="mws-form-label">
+                    友情连接名称:
+                </label>
+                <div class="mws-form-item">
+                    <input type="text" name='name' value="{{$data['name']}}" class="fileinput-preview">
+                </div>
+            </div>
 
             <div class="mws-form-row">
                 <label  class="mws-form-label">
-                   轮播图:
+                   友情链接图片:
                 </label>
                 <div class="mws-form-item">
-                    <img src="{{URL::asset($data['pic'])}}" style="width: 150px;height: 150px;">
-                    <input type="file"  name="pic" value="" class="layui-input">
+                    <img src="{{URL::asset($data['img'])}}" style="width: 150px;height: 150px;">
+                    <input type="file"  name="img" value="" class="layui-input">
                 </div>
             </div>
 
@@ -52,7 +61,7 @@
                 <input type="submit" class="btn btn-info" value="确认修改">
             </div>
         </form>
-    </div>    	
+    </div>      
 </div>
 
 <!-- 右侧内容框架，更改从这里结束 -->

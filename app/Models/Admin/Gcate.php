@@ -4,14 +4,14 @@ namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 
-class User extends Model
+class Gcate extends Model
 {
-     /**
+    /**
      * 与模型关联的数据表
      *
      * @var string
      */
-    protected $table = 'users';
+    protected $table = 'ggcate';
 
     protected $primaryKey = 'id';
 
@@ -23,5 +23,5 @@ class User extends Model
      *
      * @var array
      */
-    protected $fillable = ['uname','password','email','tel','header','auth','age','sex','nickname','register_at','token'];
+    protected $fillable = ['title'];
 }

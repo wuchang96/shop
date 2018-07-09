@@ -140,8 +140,8 @@
                     <li>
                         <a href="#"><i class="icon-heart"></i>友情链接管理</a>
                         <ul class='closed'>
-                            <li><a href="/admin/user/create">友情链接添加</a></li>
-                            <li><a href="/admin/user">友情链接列表</a></li>
+                            <li><a href="/admin/link/create">友情链接添加</a></li>
+                            <li><a href="/admin/link">友情链接列表</a></li>
                         </ul>
                     </li>
 
@@ -152,10 +152,27 @@
                             <li><a href="/admin/lunbo">轮播图列表</a></li>
                         </ul>
                     </li>
+					
+                    <li>
+                        <a href="#"><i class="icon-home"></i>广告类别管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/gcate/create">广告类别添加</a></li>
+                            <li><a href="/admin/gcate">广告类别列表</a></li>
+                        </ul>
+                    </li>
+					
                     <li>
                         <a href="#"><i class="icon-home"></i>站点管理</a>
                         <ul class='closed'>
                             <li><a href="/admin/site">站点信息</a></li>
+						</ul>
+					</li>
+					
+                    <li>
+                        <a href="#"><i class="icon-list"></i>广告管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/guanggao/create">广告添加</a></li>
+                            <li><a href="/admin/guanggao">广告列表</a></li>
                         </ul>
                     </li>
                     
