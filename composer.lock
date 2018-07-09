@@ -865,7 +865,21 @@
         },
         {
             "name": "nesbot/carbon",
+
             "version": "1.32.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/briannesbitt/Carbon.git",
+                "reference": "64563e2b9f69e4db1b82a60e81efa327a30ff343"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/briannesbitt/Carbon/64563e2b9f69e4db1b82a60e81efa327a30ff343.zip",
+                "reference": "64563e2b9f69e4db1b82a60e81efa327a30ff343",
+            "version": "1.31.1",
+
+            "version": "1.32.0",
+
             "source": {
                 "type": "git",
                 "url": "https://github.com/briannesbitt/Carbon.git",
@@ -917,6 +931,10 @@
                 "time"
             ],
             "time": "2018-07-05T06:59:26+00:00"
+
+            "time": "2018-06-25T13:15:16+00:00"
+
+
         },
         {
             "name": "nikic/php-parser",
@@ -971,7 +989,22 @@
         },
         {
             "name": "paragonie/random_compat",
+
+
             "version": "v2.0.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/paragonie/random_compat.git",
+                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://files.phpcomposer.com/files/paragonie/random_compat/29af24f25bab834fcbb38ad2a69fa93b867e070d.zip",
+                "reference": "29af24f25bab834fcbb38ad2a69fa93b867e070d",
+            "version": "v2.0.15",
+
+            "version": "v2.0.17",
+
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
@@ -1016,7 +1049,15 @@
                 "pseudorandom",
                 "random"
             ],
+
+
             "time": "2018-07-04T16:31:37+00:00"
+
+            "time": "2018-06-08T15:26:40+00:00"
+
+
+            "time": "2018-07-04T16:31:37+00:00"
+
         },
         {
             "name": "psr/container",
