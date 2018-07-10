@@ -70,6 +70,10 @@ Route::group([],function(){
 
 	Route::resource('/home/goods','home\GoodsController');
 
+	//个人中心
+	Route::any('home/ucenter','home\UcenterController@ucenter');
+	Route::any('home/update/{id}','home\UcenterController@update');
+
 
 });
 
@@ -78,7 +82,10 @@ Route::group([],function(){
  */
 Route::any('home/login','home\LoginController@login');
 Route::any('home/dologin','home\LoginController@dologin');
+Route::any('home/logout','home\LoginController@logout');
 Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
 Route::any('home/captcha','home\RegistController@captcha');
 Route::any('home/jihuo','home\RegistController@jihuo');
+
+

@@ -111,10 +111,22 @@
                 </div>
             </span>
         </span>
-
+       
         <!--End 所在收货地区 End-->
         <span class="fr">
-        	<span class="fl">你好，请{{Session::get('uname')}}<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+            
+        	<span class="fl">
+                @if(empty(Session::get('user')))
+                   你好,请<a href="/home/login">登录</a>
+                @else
+                    你好,{{session('user.nickname')}}
+                    <a href="/home/ucenter">个人中心</a>
+                    <a href="/home/logout">退出</a> 
+                @endif
+                <a href="/home/regist" style="color:#ff4e00;">免费注册</a>
+                |
+                <a href="#">我的订单</a>
+            </span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">收藏夹</a>
@@ -127,31 +139,6 @@
                             </ul>
                         </div>
                     </div>     
-                </div>
-                <div class="ss_list">
-                	<a href="#">客户服务</a>
-                    <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
-                        <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">客户服务</a></li>
-                                <li><a href="#">客户服务</a></li>
-                                <li><a href="#">客户服务</a></li>
-                            </ul>
-                        </div>
-                    </div>    
-                </div>
-                <div class="ss_list">
-                	<a href="#">网站导航</a>
-                    <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
-                        <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">网站导航</a></li>
-                                <li><a href="#">网站导航</a></li>
-                            </ul>
-                        </div>
-                    </div>    
                 </div>
             </span>
             <span class="fl">|&nbsp;关注我们：</span>
