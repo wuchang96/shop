@@ -55,12 +55,11 @@ Route::group(['middleware'=>'login'],function(){
 	Route::resource('admin/guanggao','admin\GuangController');
 
 	Route::resource('admin/gcate','admin\GcateController');
-<<<<<<< HEAD
-=======
+
 
 	// 友情链接
 	Route::resource('admin/link','admin\LinksController');
->>>>>>> origin/lz
+
 
 });
 
@@ -73,6 +72,23 @@ Route::group([],function(){
 
 
 });
+
+//前台购物车
+Route::resource('/home/cart','home\CartController');
+Route::any('/home/ajaxcart','home\CartController@ajaxcart');
+
+//前台订单
+Route::resource('/home/order','home\OrderController');
+
+//前台收货地址
+Route::resource('/home/addr','home\AddrController');
+
+//前台我的收藏
+Route::resource('/home/collect','home\CollectController');
+
+//前台我的订单
+Route::resource('/home/grorder','home\GrOrderController');
+
 
 /**
  * 前台登录
