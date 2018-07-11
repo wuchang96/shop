@@ -67,8 +67,9 @@ Route::group(['middleware'=>'login'],function(){
 Route::group([],function(){
 	//前台路由
 	Route::resource('/','home\IndexController');
-
+	//商品的列表页
 	Route::resource('/home/goods','home\GoodsController');
+	Route::any('/home/cate','home\GoodsController@index');
 
 
 });
