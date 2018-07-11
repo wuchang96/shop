@@ -4,11 +4,11 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Home\Cart;
-use Session;
+use App\Models\Admin\Orders;
 use DB;
+use Session;
 
-class CartController extends Controller
+class GrOrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +17,9 @@ class CartController extends Controller
      */
     public function index()
     {   
-
-        $uid = Session::get('UserInfo.uname');
-        dd($uid);
-        $res = Cart::get();
-        return view('home.cart.index',['title'=>'购物车','res'=>$res]);
+        $uid = Session::get('user.id');
+        $data = Orders::where('u_id',$uid)->get();
+        return view('home.grorder.index',['title'=>'我的订单','data'=>$data]);
     }
 
     /**
@@ -30,9 +28,8 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
-
-
+    {
+        //
     }
 
     /**
@@ -43,7 +40,7 @@ class CartController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**
@@ -54,7 +51,7 @@ class CartController extends Controller
      */
     public function show($id)
     {
-        //
+       
     }
 
     /**
@@ -65,7 +62,30 @@ class CartController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data = Orders::where('id',$id)->first();
+        $data['status'] = 2;
+        $add['id'] = $data['id'];
+        $add['u_id'] = $data['u_id'];
+        $add['name'] = $data['name'];
+        $add['addr'] = $data['addr'];
+        $add['tel'] = $data['tel'];
+        $add['cnt'] = $data['cnt'];
+        $add['create_at'] = $data['create_at'];
+        $add['sum'] = $data['sum'];
+        $add['umsg'] = $data['umsg'];
+        $add['status'] = $data['status'];
+        // dump($data);
+       
+         // dump($add);
+        try{
+            $res = Orders::where('id',$id)->update($add);
+            if($str){
+                 return redirect('home.grorder');
+            }
+        }catch(\Exception $e){
+
+            return back();
+        }
     }
 
     /**
@@ -77,7 +97,7 @@ class CartController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        
     }
 
     /**
@@ -89,24 +109,5 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function ajaxcart(Request $request)
-    {
-        $id = $request->input('id');
-        //构造器删除
-        $data = Cart::where('id',$id)->delete();
-
-        $count = Cart::count();
-
-        echo $count;
-
-
-    }
-
-
-    public function sess()
-    {
-        session('ses') == session('username');
     }
 }

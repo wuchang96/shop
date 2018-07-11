@@ -4,11 +4,8 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\Home\Cart;
-use Session;
-use DB;
 
-class CartController extends Controller
+class CollectController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +13,8 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
-
-        $uid = Session::get('UserInfo.uname');
-        dd($uid);
-        $res = Cart::get();
-        return view('home.cart.index',['title'=>'购物车','res'=>$res]);
+    {
+        return view('home.collect.index',['title'=>'我的收藏']);
     }
 
     /**
@@ -30,9 +23,8 @@ class CartController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
-
-
+    {
+        //
     }
 
     /**
@@ -89,24 +81,5 @@ class CartController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function ajaxcart(Request $request)
-    {
-        $id = $request->input('id');
-        //构造器删除
-        $data = Cart::where('id',$id)->delete();
-
-        $count = Cart::count();
-
-        echo $count;
-
-
-    }
-
-
-    public function sess()
-    {
-        session('ses') == session('username');
     }
 }

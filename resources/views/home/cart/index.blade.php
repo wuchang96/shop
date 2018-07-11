@@ -333,14 +333,15 @@
 
   })
  
-  $('#tj').click(function(){
+  /* $('#tj').click(function(){
     var id = $('.shuid').attr('idc');
     console.log(id);
      var cnt = $('input[type=text][name=cnt]').val();
-   /* $.post('',{cnt:cnt}function(data){
+   $.post('',{cnt:cnt}function(data){
 
-    })*/
     })
+    })*/
+
  
 </script>
 @endsection
