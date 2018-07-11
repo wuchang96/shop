@@ -2,13 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link type="text/css" rel="stylesheet" href="/home/css/style.css" />
-    <!--[if IE 6]>
-    <script src="js/iepng.js" type="text/javascript"></script>
-        <script type="text/javascript">
-           EvPNG.fix('div, ul, img, li, input, a'); 
-        </script>
-    <![endif]-->    
+	<link type="text/css" rel="stylesheet" href="/home/css/style.css" />   
     <script type="text/javascript" src="/home/js/jquery-1.11.1.min_044d0927.js"></script>
 	<script type="text/javascript" src="/home/js/jquery.bxslider_e88acd1b.js"></script>
     
@@ -27,9 +21,7 @@
     <script type="text/javascript" src="/home/js/hban.js"></script>
     <script type="text/javascript" src="/home/js/tban.js"></script>
     
-	<script type="text/javascript" src="/home/js/lrscroll_1.js"></script>
-    
-    
+	<script type="text/javascript" src="/home/js/lrscroll_1.js"></script>       
 <title>@yield('title')</title>
 </head>
 <body>  
@@ -224,42 +216,9 @@
                                     <h2>{{$kk->title}}</h2>
                                     @foreach($kk->sub as $ks)
                                     <a href="/home/cate?id={{$ks->id}}">{{$ks->title}}</a>|
-                                    @endforeach
-                                    <!-- <a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">巧克力</a>|
-                                    <a href="#">口香糖</a>|<a href="#">海苔</a>|<a href="#">鱼干</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|
-                                    <a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">蜜饯</a>| -->
+                                    @endforeach                                   
                                 </div>
                                 @endforeach
-                               <!--  <div class="zj_l_c">
-                                    <h2>零食 / 糖果 / 巧克力</h2>
-                                    <a href="#">坚果</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">巧克力</a>|
-                                    <a href="#">口香糖</a>|<a href="#">海苔</a>|<a href="#">鱼干</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|
-                                    <a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">蜜饯</a>|
-                                </div>
-                                <div class="zj_l_c">
-                                    <h2>零食 / 糖果 / 巧克力</h2>
-                                    <a href="#">坚果</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">巧克力</a>|
-                                    <a href="#">口香糖</a>|<a href="#">海苔</a>|<a href="#">鱼干</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|
-                                    <a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">蜜饯</a>|
-                                </div>
-                                <div class="zj_l_c">
-                                    <h2>零食 / 糖果 / 巧克力</h2>
-                                    <a href="#">坚果</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">巧克力</a>|
-                                    <a href="#">口香糖</a>|<a href="#">海苔</a>|<a href="#">鱼干</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|
-                                    <a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">蜜饯</a>|
-                                </div>
-                                <div class="zj_l_c">
-                                    <h2>零食 / 糖果 / 巧克力</h2>
-                                    <a href="#">坚果</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">巧克力</a>|
-                                    <a href="#">口香糖</a>|<a href="#">海苔</a>|<a href="#">鱼干</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|
-                                    <a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">蜜饯</a>|
-                                </div>
-                                <div class="zj_l_c">
-                                    <h2>零食 / 糖果 / 巧克力</h2>
-                                    <a href="#">坚果</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">巧克力</a>|
-                                    <a href="#">口香糖</a>|<a href="#">海苔</a>|<a href="#">鱼干</a>|<a href="#">蜜饯</a>|<a href="#">红枣</a>|
-                                    <a href="#">蜜饯</a>|<a href="#">红枣</a>|<a href="#">牛肉干</a>|<a href="#">蜜饯</a>|
-                                </div> -->
                             </div>
                             <div class="zj_r">
                                 <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
@@ -267,14 +226,12 @@
                             </div>
                         </div>
                     </li>
-
                    @endforeach             	
                 </ul>            
             </div>
         </div>  
-        <!--End 商品分类详情 End-->                                                     
-    	<ul class="menu_r">                                                                                                                                               
-        	<li><a href="Index.html">首页</a></li>
+        <!--End 商品分类详情 End-->                                                 
+    	<ul class="menu_r">                                                                                                                                      <li><a href="Index.html">首页</a></li>
             <li><a href="Food.html">美食</a></li>
             <li><a href="Fresh.html">生鲜</a></li>
             <li><a href="HomeDecoration.html">家居</a></li>
@@ -374,9 +331,4 @@
 @section('js')
 @show
 </body>
-
-
-<!--[if IE 6]>
-<script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
-<![endif]-->
 </html>
