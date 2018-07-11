@@ -19,7 +19,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-         $data= DB::table('goods')->get();
+         // $data= DB::table('cate')->get();
         // dd($goods);
 
         //递归处理数据
@@ -29,10 +29,16 @@ class IndexController extends Controller
         // $data=array(
         //     'good'=>$good
         // );
-         $data=Cate::getsubcate(0); 
+         
          //处理右侧广告
+         // foreach ($goods as $key => $value) {
+         //     $value->rightAds=DB::table('advresing')->where([["cid","=","$value->id"],['type','=',0]])->limit(2)->get();
 
-        return view('home.index.index',['title'=>'尤洪','data'=>$data]);
+
+         // }
+         // dd($goods);
+
+        return view('home.index.index',['title'=>'尤洪']);
 
        
     }
