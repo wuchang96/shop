@@ -22,7 +22,7 @@ class GuangController extends Controller
        $search = $request -> input('search','');//接收的广告名称
        $cid = $request -> input('cid','');//接收广告类别
        $count = DB::table('advresing')->count();
-       $page_count = $request->input('page_count',5);
+       $page_count = $request->input('page_count',2);
 
        $Guanggao =new Guanggao(); //创建数据对象
         if(isset($search) && !empty($search)){
@@ -120,7 +120,7 @@ class GuangController extends Controller
         
 
         // dd($data);
-        return view('admin.guanggao.update',['data'=>$data,'title'=>'修改广告']);
+        return view('admin.guanggao.edit',['data'=>$data,'title'=>'修改广告']);
     }
 
     /**

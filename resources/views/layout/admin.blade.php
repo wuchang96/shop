@@ -169,10 +169,18 @@
 					</li>
 					
                     <li>
-                        <a href="#"><i class="icon-list"></i>广告管理</a>
+                        <a href="#"><i class="icon-indent-left"></i>广告管理</a>
                         <ul class='closed'>
                             <li><a href="/admin/guanggao/create">广告添加</a></li>
                             <li><a href="/admin/guanggao">广告列表</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#"><i class="icon-planet"></i>新闻管理</a>
+                        <ul class='closed'>
+                            <li><a href="/admin/news/create">新闻添加</a></li>
+                            <li><a href="/admin/news">新闻列表</a></li>
                         </ul>
                     </li>
                     

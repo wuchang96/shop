@@ -3,8 +3,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <<<<<<< HEAD
+<<<<<<< HEAD
 	<link type="text/css" rel="stylesheet" href="/home/css/style.css" />   
 =======
+=======
+>>>>>>> origin/lz
 	<link type="text/css" rel="stylesheet" href="/home/css/style.css" />
     <!--[if IE 6]>
     <script src="js/iepng.js" type="text/javascript"></script>
@@ -12,7 +15,10 @@
            EvPNG.fix('div, ul, img, li, input, a'); 
         </script>
     <![endif]-->    
+<<<<<<< HEAD
 >>>>>>> origin/wu
+=======
+>>>>>>> origin/lz
     <script type="text/javascript" src="/home/js/jquery-1.11.1.min_044d0927.js"></script>
 	<script type="text/javascript" src="/home/js/jquery.bxslider_e88acd1b.js"></script>
     
@@ -23,7 +29,10 @@
     
 	<script type="text/javascript" src="/home/js/lrscroll.js"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/lz
     
     <script type="text/javascript" src="/home/js/iban.js"></script>
     <script type="text/javascript" src="/home/js/fban.js"></script>
@@ -34,7 +43,10 @@
     <script type="text/javascript" src="/home/js/tban.js"></script>
     
 	<script type="text/javascript" src="/home/js/lrscroll_1.js"></script>
+<<<<<<< HEAD
 >>>>>>> origin/wu
+=======
+>>>>>>> origin/lz
     
     <script type="text/javascript" src="/home/js/iban.js"></script>
     <script type="text/javascript" src="/home/js/fban.js"></script>
@@ -74,12 +86,16 @@
 </div>
 <div class="top">
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     <div class="logo"><a href="Index.html"><img src="/home/images/logo.png" /></a></div>
 
 =======
     <div class="logo"><a href="Index.html"><img src="/home/images/logo.png" /></a></div>
 >>>>>>> origin/wu
+=======
+    <div class="logo"><a href="Index.html"><img src="/home/images/logo.png" /></a></div>
+>>>>>>> origin/lz
     <div class="search">
     	<form>
         	<input type="text" value="" class="s_ipt" />
@@ -133,9 +149,12 @@
                     <li>
                     	<div class="fj">
 <<<<<<< HEAD
+<<<<<<< HEAD
                         	<span class="n_img"><span></span><img src="" /></span>
                             <span class="fl">{{$v->title}}</span>
 =======
+=======
+>>>>>>> origin/lz
                         	<span class="n_img"><span></span><img src="/home/images/nav1.png" /></span>
                             <span class="fl">进口食品、生鲜</span>
 >>>>>>> origin/wu

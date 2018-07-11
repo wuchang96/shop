@@ -4,9 +4,13 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use DB;
-use App\Http\Controllers\home;
 use App\Models\Admin\Cate;
+use App\Models\admin\Lunbo;
+use App\Models\admin\News;
+use App\Models\admin\Guanggao;
+use DB;
+
+>>>>>>> origin/lz
 class IndexController extends Controller
 {
     
@@ -19,28 +23,17 @@ class IndexController extends Controller
      */
     public function index()
     {
-         // $data= DB::table('cate')->get();
-        // dd($goods);
+        // 获取轮播图表信息
+        $lunbo=Lunbo::get();
 
-        //递归处理数据
-        // $good=$this->checkGoods($goods);
-        // dd($good);
-        // //格式化数据
-        // $data=array(
-        //     'good'=>$good
-        // );
-         
-         //处理右侧广告
-         // foreach ($goods as $key => $value) {
-         //     $value->rightAds=DB::table('advresing')->where([["cid","=","$value->id"],['type','=',0]])->limit(2)->get();
+        // 获取新闻表信息
+        $news = News::get();
 
+        // 获取广告表信息
+        $guang = Guanggao::get();
 
-         // }
-         // dd($goods);
+        return view('home.index.index',['title'=>'尤洪','lunbo'=>$lunbo,'news'=>$news,'guang'=>$guang]);
 
-        return view('home.index.index',['title'=>'尤洪']);
-
-       
     }
 
     /**
