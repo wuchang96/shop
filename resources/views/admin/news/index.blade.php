@@ -65,38 +65,35 @@
     <div class="mws-panel-body no-padding">
         <div role="grid" class="dataTables_wrapper" id="DataTables_Table_1_wrapper">
 
-            <form action="/admin/guanggao" method='get'>
+            <form action="/admin/news" method='get'>
                 <div id="DataTables_Table_1_length" class="dataTables_length">
                     <label>
                         显示
-                        <select name="page_count" size="1" aria-controls="DataTables_Table_1">
-
-                            <option value="2" @if($request->page_count == 2)   selected="selected" @endif>
-                                2
-                            </option>
-                            <option value="4" @if($request->page_count == 4)   selected="selected" @endif>
-                                4
-                            </option>
-                            <option value="6" @if($request->page_count == 6)   selected="selected" @endif>
-                                6
-                            </option>
-                           
-                            
-                        </select>
+                    <select name="page_count" size="1" aria-controls="DataTables_Table_1">
+                     <option value="3"
+                         @if(isset($search['page_count']) && !empty($search['page_count']) && $search['page_count'] == 3)
+                         selected 
+                         @endif >3条</option>
+                     <option value="5"
+                       @if(isset($search['page_count']) && !empty($search['page_count']) && $search['page_count'] == 5)
+                           selected 
+                           @endif >5条</option>
+                       <option value="8"
+                       @if(isset($search['page_count']) && !empty($search['page_count']) && $search['page_count'] == 8)
+                           selected 
+                           @endif >8条</option>
+                       <option value="11"
+                       @if(isset($search['page_count']) && !empty($search['page_count']) && $search['page_count'] == 11)
+                           selected 
+                         @endif >11条</option>
+                   </select>
                         条数据
                     </label>
                 </div>
                 <div class="dataTables_filter" id="DataTables_Table_1_filter">
-                    <label class="layui-form-label xbs768">顾客:　</label>
-                    <input type="text" class="layui-input" placeholder="请输入顾客姓名" value="{{$search['search'] or ''}}" name="search" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <label class="layui-form-label xbs768">作者:　</label>
+                    <input type="text" class="layui-input" placeholder="请输入作者姓名" value="{{$search['search'] or ''}}" name="search" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-                    <label class="layui-form-label"></font>广告分类:　</label>
-                        <select name="cid" lay-filter="aihao">
-                        <option value="0" @if($cid==0) selected @endif>----请选择----</option>
-                        <option value="1" @if($cid==1) selected @endif>商品推广</option>
-                        <option value="2" @if($cid==2) selected @endif>公益广告</option>
-                        </select>
-                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button class='btn btn-info'>搜索</button>
                 </div>
             </form>
@@ -111,36 +108,21 @@
                             ID
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 130px;" aria-label="Browser: activate to sort column ascending">
-                           广告类别
+                        rowspan="1" colspan="1" style="width: 150px;" aria-label="Browser: activate to sort column ascending">
+                           新闻标题
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" style="width: 100px;" aria-label="Platform(s): activate to sort column ascending">
-                            客户
+                            新闻作者
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">
-                            价格
-                        </th>
-                        
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 150px;" aria-label="CSS grade: activate to sort column ascending">
-                           上架日期
+                        rowspan="1" colspan="1" style="width: 150px;" aria-label="Engine version: activate to sort column ascending">
+                            新闻插图
                         </th>
 
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 140px;" aria-label="CSS grade: activate to sort column ascending">
-                           广告图
-                        </th>
-
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 140px;" aria-label="CSS grade: activate to sort column ascending">
-                           广告跳转
-                        </th>
-
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 140px;" aria-label="CSS grade: activate to sort column ascending">
-                           广告状态
+                        rowspan="1" colspan="1" style="width: 150px;" aria-label="Engine version: activate to sort column ascending">
+                            创建时间
                         </th>
 
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
@@ -152,49 +134,38 @@
                 <tbody>
                     @foreach($data as $v)
                     <tr>
-                        <td class="td">{{$v->id}}</td>
                         <td>
-                            @if($v->cid==1)
-                            商品推广
-                            @elseif($v->cid==2)
-                            公益广告
-                            @endif
-                        </td>
-                        <td>
-                            {{$v->acustomer}}
+                            {{$v->id}}
                         </td>
                         <td >
-                            {{$v->aprice}}
+                            {{$v->title}}
                         </td>
                         <td >
-                            {{$v->updated_at}}
+                            {{$v->author}}
                         </td>
                         <td >
-                            <img src="{{$v->pic}}" alt="" width="100px">
+                            <img src="{{URL::asset($v->apic)}}" alt="" width="100px">
                         </td>
-                        <td><a>{{$v['url']}}</a></td>
-                        <td class="status" status="{{$v->astatus}}">
-                            @if($v->astatus==1)上架
-                            @elseif($v->astatus==0)下架
-                            @endif
-                        </td>
-                       
-                        <td class=" ">
-                          <a href="/admin/guanggao/{{$v->id}}/edit" class='btn btn-info'>修改</a>
+                        
+                        <td>{{$v->created_at}}</td>
 
-                          <form action="/admin/guanggao/{{$v->id}}" method='post' style='display:inline'>
+                        <td class=" ">
+                          <a href="/admin/news/{{$v->id}}/edit" class='btn btn-info'>修改</a>
+
+                          <form action="/admin/news/{{$v->id}}" method='post' style='display:inline'>
                               
                               {{csrf_field()}}
 
                               {{method_field('DELETE')}}
-                              <button href="" class='btn btn-warning'>删除</button>
-
+                              <button href="" class='btn btn-warning' style='margin:15px'>删除</button>
                           </form>
-                                
+                          <a class="btn btn-success" href="/admin/news/{{$v->id}}">文章详情</a>
                         </td>
+
                     </tr>
                     @endforeach
                 </tbody>
+            </table>
             </table>
 
             <div class="dataTables_info" id="DataTables_Table_1_info">

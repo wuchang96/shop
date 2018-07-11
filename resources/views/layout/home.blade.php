@@ -2,32 +2,32 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link type="text/css" rel="stylesheet" href="home/css/style.css" />
+	<link type="text/css" rel="stylesheet" href="/home/css/style.css" />
     <!--[if IE 6]>
     <script src="js/iepng.js" type="text/javascript"></script>
         <script type="text/javascript">
            EvPNG.fix('div, ul, img, li, input, a'); 
         </script>
     <![endif]-->    
-    <script type="text/javascript" src="home/js/jquery-1.11.1.min_044d0927.js"></script>
-	<script type="text/javascript" src="home/js/jquery.bxslider_e88acd1b.js"></script>
+    <script type="text/javascript" src="/home/js/jquery-1.11.1.min_044d0927.js"></script>
+	<script type="text/javascript" src="/home/js/jquery.bxslider_e88acd1b.js"></script>
     
-    <script type="text/javascript" src="home/js/jquery-1.8.2.min.js"></script>
-    <script type="text/javascript" src="home/js/menu.js"></script>    
+    <script type="text/javascript" src="/home/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="/home/js/menu.js"></script>    
         
-	<script type="text/javascript" src="home/js/select.js"></script>
+	<script type="text/javascript" src="/home/js/select.js"></script>
     
-	<script type="text/javascript" src="home/js/lrscroll.js"></script>
+	<script type="text/javascript" src="/home/js/lrscroll.js"></script>
     
-    <script type="text/javascript" src="home/js/iban.js"></script>
-    <script type="text/javascript" src="home/js/fban.js"></script>
-    <script type="text/javascript" src="home/js/f_ban.js"></script>
-    <script type="text/javascript" src="home/js/mban.js"></script>
-    <script type="text/javascript" src="home/js/bban.js"></script>
-    <script type="text/javascript" src="home/js/hban.js"></script>
-    <script type="text/javascript" src="home/js/tban.js"></script>
+    <script type="text/javascript" src="/home/js/iban.js"></script>
+    <script type="text/javascript" src="/home/js/fban.js"></script>
+    <script type="text/javascript" src="/home/js/f_ban.js"></script>
+    <script type="text/javascript" src="/home/js/mban.js"></script>
+    <script type="text/javascript" src="/home/js/bban.js"></script>
+    <script type="text/javascript" src="/home/js/hban.js"></script>
+    <script type="text/javascript" src="/home/js/tban.js"></script>
     
-	<script type="text/javascript" src="home/js/lrscroll_1.js"></script>
+	<script type="text/javascript" src="/home/js/lrscroll_1.js"></script>
     
     
 <title>@yield('title')</title>
@@ -155,12 +155,12 @@
             </span>
             <span class="fl">|&nbsp;关注我们：</span>
             <span class="s_sh"><a href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span>
-            <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="home/images/s_tel.png" align="absmiddle" /></a></span>
+            <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="/home/images/s_tel.png" align="absmiddle" /></a></span>
         </span>
     </div>
 </div>
 <div class="top">
-    <div class="logo"><a href="Index.html"><img src="home/images/logo.png" /></a></div>
+    <div class="logo"><a href="Index.html"><img src="/home/images/logo.png" /></a></div>
     <div class="search">
     	<form>
         	<input type="text" value="" class="s_ipt" />
@@ -177,17 +177,17 @@
             <!--Begin 购物车已登录 Begin-->
             <ul class="cars">
             	<li>
-                	<div class="img"><a href="#"><img src="home/images/car1.jpg" width="58" height="58" /></a></div>
+                	<div class="img"><a href="#"><img src="/home/images/car1.jpg" width="58" height="58" /></a></div>
                     <div class="name"><a href="#">法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只</a></div>
                     <div class="price"><font color="#ff4e00">￥399</font> X1</div>
                 </li>
                 <li>
-                	<div class="img"><a href="#"><img src="home/images/car2.jpg" width="58" height="58" /></a></div>
+                	<div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
                     <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
                     <div class="price"><font color="#ff4e00">￥399</font> X1</div>
                 </li>
                 <li>
-                	<div class="img"><a href="#"><img src="home/images/car2.jpg" width="58" height="58" /></a></div>
+                	<div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
                     <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
                     <div class="price"><font color="#ff4e00">￥399</font> X1</div>
                 </li>
@@ -209,7 +209,7 @@
                 <ul>      
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav1.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav1.png" /></span>
                             <span class="fl">进口食品、生鲜</span>
                         </div>
                         <div class="zj">
@@ -252,14 +252,14 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav2.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav2.png" /></span>
                             <span class="fl">食品、饮料、酒</span>
                         </div>
                         <div class="zj" style="top:-40px;">
@@ -278,14 +278,14 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav3.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav3.png" /></span>
                             <span class="fl">母婴、玩具、童装</span>
                         </div>
                         <div class="zj" style="top:-80px;">
@@ -298,14 +298,14 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav4.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav4.png" /></span>
                             <span class="fl">家居、家庭清洁、纸品</span>
                         </div>
                         <div class="zj" style="top:-120px;">
@@ -318,14 +318,14 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav5.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav5.png" /></span>
                             <span class="fl">美妆、个人护理、洗护</span>
                         </div>
                         <div class="zj" style="top:-160px;">
@@ -338,14 +338,14 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav6.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav6.png" /></span>
                             <span class="fl">女装、内衣、中老年</span>
                         </div>
                         <div class="zj" style="top:-200px;">
@@ -358,14 +358,14 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav7.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav7.png" /></span>
                             <span class="fl">鞋靴、箱包、腕表配饰</span>
                         </div>
                         <div class="zj" style="top:-240px;">
@@ -378,14 +378,14 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav8.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav8.png" /></span>
                             <span class="fl">男装、运动</span>
                         </div>
                         <div class="zj" style="top:-280px;">
@@ -398,14 +398,14 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav9.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav9.png" /></span>
                             <span class="fl">手机、小家电、电脑</span>
                         </div>
                         <div class="zj" style="top:-320px;">
@@ -418,14 +418,14 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>                    
                     <li>
                     	<div class="fj">
-                        	<span class="n_img"><span></span><img src="home/images/nav10.png" /></span>
+                        	<span class="n_img"><span></span><img src="/home/images/nav10.png" /></span>
                             <span class="fl">礼品、充值</span>
                         </div>
                         <div class="zj" style="top:-360px;">
@@ -438,8 +438,8 @@
                                 </div>
                             </div>
                             <div class="zj_r">
-                                <a href="#"><img src="home/images/n_img1.jpg" width="236" height="200" /></a>
-                                <a href="#"><img src="home/images/n_img2.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img1.jpg" width="236" height="200" /></a>
+                                <a href="#"><img src="/home/images/n_img2.jpg" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>                    	

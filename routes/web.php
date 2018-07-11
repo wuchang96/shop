@@ -55,12 +55,14 @@ Route::group(['middleware'=>'login'],function(){
 	Route::resource('admin/guanggao','admin\GuangController');
 
 	Route::resource('admin/gcate','admin\GcateController');
-<<<<<<< HEAD
-=======
+
 
 	// 友情链接
 	Route::resource('admin/link','admin\LinksController');
->>>>>>> origin/lz
+
+	// 新闻
+	Route::resource('admin/news','admin\NewsController');
+
 
 });
 
@@ -71,7 +73,7 @@ Route::group([],function(){
 
 	Route::resource('/home/goods','home\GoodsController');
 
-
+	
 });
 
 /**
@@ -81,3 +83,6 @@ Route::any('home/login','home\LoginController@login');
 Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
 
+
+//新闻详情页
+Route::get('/home/news/detail','admin\NewsController@detail');

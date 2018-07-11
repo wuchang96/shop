@@ -7,9 +7,39 @@
     	<div class="banner">    	
             <div class="top_slide_wrap">
                 <ul class="slide_box bxslider">
-                    <li><img src="home/images/ban1.jpg" width="740" height="401" /></li>
-                    <li><img src="home/images/ban1.jpg" width="740" height="401" /></li> 
-                    <li><img src="home/images/ban1.jpg" width="740" height="401" /></li> 
+                    @foreach($lunbo as $k=>$v)
+                    <li>
+                        <a href="{{$v['url_1']}}">
+                        <img src="{{$v['pic_1']}}" width="740" height="401" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{$v['url_2']}}">
+                        <img src="{{$v['pic_2']}}" width="740" height="401" />
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="{{$v['url_3']}}">
+                        <img src="{{$v['pic_3']}}" width="740" height="401" />
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="{{$v['url_4']}}">
+                        <img src="{{$v['pic_4']}}" width="740" height="401" />
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="{{$v['url_5']}}">
+                        <img src="{{$v['pic_5']}}" width="740" height="401" />
+                        </a>
+                    </li> 
+                    <li>
+                        <a href="{{$v['url_6']}}">
+                        <img src="{{$v['pic_6']}}" width="740" height="401" />
+                        </a>
+                    </li> 
+
+                    @endforeach
                 </ul>	
                 <div class="op_btns clearfix">
                     <a href="#" class="op_btn op_prev"><span></span></a>
@@ -32,11 +62,9 @@
             	<span class="fr"><a href="#">更多 ></a></span>新闻资讯
             </div>
             <ul>
-            	<li><span>[ 特惠 ]</span><a href="#">掬一轮明月 表无尽惦念</a></li>
-            	<li><span>[ 公告 ]</span><a href="#">好奇金装成长裤新品上市</a></li>
-            	<li><span>[ 特惠 ]</span><a href="#">大牌闪购 · 抢！</a></li>
-            	<li><span>[ 公告 ]</span><a href="#">发福利 买车就抢千元油卡</a></li>
-            	<li><span>[ 公告 ]</span><a href="#">家电低至五折</a></li>
+                @foreach($news as $k=>$v)
+            	<li><span>[ 公告 ]</span><a href="/home/news/detail?id={{$v['id']}}">{{$v['title']}}</a></li>
+                @endforeach
             </ul>
             <div class="charge_t">
             	话费充值<div class="ch_t_icon"></div>
