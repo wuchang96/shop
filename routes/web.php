@@ -76,6 +76,7 @@ Route::group([],function(){
 	//商品的列表页
 	Route::resource('/home/goods','home\GoodsController');
 	Route::any('/home/cate','home\GoodsController@index');
+	
 
 	
 });

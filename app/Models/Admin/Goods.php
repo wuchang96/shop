@@ -30,4 +30,9 @@ class Goods extends Model
     {
         return $this->hasMany('App\Models\Admin\Goodspic','gid');
     }
+    
+   //   public function goods_descr()
+   // {
+   //      return $this->hasOne('App\Models\Admin\Descr','gid');
+   // }
 }

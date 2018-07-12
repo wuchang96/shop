@@ -1,6 +1,7 @@
 @extends('layout.home')
 @section('title',$title)
 @section('content')
+<script type="text/javascript" src="/home/js/n_nav.js"></script>
 <div class="i_bg">
 	<div class="postion">
     	<span class="fl">全部 > 美妆个护 > 香水 > </span>
@@ -99,7 +100,7 @@
                 <ul class="cate_list">
                 	@foreach($goods as $v)
                 	<li>
-                    	<div class="img"><a href="#"><img src="{{$v->gs[0]->gpic}}" width="210" height="185" /></a></div>
+                    	<div class="img"><a href="/home/goods/create?id={{$v->id}}"><img src="{{$v->gs[0]->gpic}}" width="210" height="185" /></a></div>
                         <div class="price">
                             <font>￥<span>{{$v->price}}</span></font> &nbsp; 26R
                         </div>
