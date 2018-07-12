@@ -13,7 +13,7 @@ class Orders extends Model
      */
     protected $table = 'orders';
 
-    protected $primaryKey = 'id';
+    // protected $primaryKey = 'id';
 
     public $timestamps = false;
 
@@ -23,11 +23,11 @@ class Orders extends Model
      *
      * @var array
      */
-    protected $fillable = ['name','u_id','addr','tel','cnt','sum','umsg','status'];
+    protected $fillable = ['oid','name','u_id','addr','tel','cnt','sum','create_at','umsg','status'];
 
 
     public function odeta()
     {
-        return $this->hasMany('App\Models\Admin\Odetails','o_id');
+        return $this->hasMany('App\Models\Admin\Odetails','oid','oid');
     }
 }

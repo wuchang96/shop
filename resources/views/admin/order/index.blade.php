@@ -138,7 +138,7 @@
                                 {{csrf_field()}}
 
                                 {{method_field('DELETE')}}
-                                <button href="" class='btn btn-danger'>删除</button>
+                                <button href="/admin/order/{{$v->id}}" class='btn btn-danger'>删除</button>
 
                             </form>
                         </td>

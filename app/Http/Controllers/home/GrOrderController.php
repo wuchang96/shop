@@ -79,7 +79,7 @@ class GrOrderController extends Controller
          // dump($add);
         try{
             $res = Orders::where('id',$id)->update($add);
-            if($str){
+            if($res){
                  return redirect('home.grorder');
             }
         }catch(\Exception $e){

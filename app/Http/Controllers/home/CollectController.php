@@ -4,6 +4,11 @@ namespace App\Http\Controllers\home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Admin\Goods;
+use App\Models\Admin\Goodspic;
+use App\Models\Home\Collect;
+use Session;
+
 
 class CollectController extends Controller
 {
@@ -14,7 +19,9 @@ class CollectController extends Controller
      */
     public function index()
     {
-        return view('home.collect.index',['title'=>'我的收藏']);
+        $data = Collect::get();
+        // dd($data);
+        return view('home.collect.index',['title'=>'我的收藏','data'=>$data]);
     }
 
     /**
@@ -35,7 +42,7 @@ class CollectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       
     }
 
     /**
@@ -45,8 +52,28 @@ class CollectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
-        //
+    {   
+        $uid = Session::get('user.id');
+        $data = Goods::where('id',$id)->first();
+        $str = Goodspic::where('gid',$id)->first();
+         
+        $add['g_id'] = $data['id']; 
+        $add['u_id'] = $uid; 
+        $add['name'] = $data['gname']; 
+        $add['pic'] = $str['gpic'];
+        $add['price'] = $data['price'];
+        $add['color'] = $data['color'];
+       // dump($add);
+            // dd($res);
+        try{
+            $res = Collect::create($add);
+            if($res){
+                 return redirect('home/collect');
+            }
+        }catch(\Exception $e){
+
+            return back();
+        }
     }
 
     /**
@@ -80,6 +107,15 @@ class CollectController extends Controller
      */
     public function destroy($id)
     {
-        //
+       
+    }
+
+    public function delete($id)
+    {
+        $data = Collect::where('id',$id)->delete();
+        // dd($data);
+        if ($data) {
+            return redirect('/home/collect');
+        }
     }
 }

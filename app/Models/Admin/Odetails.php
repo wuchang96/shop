@@ -13,7 +13,7 @@ class Odetails extends Model
      */
     protected $table = 'odetails';
 
-    protected $primaryKey = 'id';
+    // protected $primaryKey = 'id';
 
     public $timestamps = false;
 
@@ -23,5 +23,10 @@ class Odetails extends Model
      *
      * @var array
      */
-    protected $fillable = ['o_id','g_id','gname','price','num','pic'];
+    protected $fillable = ['oid','gname','price','cnt','pic'];
+
+   /* public function orders()
+    {   
+        return $this->belongsTo('Orders','oid','oid');
+    }*/
 }

@@ -54,7 +54,7 @@ class AddrController extends Controller
         // dd($res);
        try{
             $res = Addr::create($data);
-            if($data){
+            if($res){
                 return redirect('/home/addr');
             }
         }catch(\Exception $e){
