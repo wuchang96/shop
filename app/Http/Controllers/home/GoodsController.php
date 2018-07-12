@@ -30,10 +30,17 @@ class GoodsController extends Controller
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
-     
-    public function create()
+     */
+    public function create(Request $request)
     {
-        //
+        $data = $request->all();
+
+        $id = $data['id'];
+
+        $add = Goods::with('gs')->where("id",$id)->get();
+
+        
+        return view('home.goods.show',['title'=>'商品的详情页','add'=>$add]);
     }
 
     /**
@@ -55,7 +62,23 @@ class GoodsController extends Controller
      */
     public function show($id)
     {
-        //
+
+
+       // // //获取商品信息
+       //  $good=Goods::find($id);
+        
+        //  $goods=Goods::where('id',$id)->with('goods')->first();
+        // dd($goods);
+
+       //  //通过模型获取商品详情   
+       //  $pics =json_decode($good->goods_goodspic->gpic);
+       //  dd($pics);
+       //  // 获取商品顶级分类
+       //  $id = $good -> goods_cate() ->pid;
+       //  $cate_name = Cate::find($c_id);
+       //  $cate = $cate_name->title;
+        // dd($_SERVER);
+        // return view('home.goods.show',['title'=>'商品的详情页','goods'=>$goods]);
     }
 
     /**
