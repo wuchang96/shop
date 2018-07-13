@@ -62,6 +62,14 @@
                     </div>
                 </div>
 
+                
+                
+
+               
+
+
+
+
                 <script>
                     
                     //实例化编辑器
@@ -69,6 +77,7 @@
                     var ue = UE.getEditor('editor');
 
                 </script>
+
 
                 <div class="mws-form-row">
                     <label class="mws-form-label">商品描述</label>

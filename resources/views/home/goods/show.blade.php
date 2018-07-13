@@ -31,7 +31,13 @@
                 <div id="tsImgSCon">
                     <ul>
                         @foreach($add as $k=>$v)
-                        <li onclick="showPic(1)" rel="MagicZoom"><img src="/uploads/goods/image/{{$v->descr}}" tsImgS="" width="79" height="79" /></li>
+                       	
+
+                        <li onclick="showPic(1)" rel="MagicZoom"><img src="{{$v->gs[0]->gpic}}" tsImgS="" width="79" height="79" /></li>
+                        <li onclick="showPic(1)" rel="MagicZoom"><img src="{{$v->gs[0]->gpic}}" tsImgS="" width="79" height="79" /></li>
+                        <li onclick="showPic(1)" rel="MagicZoom"><img src="{{$v->gs[0]->gpic}}" tsImgS="" width="79" height="79" /></li>
+                        <li onclick="showPic(1)" rel="MagicZoom"><img src="{{$v->gs[0]->gpic}}" tsImgS="" width="79" height="79" /></li>
+                        
                         @endforeach
                     </ul>
                 </div>
@@ -163,12 +169,15 @@
                       <tr>
                         
                         <td>商品产地：法国</td>
-                        <td>商品状态:</td>
-                       {{-- @if ({{$v->status}}) === 1)
-						    上架
-						@elseif 
-						    下架
-						@else --}}
+                        <td>商品的状态:
+                       		@if($v->status == '1')
+                            上架
+                            
+                            @else
+                            下架
+                            
+                            @endif
+                        </td>
                         <td>&nbsp;</td>
                       </tr>
                       
@@ -195,7 +204,7 @@
                             【商品日期】：与专柜同步更新<br />
                             【商品产地】：法国<br />
                             【商品包装】：无外盒 无塑封<br />
-                            
+                           
                             
                         </td>
                       </tr>
@@ -204,8 +213,7 @@
                     @foreach($add as $k=>$v)
                     <p align="center">
                     
-                    <img src="/uploads/goods/image
-                    /{{$v->descr}}" width="750" height="409" />
+                    <img src="{{$v->gs[0]->gpic}}" width="750" height="409" />
 					</p>
 					@endforeach
                     

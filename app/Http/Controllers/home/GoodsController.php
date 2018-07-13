@@ -38,9 +38,26 @@ class GoodsController extends Controller
         $id = $data['id'];
 
         $add = Goods::with('gs')->where("id",$id)->get();
-
         
-        return view('home.goods.show',['title'=>'商品的详情页','add'=>$add]);
+       
+          /* $arr = explode('"',$add['descr']);
+           
+           $str=[];
+           $str[] = $arr['1'];
+           $str[] = $arr['3'];
+           $str[] = $arr['5'];
+           // dd($str);
+
+           $trs = explode('/',$str['0']);
+           $aa ='/'.$trs['1'].'/'.$trs['2'].'/'.$trs['3'].'/'.$trs['4'].'/';*/
+           // dd($str);
+           // $trs[]=$str['1'];
+
+       
+        return view('home.goods.show',[
+            'title'=>'商品的详情页',
+            'add'=>$add
+        ]);
     }
 
     /**
