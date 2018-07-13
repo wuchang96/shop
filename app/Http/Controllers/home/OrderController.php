@@ -44,6 +44,11 @@ class OrderController extends Controller
 
 
         $data = Addr::where('uid',$uid)->where('status','0')->first();
+
+        if (empty($data)) {
+            return redirect('/home/addr/add')->with('error','请添加收货地址');
+        }
+       
         $str =  explode(",",$data['addr']);
         $diz = $str['0'].$str['1'].$str['2'].$str['3'];
         // dd($diz);
@@ -103,9 +108,9 @@ class OrderController extends Controller
       }
 
       $str = Addr::where('uid',$id)->where('status','0')->first();
+  
       $res =  explode(",",$str['addr']);
       $diz = $res['0'].$res['1'].$res['2'].$res['3'];
-      
       $abc = date('YmdHis').mt_rand(1000,9999);
       $uid = Session::get('user.id');
       $create_at = time();

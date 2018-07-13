@@ -18,8 +18,10 @@ class CollectController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $data = Collect::get();
+    {   
+         $uid = Session::get('user.id');
+         // dd($uid);
+        $data = Collect::where('u_id',$uid)->get();
         // dd($data);
         return view('home.collect.index',['title'=>'我的收藏','data'=>$data]);
     }
@@ -63,7 +65,7 @@ class CollectController extends Controller
         $add['pic'] = $str['gpic'];
         $add['price'] = $data['price'];
         $add['color'] = $data['color'];
-       // dump($add);
+        // dump($add);
             // dd($res);
         try{
             $res = Collect::create($add);

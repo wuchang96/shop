@@ -45,7 +45,8 @@ Route::group(['middleware'=>'login'],function(){
 
 	//订单
 	Route::resource('/admin/order','admin\OrderController');
-	Route::get('/admin/details/{id}','admin\OrderController@details');
+	Route::get('/admin/details/{oid}','admin\OrderController@details');
+	Route::get('/admin/fa/{oid}','admin\OrderController@fa');
 
 	//站点
 	Route::resource('admin/site','admin\SiteController');

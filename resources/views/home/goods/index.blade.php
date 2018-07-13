@@ -106,7 +106,7 @@
                         <div class="name"><a href="#">{{$v->gname}}</a></div>
                         <div class="carbg">
                         	<a href="/home/collect/{{$v->id}}" class="ss">收藏</a>
-                            <a href="#" class="j_car">加入购物车</a>
+                            <a href="/home/cart/{{$v->id}}" class="j_car">加入购物车</a>
                         </div>
                     </li>
                    @endforeach
