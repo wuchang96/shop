@@ -16,7 +16,7 @@
     <div class="mws-panel-body no-padding">
         <div role="grid" class="dataTables_wrapper" id="DataTables_Table_1_wrapper">
 
-			<form action="/admin/details/{{$request->id}}" method='get'>
+			<form action="/admin/details/{{$request->oid}}" method='get'>
                 <div id="DataTables_Table_1_length" class="dataTables_length">
                     <label>
                         显示
@@ -78,10 +78,10 @@
                             {{$v->gname}}
                         </td>
                         <td class=" ">
-                            {{$v->pic}}
+                            <img src="{{$v->pic}}" width="100px" height="100px">
                         </td>
                         <td class=" ">
-                             {{$v->num}}
+                             {{$v->cnt}}
                         </td>
                          <td class=" ">
                              {{$v->price}}

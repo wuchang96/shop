@@ -114,22 +114,31 @@
            	<table border="0" class="order_tab" style="width:930px;" cellspacing="0" cellpadding="0">
               <tr>                                                                                                                                       
                 <td align="center" width="50">商品图片</td>
-                <td align="center" width="420">商品名称</td>
+                <td align="center" width="350">商品名称</td>
+                <td align="center" width="120">商品属性</td>
                 <td align="center" width="180">价格</td>
                 <td align="center" width="270">操作</td>
               </tr>
 
 
-
+            @foreach($data as $k => $v)
               <tr>
                 <td style="font-family:'宋体';">
-                	<div class="sm_img"><img src="images/simg.jpg" width="48" height="48" /></div>
+                	<div class="sm_img"><img src="{{$v->pic}}" width="48" height="48" /></div>
                 </td>
-                 <td align="center">法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只</td>
-                <td align="center">￥456.00</td>
-                <td align="center"><a href="#" style="color:#ff4e00;">加入购物车</a>&nbsp; &nbsp; <a href="#">删除</a></td>
+                 <td align="center">{{$v->name}}</td>
+                 <td align="center">{{$v->color}}</td>
+                <td align="center">￥{{$v->price}}</td>
+                <td align="center">
+                    <a href="/home/cart/{{$v->id}}" style="color:#ff4e00;">加入购物车</a>&nbsp; &nbsp;
+                    <a href="/home/delete/{{$v->id}}" onclick="return confirm('确定要删除吗?')">删除</a>
+                </td>
+
+                 {{method_field('DELETE')}}
               </tr>
-             
+             @endforeach
+
+
             </table>
 
 

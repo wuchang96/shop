@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Models\Home;
+namespace App\Models\home;
 
 use Illuminate\Database\Eloquent\Model;
 
-class cart extends Model
+class Collect extends Model
 {
     /**
      * 与模型关联的数据表
      *
      * @var string
      */
-    protected $table = 'cart';
+    protected $table = 'collect';
 
     protected $primaryKey = 'id';
 
@@ -23,5 +23,5 @@ class cart extends Model
      *
      * @var array
      */
-    protected $fillable = ['u_id','g_id','name','color','size','price','gimg','cnt'];
+    protected $fillable = ['u_id','g_id','name','pic','price','color'];
 }

@@ -118,24 +118,28 @@
               </tr>
               @foreach($data as $k => $v)
               <tr>
-                <td><font color="#ff4e00">{{$v->id}}</font></td>
+                <td><font color="#ff4e00">{{$v->oid}}</font></td>
                 <td>{{date('Y-m-d',$v->create_at)}}</td>
                 <td>￥{{$v->sum}}</td>
                 <td>
-                    @if($v->status == '1') 
+                    @if($v->status == '0')
+                        未发货
+                    @elseif($v->status == '2') 
                         已发货
-                    @elseif($v->status == '2')
+                    @elseif($v->status == '3')
                         已签收
                     @endif
                 </td>
 
                 <td>
-                    @if($v->status == '1') 
-                        <a href="/home/grorder/{{$v->id}}/edit"">确认签收</a>
-                    @elseif($v->status == '2')
+                    @if($v->status == '0')
+                        催单
+                    @elseif($v->status == '2') 
+                        <a href="/home/grorder/{{$v->oid}}/edit">确认签收</a>
+                    @elseif($v->status == '3')
                         交易完成 
                     @endif
-                    </td>
+                </td>
               </tr>
 
                 {{csrf_field()}}
