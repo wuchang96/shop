@@ -74,6 +74,9 @@ Route::group([],function(){
 	Route::any('home/ucenter','home\UcenterController@ucenter');
 	Route::any('home/update/{id}','home\UcenterController@update');
 
+	//退出登录
+	Route::any('home/logout','home\LoginController@logout');
+
 
 });
 
@@ -82,10 +85,26 @@ Route::group([],function(){
  */
 Route::any('home/login','home\LoginController@login');
 Route::any('home/dologin','home\LoginController@dologin');
-Route::any('home/logout','home\LoginController@logout');
+/**
+ * 前台注册
+ */
 Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
+/**
+ * 前台验证码
+ */
 Route::any('home/captcha','home\RegistController@captcha');
+/**
+ * 前台账号激活
+ */
 Route::any('home/jihuo','home\RegistController@jihuo');
 
+/**
+ * 找回密码
+ */
+Route::any('home/back','home\BackController@index');
+Route::any('home/tel','home\BackController@tel');
+Route::any('home/code','home\BackController@code');
+Route::any('home/npwd','home\BackController@npwd');
+Route::any('home/pwd','home\BackController@pwd');
 

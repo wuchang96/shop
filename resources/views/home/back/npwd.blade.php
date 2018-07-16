@@ -50,6 +50,10 @@
         color: #a98b15;
         }
 
+      .l_user{
+        width: 120px;
+      }  
+
     </style>
     
   <title>{{$title}}</title>
@@ -64,13 +68,12 @@
 	<div class="login">
     	<div class="log_img"><img src="/home/images/l_img.png" width="611" height="425" /></div>
 		<div class="log_c">
-        	<form action="/home/dologin" method="post">
+        	<form action="/home/pwd" method="post">
             <table border="0" style="width:370px; font-size:14px; margin-top:30px;" cellspacing="0" cellpadding="0">
               <tr height="50" valign="top">
               	<td width="55">&nbsp;</td>
                 <td>
-                	<span class="fl" style="font-size:24px;">登录</span>
-                    <span class="fr">还没有商城账号，<a href="/home/regist" style="color:#ff4e00;">立即注册</a></span>
+                	<span class="fl" style="font-size:24px;">修改密码</span>
                 </td>
                 <div class="mws-form-message error">
                     <ul>
@@ -83,23 +86,17 @@
                 </div>
               </tr>
               <tr height="70">
-                <td>用户名</td>
-                <td><input type="text" value="" class="l_user" name="uname" /></td>
-              </tr>
-              <tr height="70">
-                <td>密&nbsp; &nbsp; 码</td>
+                <td>新密码</td>
                 <td><input type="password" value="" class="l_pwd" name="password" /></td>
               </tr>
-              <tr>
-              	<td>&nbsp;</td>
-                <td style="font-size:12px; padding-top:20px;">
-                    <span class="fr"><a href="/home/back" style="color:#ff4e00;">忘记密码</a></span>
-                </td>
+              <tr height="70">
+                <td>确认密码</td>
+                <td><input type="password" value="" class="l_pwd" name="repass" /></td>
               </tr>
               <tr height="60">
               {{csrf_field()}}
               	<td>&nbsp;</td>
-                <td><input type="submit" value="登录" class="log_btn" /></td>
+                <td><input type="submit" value="提交" id="sub" class="log_btn" /></td>
               </tr>
             </table>
             </form>
