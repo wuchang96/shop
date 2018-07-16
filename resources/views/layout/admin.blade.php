@@ -251,7 +251,7 @@
     <script src="/admin/custom-plugins/wizard/wizard.min.js"></script>
 
     <!-- Core Script -->
-    <script src="/admin/bootstrap/js/bootstrap.min.js"></script>
+    
     <script src="/admin/js/core/mws.js"></script>
 
     <!-- Themer Script (Remove if not needed) -->
@@ -264,6 +264,6 @@
 
 
     @show
-
+<script src="/admin/bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>

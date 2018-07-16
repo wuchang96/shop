@@ -13,6 +13,7 @@
 	<script type="text/javascript" src="/home/js/jquery.bxslider_e88acd1b.js"></script>
     
     <script type="text/javascript" src="/home/js/jquery-1.8.2.min.js"></script>
+    <!-- <script type="text/javascript" src="/home/js/jquery-3.2.1.min.js"></script> -->
     <script type="text/javascript" src="/home/js/menu.js"></script>    
         
 	<script type="text/javascript" src="/home/js/select.js"></script>
@@ -50,23 +51,16 @@
         color: #a98b15;
         }
 
+      .l_user{
+        width: 120px;
+      }  
+
     </style>
     
   <title>{{$title}}</title>
 </head>
 <body>  
-<!--Begin Header Begin-->
-<div class="soubg">
-	<div class="sou">
-        <span class="fr">
-        	<span class="fl">你好，请{{Session::get('UserInfo.uname')}}<a href="Login.html">登录</a>&nbsp; <a href="/home/regist" style="color:#ff4e00;">免费注册</a></span>
-            <span class="fl">&nbsp;|&nbsp;关注我们：</span>
-            <span class="s_sh"><a href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span>
-            <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="/home/images/s_tel.png" align="absmiddle" /></a></span>
-        </span>
-    </div>
-</div>
-<!--End Header End--> 
+
 <!--Begin Login Begin-->
 <div class="log_bg">	
     <div class="top">
@@ -75,42 +69,29 @@
 	<div class="login">
     	<div class="log_img"><img src="/home/images/l_img.png" width="611" height="425" /></div>
 		<div class="log_c">
-        	<form action="/home/dologin" method="post">
+        	<form action="/home/npwd" method="post">
             <table border="0" style="width:370px; font-size:14px; margin-top:30px;" cellspacing="0" cellpadding="0">
               <tr height="50" valign="top">
               	<td width="55">&nbsp;</td>
                 <td>
-                	<span class="fl" style="font-size:24px;">登录</span>
-                    <span class="fr">还没有商城账号，<a href="/home/regist" style="color:#ff4e00;">立即注册</a></span>
+                	<span class="fl" style="font-size:24px;">找回密码</span>
                 </td>
-                <div class="mws-form-message error">
-                    <ul>
-                    @if(session('error'))
-                        <div class="mws-form-message warning" id="error">
-                            {{session('error')}}
-                        </div>
-                    @endif
-                    </ul>
-                </div>
               </tr>
               <tr height="70">
-                <td>用户名</td>
-                <td><input type="text" value="" class="l_user" name="uname" /></td>
+                <td>手机号</td>
+                <td>
+                  <input type="phone" value="" class="l_user" id="tel" name="tel" placeholder="请输入手机号码" />
+                   <button id='but' style='width:90px;height:36px;font-size:14px'>获取验证码</button>
+                </td>
               </tr>
               <tr height="70">
-                <td>密&nbsp; &nbsp; 码</td>
-                <td><input type="password" value="" class="l_pwd" name="password" /></td>
-              </tr>
-              <tr>
-              	<td>&nbsp;</td>
-                <td style="font-size:12px; padding-top:20px;">
-                    <span class="fr"><a href="/home/back" style="color:#ff4e00;">忘记密码</a></span>
-                </td>
+                <td>验证码</td>
+                <td><input type="text" value="" class="l_pwd" name="code" /></td>
               </tr>
               <tr height="60">
               {{csrf_field()}}
               	<td>&nbsp;</td>
-                <td><input type="submit" value="登录" class="log_btn" /></td>
+                <td><input type="submit" value="提交" class="log_btn" /></td>
               </tr>
             </table>
             </form>
@@ -127,8 +108,50 @@
 </div>
 <!--End Footer End --> 
 <script>
-    
-    $('.mws-form-message').fadeOut(5000);
+
+   //获取button
+    $('#but').click(function() {
+
+        //获取手机号
+        var number = $('input[name=tel]').val();
+
+        $.get('/home/tel', {number: number},function(data){
+
+            console.log(data);
+        })
+
+        return false;
+
+    })
+
+    var Cv = true;
+
+    $('input[name=code]').blur(function(){
+
+        var code = $(this).val();
+
+        $.get('/home/code', {code:code},function(data) {
+
+            if(data == '1'){
+
+              Cv = false;
+
+              alert('验证码错误!!!');
+
+            }
+
+        })
+
+    })
+
+    $(':submit').click(function(){
+
+      if(Cv){
+        
+        return true;
+      }
+      return false;
+    })
 
 </script>   
 </body>

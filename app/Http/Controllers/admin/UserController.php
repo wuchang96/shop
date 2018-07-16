@@ -34,7 +34,7 @@ class UserController extends Controller
                     $query->where('email','like','%'.$email.'%');
                 }
             })
-            ->paginate($req->input('num', 5));
+            ->paginate($req->input('num', 10));
 
         return view('admin.user.index',[
                 'title'=>'用户的列表页面',

@@ -62,11 +62,14 @@ Route::group(['middleware'=>'login'],function(){
 	Route::resource('admin/link','admin\LinksController');
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	// 新闻
 	Route::resource('admin/news','admin\NewsController');
 
 >>>>>>> origin/lz
+=======
+>>>>>>> origin/wjc
 
 });
 
@@ -79,7 +82,18 @@ Route::group([],function(){
 	Route::any('/home/cate','home\GoodsController@index');
 	
 
+<<<<<<< HEAD
 	
+=======
+	//个人中心
+	Route::any('home/ucenter','home\UcenterController@ucenter');
+	Route::any('home/update/{id}','home\UcenterController@update');
+
+	//退出登录
+	Route::any('home/logout','home\LoginController@logout');
+
+
+>>>>>>> origin/wjc
 });
 
 //前台购物车
@@ -110,14 +124,39 @@ Route::resource('/home/grorder','home\GrOrderController');
  */
 Route::any('home/login','home\LoginController@login');
 Route::any('home/dologin','home\LoginController@dologin');
+/**
+ * 前台注册
+ */
 Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/**
+ * 前台验证码
+ */
+>>>>>>> origin/wjc
 Route::any('home/captcha','home\RegistController@captcha');
+/**
+ * 前台账号激活
+ */
 Route::any('home/jihuo','home\RegistController@jihuo');
+<<<<<<< HEAD
 =======
 
 
 //新闻详情页
 Route::get('/home/news/detail','admin\NewsController@detail');
 >>>>>>> origin/lz
+=======
+
+/**
+ * 找回密码
+ */
+Route::any('home/back','home\BackController@index');
+Route::any('home/tel','home\BackController@tel');
+Route::any('home/code','home\BackController@code');
+Route::any('home/npwd','home\BackController@npwd');
+Route::any('home/pwd','home\BackController@pwd');
+
+>>>>>>> origin/wjc
