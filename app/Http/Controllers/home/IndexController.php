@@ -10,7 +10,7 @@ use App\Models\admin\News;
 use App\Models\admin\Guanggao;
 use DB;
 
->>>>>>> origin/lz
+
 class IndexController extends Controller
 {
     
