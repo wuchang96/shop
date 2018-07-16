@@ -136,6 +136,8 @@
                             <li><a href="/admin/order">浏览订单</a></li>
                         </ul>
                     </li>
+                    
+
 
                     <li>
                         <a href="#"><i class="icon-heart"></i>友情链接管理</a>
@@ -183,7 +185,9 @@
                             <li><a href="/admin/news">新闻列表</a></li>
                         </ul>
                     </li>
-                    
+                    <li>
+
+                    </li>
                 </ul>
             </div>  
                            
