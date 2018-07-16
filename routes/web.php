@@ -60,12 +60,10 @@ Route::group(['middleware'=>'login'],function(){
 	// 友情链接
 	Route::resource('admin/link','admin\LinksController');
 
-<<<<<<< HEAD
-=======
+
 	// 新闻
 	Route::resource('admin/news','admin\NewsController');
 
->>>>>>> origin/lz
 
 });
 
@@ -87,8 +85,7 @@ Route::any('/home/ajaxcart','home\CartController@ajaxcart');
 //前台订单
 Route::resource('/home/order','home\OrderController');
 
-<<<<<<< HEAD
-=======
+
 //前台收货地址
 Route::resource('/home/addr','home\AddrController');
 
@@ -98,7 +95,6 @@ Route::resource('/home/collect','home\CollectController');
 //前台我的订单
 Route::resource('/home/grorder','home\GrOrderController');
 
->>>>>>> origin/wu
 
 /**
  * 前台登录
@@ -107,12 +103,12 @@ Route::any('home/login','home\LoginController@login');
 Route::any('home/dologin','home\LoginController@dologin');
 Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
-<<<<<<< HEAD
+
 Route::any('home/captcha','home\RegistController@captcha');
 Route::any('home/jihuo','home\RegistController@jihuo');
-=======
+
 
 
 //新闻详情页
 Route::get('/home/news/detail','admin\NewsController@detail');
->>>>>>> origin/lz
+
