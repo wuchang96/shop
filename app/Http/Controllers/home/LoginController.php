@@ -41,7 +41,6 @@ class LoginController extends Controller
             return back()->with('error','用户名或密码不正确');
         }
 
-        // Session::flash('user',$data);
         session(['user'=>$data]);
         
         return redirect('/');

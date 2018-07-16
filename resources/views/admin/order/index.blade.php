@@ -37,7 +37,7 @@
                 <div class="dataTables_filter" id="DataTables_Table_1_filter">
                     <label>
                         订单号:
-                        <input type="text" name='id' value="{{$request->id}}" aria-controls="DataTables_Table_1">
+                        <input type="text" name='oid' value="{{$request->oid}}" aria-controls="DataTables_Table_1">
                     </label>
 
                     <label>
@@ -62,25 +62,25 @@
                             订单号
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 100px;" aria-label="Browser: activate to sort column ascending">
+                        rowspan="1" colspan="1" style="width: 50px;" aria-label="Browser: activate to sort column ascending">
                             收货人
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 247px;" aria-label="Platform(s): activate to sort column ascending">
+                        rowspan="1" colspan="1" style="width: 200px;" aria-label="Platform(s): activate to sort column ascending">
                             收货地址
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 100px;" aria-label="Engine version: activate to sort column ascending">
+                        rowspan="1" colspan="1" style="width: 80px;" aria-label="Engine version: activate to sort column ascending">
                             手机号
                         </th>
                          <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 100px;" aria-label="CSS grade: activate to sort column ascending">
+                        rowspan="1" colspan="1" style="width: 50px;" aria-label="CSS grade: activate to sort column ascending">
                            总金额
                         </th>
-                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 126px;" aria-label="CSS grade: activate to sort column ascending">
-                           买家留言
-                        </th>
+                        <!--  <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
+                                                rowspan="1" colspan="1" style="width: 126px;" aria-label="CSS grade: activate to sort column ascending">
+                          买家留言
+                                                </th> -->
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" style="width: 50px;" aria-label="CSS grade: activate to sort column ascending">
                            状态
@@ -96,7 +96,7 @@
                     <tr class="@if($k % 2 == 1)  odd   @else even  @endif">
                         
                         <td class=" ">
-                            {{$v->id}}
+                            {{$v->oid}}
                         </td>
                         <td class=" ">
                              {{$v->name}}
@@ -112,16 +112,16 @@
                         <td class=" ">
                              {{$v->sum}}
                         </td>
-                        <td class=" ">
+                        <!-- <td class=" ">
                              {{$v->umsg}}
-                        </td>
+                        </td> -->
                          <td class=" ">
                              @if ($v->status == 0)
                                     新订单
                              @elseif($v->status == 1)
-                                    已发货
+                                    发货
                              @elseif($v->status == 2)
-                                    已签收
+                                    已发货
                              @elseif($v->status == 3)
                                     交易完成
                              @elseif($v->status == 4)
@@ -130,15 +130,21 @@
                             
                         </td>
                          <td class=" ">
-                            <button class="btn btn-info"><a href="/admin/details/{{$v->id}}">详情</a></button>
-                            <button class="btn btn-warning"><a href="/admin/order/{{$v->id}}/edit">修改</a></button>
+                            <button class="btn btn-info"><a href="/admin/details/{{$v->oid}}">详情</a></button>
+
+                            <button class="btn btn-warning"><a href="/admin/order/{{$v->oid}}/edit">修改</a></button>
                             
-                            <form action="/admin/order/{{$v->id}}" method='post' style='display:inline'>
+                            @if($v->status == 0)
+                            <button class="btn btn-success"><a href="/admin/fa/{{$v->oid}}">发货</a></button>
+                            @elseif($v->status == 2)
+                            <button class="btn btn-gray"><a href="#">等待签收</a></button>
+                            @endif
+                            <form action="/admin/order/{{$v->oid}}" method='post' style='display:inline'>
                                 
                                 {{csrf_field()}}
 
                                 {{method_field('DELETE')}}
-                                <button href="" class='btn btn-danger'>删除</button>
+                                <button href="/admin/order/{{$v->oid}}" class='btn btn-danger'>删除</button>
 
                             </form>
                         </td>

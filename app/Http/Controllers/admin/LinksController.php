@@ -22,15 +22,15 @@ class LinksController extends Controller
         $search = $request -> input('search','');
         //查数据
         $count = DB::table('links')->count();
-        $page_count = $request->input('page_count',1); 
+        $page_count = $request->input('page_count',2); 
          //获取数据
-        $link = DB::table('links');
+        $link = new Link();
         if(isset($search) && !empty($search)){
-           $link -> where('name','like','%'.$search.'%');
+           $link = $link::where('name','like','%'.$search.'%');
         }
         $data = $link->paginate($page_count);
         //添加友情链接列表页
-        return view('admin.link.index',['title'=>'','data'=>$data,'count'=>$count,'search'=>$request->all()]);
+        return view('admin.link.index',['title'=>'','data'=>$data,'count'=>$count,'search'=>$request->all(),'request'=>$request]);
     }
 
     /**

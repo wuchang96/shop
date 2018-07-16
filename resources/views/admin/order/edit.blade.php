@@ -18,7 +18,7 @@
                 <div class="mws-form-row">
                     <label class="mws-form-label">订单号</label>
                     <div class="mws-form-item">
-                        <input type="text" class="small" name='id' value='{{$res->id}}' readonly="readonly">
+                        <input type="text" class="small" name='oid' value='{{$res->oid}}' readonly="readonly">
                     </div>
                 </div>
 
@@ -50,12 +50,12 @@
                     </div>
                 </div>
 
-                <div class="mws-form-row">
+                <!-- <div class="mws-form-row">
                     <label class="mws-form-label">买家留言</label>
                     <div class="mws-form-item">
                         <input type="text" class="small" name='umsg' value='{{$res->umsg}}'>
                     </div>
-                </div>
+                </div> -->
 
             </div>
             <div class="mws-button-row">
