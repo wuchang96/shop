@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
+
 	<link type="text/css" rel="stylesheet" href="/home/css/style.css" />   
 
     <!--[if IE 6]>
@@ -13,14 +14,16 @@
     <![endif]-->    
 
     <script type="text/javascript" src="/home/js/jquery-1.11.1.min_044d0927.js"></script>
-	<script type="text/javascript" src="/home/js/jquery.bxslider_e88acd1b.js"></script>
+    <script type="text/javascript" src="/home/js/jquery.bxslider_e88acd1b.js"></script>
     
     <script type="text/javascript" src="/home/js/jquery-1.8.2.min.js"></script>
     <script type="text/javascript" src="/home/js/menu.js"></script>    
         
-	<script type="text/javascript" src="/home/js/select.js"></script>
+
+    <script type="text/javascript" src="/home/js/select.js"></script>
     
-	<script type="text/javascript" src="/home/js/lrscroll.js"></script>
+    <script type="text/javascript" src="/home/js/lrscroll.js"></script>
+
 
     
     <script type="text/javascript" src="/home/js/iban.js"></script>
@@ -31,93 +34,16 @@
     <script type="text/javascript" src="/home/js/hban.js"></script>
     <script type="text/javascript" src="/home/js/tban.js"></script>
     
-	<script type="text/javascript" src="/home/js/lrscroll_1.js"></script>       
+    <script type="text/javascript" src="/home/js/lrscroll_1.js"></script>       
 <title>@yield('title')</title>
 </head>
 <body>  
 <!--Begin Header Begin-->
 <div class="soubg">
+
 	<div class="sou">
-<<<<<<< HEAD
-=======
-    	<!--Begin 所在收货地区 Begin-->
-    	<span class="s_city_b">
-        	<span class="fl">送货至：</span>
-            <span class="s_city">
-            	<span>四川</span>
-                <div class="s_city_bg">
-                	<div class="s_city_t"></div>
-                    <div class="s_city_c">
-                    	<h2>请选择所在的收货地区</h2>
-                        <table border="0" class="c_tab" style="width:235px; margin-top:10px;" cellspacing="0" cellpadding="0">
-                          <tr>
-                            <th>A</th>
-                            <td class="c_h"><span>安徽</span><span>澳门</span></td>
-                          </tr>
-                          <tr>
-                            <th>B</th>
-                            <td class="c_h"><span>北京</span></td>
-                          </tr>
-                          <tr>
-                            <th>C</th>
-                            <td class="c_h"><span>重庆</span></td>
-                          </tr>
-                          <tr>
-                            <th>F</th>
-                            <td class="c_h"><span>福建</span></td>
-                          </tr>
-                          <tr>
-                            <th>G</th>
-                            <td class="c_h"><span>广东</span><span>广西</span><span>贵州</span><span>甘肃</span></td>
-                          </tr>
-                          <tr>
-                            <th>H</th>
-                            <td class="c_h"><span>河北</span><span>河南</span><span>黑龙江</span><span>海南</span><span>湖北</span><span>湖南</span></td>
-                          </tr>
-                          <tr>
-                            <th>J</th>
-                            <td class="c_h"><span>江苏</span><span>吉林</span><span>江西</span></td>
-                          </tr>
-                          <tr>
-                            <th>L</th>
-                            <td class="c_h"><span>辽宁</span></td>
-                          </tr>
-                          <tr>
-                            <th>N</th>
-                            <td class="c_h"><span>内蒙古</span><span>宁夏</span></td>
-                          </tr>
-                          <tr>
-                            <th>Q</th>
-                            <td class="c_h"><span>青海</span></td>
-                          </tr>
-                          <tr>
-                            <th>S</th>
-                            <td class="c_h"><span>上海</span><span>山东</span><span>山西</span><span class="c_check">四川</span><span>陕西</span></td>
-                          </tr>
-                          <tr>
-                            <th>T</th>
-                            <td class="c_h"><span>台湾</span><span>天津</span></td>
-                          </tr>
-                          <tr>
-                            <th>X</th>
-                            <td class="c_h"><span>西藏</span><span>香港</span><span>新疆</span></td>
-                          </tr>
-                          <tr>
-                            <th>Y</th>
-                            <td class="c_h"><span>云南</span></td>
-                          </tr>
-                          <tr>
-                            <th>Z</th>
-                            <td class="c_h"><span>浙江</span></td>
-                          </tr>
-                        </table>
-                    </div>
-                </div>
-            </span>
-        </span>
-       
-        <!--End 所在收货地区 End-->
->>>>>>> origin/wjc
+
+    	
         <span class="fr">
             
         	<span class="fl">
@@ -135,11 +61,19 @@
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">收藏夹</a>
+
+    <div class="sou">
+        <span class="fr">
+            <span class="fl">你好，请{{Session::get('uname')}}<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+            <span class="ss">
+                <div class="ss_list">
+                    <a href="#">收藏夹</a>
+
                     <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
+                        <div class="s_city_t"></div>
                         <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">我的收藏夹</a></li>
+                            <ul>
+                                <li><a href="#">我的收藏夹</a></li>
                             </ul>
                         </div>
                     </div>     
@@ -154,34 +88,33 @@
 <div class="top">
 
     <div class="logo"><a href="Index.html"><img src="/home/images/logo.png" /></a></div>
-
     <div class="search">
-    	<form>
-        	<input type="text" value="" class="s_ipt" />
+        <form>
+            <input type="text" value="" class="s_ipt" />
             <input type="submit" value="搜索" class="s_btn" />
         </form>                      
         <span class="fl"><a href="#">咖啡</a><a href="#">iphone 6S</a><a href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a href="#">连衣裙</a></span>
     </div>
     <div class="i_car">
-    	<div class="car_t">购物车 [ <span>3</span> ]</div>
+        <div class="car_t">购物车 [ <span>3</span> ]</div>
         <div class="car_bg">
-       		<!--Begin 购物车未登录 Begin-->
-        	<div class="un_login">还未登录！<a href="Login.html" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
+            <!--Begin 购物车未登录 Begin-->
+            <div class="un_login">还未登录！<a href="Login.html" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
             <!--End 购物车未登录 End-->
             <!--Begin 购物车已登录 Begin-->
             <ul class="cars">
-            	<li>
-                	<div class="img"><a href="#"><img src="/home/images/car1.jpg" width="58" height="58" /></a></div>
+                <li>
+                    <div class="img"><a href="#"><img src="/home/images/car1.jpg" width="58" height="58" /></a></div>
                     <div class="name"><a href="#">法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只</a></div>
                     <div class="price"><font color="#ff4e00">￥399</font> X1</div>
                 </li>
                 <li>
-                	<div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
+                    <div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
                     <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
                     <div class="price"><font color="#ff4e00">￥399</font> X1</div>
                 </li>
                 <li>
-                	<div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
+                    <div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
                     <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
                     <div class="price"><font color="#ff4e00">￥399</font> X1</div>
                 </li>
@@ -195,22 +128,20 @@
 <!--End Header End--> 
 <!--Begin Menu Begin-->
 <div class="menu_bg">
-	<div class="menu">
-    	<!--Begin 商品分类详情 Begin-->    
-    	<div class="nav">
+    <div class="menu">
+        <!--Begin 商品分类详情 Begin-->    
+        <div class="nav">
             @php
                 $data = App\Models\Admin\Cate::getsubcate(0);
+                $guang = App\Models\Admin\Guanggao::get();
             @endphp
-        	<div class="nav_t">全部商品分类</div>
+            <div class="nav_t">全部商品分类</div>
             <div class="leftNav">
                 <ul>
                     @foreach($data as $v)  
                     <li>
-                    	<div class="fj">
-                        	<span class="n_img"><span></span><img src="" /></span>
-                            <span class="fl">{{$v->title}}</span>
-
-                        	<span class="n_img"><span></span><img src="" /></span>
+                        <div class="fj">
+                            <span class="n_img"><span></span><img src="" /></span>
                             <span class="fl">{{$v->title}}</span>
                         </div>
                         <div class="zj">
@@ -224,6 +155,19 @@
                                 </div>
                                 @endforeach
                             </div>
+                                <h2>{{$kk->title}}</h2>
+                                @foreach($kk->sub as $ks)
+                                <a href="/home/cate?id={{$ks->id}}">{{$ks->title}}</a>|
+                                @endforeach
+                            </div>
+                            @endforeach
+                            </div>
+                            <div class="zj_r">
+                                @foreach($guang as $k=>$v)
+                                <a href="{{$v['url']}}"><img src="{{$v['pic']}}" width="236" height="200" /></a>
+                                
+                                @endforeach
+                            </div>
                         </div>
                     </li>
                    @endforeach   
@@ -232,6 +176,8 @@
         </div>  
         <!--End 商品分类详情 End-->                                                 
     	<ul class="menu_r"> 
+			<li><a href="Index.html">首页</a></li>
+        <ul class="menu_r">                                                                                                                                      
 			<li><a href="Index.html">首页</a></li>
             <li><a href="Food.html">美食</a></li>
             <li><a href="Fresh.html">生鲜</a></li>
@@ -321,7 +267,32 @@
             <div class="b_er_c"><img src="/home/images/er.gif" width="118" height="118" /></div>
             <img src="/home/images/ss.png" />
         </div>
-    </div>    
+    </div>
+
+    <!-- 友情链接-->
+    <div style="margin:0px 155px">
+        <p style="height: 100%;">
+    @if(!empty($link))
+    @foreach($link as $k=>$v)
+        @if($v['img'])
+        <a target="_blank" href="https://{{$v['url']}}" style="float:left;">
+            <span style="display:bloak;">
+                <img  src="{{URL::asset($v['img'])}}" style="width:70px;height:30px;border-radius:4px" /> 
+                <b>|</b>
+            </span>
+        </a>
+        
+        @else
+        <a target="_blank" href="https://{{$v['url']}}">
+            <span style="margin-left:5px;">{{$v['name']}}</span>
+        </a>
+        <b>|</b>
+        @endif
+    @endforeach
+    @endif
+    </p>
+    </div>
+
     <div class="btmbg">
         <div class="btm">
             备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />

@@ -63,6 +63,7 @@ Route::group(['middleware'=>'login'],function(){
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 	// 新闻
 	Route::resource('admin/news','admin\NewsController');
@@ -70,6 +71,12 @@ Route::group(['middleware'=>'login'],function(){
 >>>>>>> origin/lz
 =======
 >>>>>>> origin/wjc
+=======
+
+	// 新闻
+	Route::resource('admin/news','admin\NewsController');
+
+>>>>>>> origin/lz
 
 });
 
@@ -117,7 +124,10 @@ Route::any('/home/delete/{id}','home\CollectController@delete');
 //前台我的订单
 Route::resource('/home/grorder','home\GrOrderController');
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/lz
 
 /**
  * 前台登录
@@ -131,22 +141,31 @@ Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 /**
  * 前台验证码
  */
 >>>>>>> origin/wjc
+=======
+
+>>>>>>> origin/lz
 Route::any('home/captcha','home\RegistController@captcha');
 /**
  * 前台账号激活
  */
 Route::any('home/jihuo','home\RegistController@jihuo');
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+
+>>>>>>> origin/lz
 
 
 //新闻详情页
 Route::get('/home/news/detail','admin\NewsController@detail');
+<<<<<<< HEAD
 >>>>>>> origin/lz
 =======
 
@@ -160,3 +179,6 @@ Route::any('home/npwd','home\BackController@npwd');
 Route::any('home/pwd','home\BackController@pwd');
 
 >>>>>>> origin/wjc
+=======
+
+>>>>>>> origin/lz
