@@ -136,6 +136,14 @@
                             <li><a href="/admin/order">浏览订单</a></li>
                         </ul>
                     </li>
+                     <li>
+                        <a href="#"><i class="icon-feather"></i>评论管理</a>
+                        <ul class='closed'>
+                            
+                            <li><a href="/admin/comment">评论列表</a></li>
+                        </ul>
+                    </li>
+
 
                     <li>
                         <a href="#"><i class="icon-heart"></i>友情链接管理</a>
@@ -175,6 +183,7 @@
                             <li><a href="/admin/guanggao">广告列表</a></li>
                         </ul>
                     </li>
+                    
 
                     <li>
                         <a href="#"><i class="icon-planet"></i>新闻管理</a>
@@ -183,7 +192,9 @@
                             <li><a href="/admin/news">新闻列表</a></li>
                         </ul>
                     </li>
-                    
+                    <li>
+
+                    </li>
                 </ul>
             </div>  
                            

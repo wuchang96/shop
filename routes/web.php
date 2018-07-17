@@ -64,6 +64,10 @@ Route::group(['middleware'=>'login'],function(){
 	// 新闻
 	Route::resource('admin/news','admin\NewsController');
 
+	//评论管理
+	Route::get('admin/comment','admin\CommentController@index');
+	Route::post('admin/comment/ajaxStatu','admin\CommentController@ajaxStatu');
+
 });
 
 
@@ -82,7 +86,6 @@ Route::group([],function(){
 	//退出登录
 	Route::any('home/logout','home\LoginController@logout');
 	
-	
 	//前台订单
 	Route::resource('/home/order','home\OrderController');
 
@@ -97,7 +100,6 @@ Route::group([],function(){
 	Route::resource('/home/grorder','home\GrOrderController');
 	//新闻详情页
 	Route::get('/home/news/detail','admin\NewsController@detail');
-
 
 });
 
@@ -121,11 +123,21 @@ Route::any('home/store','home\RegistController@store');
 /**
  * 前台验证码
  */
+
+
+/**
+ * 前台验证码
+ */
 Route::any('home/captcha','home\RegistController@captcha');
 /**
  * 前台账号激活
  */
 Route::any('home/jihuo','home\RegistController@jihuo');
+
+
+
+
+
 
 /**
  * 找回密码
