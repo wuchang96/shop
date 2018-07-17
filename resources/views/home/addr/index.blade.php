@@ -285,6 +285,31 @@ Gid('s_county').setAttribute('onchange','showArea()');
             <img src="images/ss.png" />
         </div>
     </div>    
+
+    <!-- 友情链接-->
+    <div style="margin:0px 155px">
+        <p style="height: 100%;">
+    @if(!empty($link))
+    @foreach($link as $k=>$v)
+        @if($v['img'])
+        <a target="_blank" href="https://{{$v['url']}}" style="float:left;">
+            <span style="display:bloak;">
+                <img  src="{{URL::asset($v['img'])}}" style="width:70px;height:30px;border-radius:4px" /> 
+                <b>|</b>
+            </span>
+        </a>
+        
+        @else
+        <a target="_blank" href="https://{{$v['url']}}">
+            <span style="margin-left:5px;">{{$v['name']}}</span>
+        </a>
+        <b>|</b>
+        @endif
+    @endforeach
+    @endif
+    </p>
+    </div>
+    
     <div class="btmbg">
 		<div class="btm">
         	备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
