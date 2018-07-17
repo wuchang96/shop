@@ -20,7 +20,7 @@
     <div class="content mar_20">
     	<div class="two_bg">
         	<div class="two_t">
-            	<span class="fr"><a href="#">修改</a></span>商品列表
+            	<span class="fr"><a href="/home/cart">修改</a></span>商品列表
             </div>
             <table border="0" class="car_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
               <tr>
@@ -40,39 +40,40 @@
                  <td align="center">{{$v->name}}</td>
                 <td align="center">{{$v->color}}&nbsp;{{$v->size}}</td>
                 <td align="center">{{$v->cnt}}</td>
-                <td align="center" style="color:#ff4e00;">￥{{$v->price*$v->cnt}}</td>
+                <td align="center" style="color:#ff4e00;">￥{{$totals}}</td>
               </tr>
 
 			@endforeach
 
             </table>
-            
             <div class="two_t">
-            	<span class="fr"><a href="#">修改</a></span>收货人信息
+              <span class="fr"><a href="/home/addr/{{$data['id']}}/edit">修改</a></span>收货人信息
             </div>
             <table border="0" class="peo_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
+           
               <tr>
                 <td class="p_td" width="160">收货人姓名</td>
-                <td width="395">海贼王</td>
+                <td width="395">{{$data['name']}}</td>
                 <td class="p_td" width="160">手机</td>
-                <td width="395">12345678911</td>
+                <td width="395">{{$data['tel']}}</td>
               </tr>
               <tr>
                 <td class="p_td">详细信息</td>
-                <td>四川省成都市武侯区</td>
+                <td>{{$diz}}</td>
                 <td class="p_td">邮政编码</td>
-                <td>6011111</td>
+                <td>{{$data['zip']}}</td>
               </tr>
             </table>
             <table border="0" style="width:900px; margin-top:20px;" cellspacing="0" cellpadding="0">
               <tr height="70">
                 <td align="right">
-                	<b style="font-size:14px;">应付款金额：<span style="font-size:22px; color:#ff4e00;">￥{{$sum}}</span></b>
+                	<b style="font-size:14px;">商品总数:{{$sums}}&nbsp;&nbsp;应付款金额：<span style="font-size:22px; color:#ff4e00;">￥{{$totals}}</span></b>
                 </td>
               </tr>
 	              <tr height="70">
-	                <td align="right"><button><a href="#"><img src="images/btn_sure.gif" /></a></button></td>
+	                <td align="right"><a href="/home/order/{{Session::get('user.id')}}"><img src="images/btn_sure.gif" /></a></td>
 	              </tr>
+                {{ method_field('PUT') }}
             </table>
         </div>
     </div>

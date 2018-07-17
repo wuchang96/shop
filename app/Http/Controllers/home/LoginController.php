@@ -41,9 +41,17 @@ class LoginController extends Controller
             return back()->with('error','用户名或密码不正确');
         }
 
-        // Session::flash('UserInfo',$data);
         session(['user'=>$data]);
         
         return redirect('/');
+    }
+
+    public function logout()
+    {
+        //第一步删除session里面存储的信息
+        session(['user'=>'']);
+
+        //跳转到登录页面
+        return redirect('home/login');
     }
 }

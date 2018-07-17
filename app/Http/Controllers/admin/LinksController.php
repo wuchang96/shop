@@ -64,9 +64,10 @@ class LinksController extends Controller
 
             //移动
             $request->file('img')->move('./uploads/',$name.'.'.$suffix);
-        }
+        
 
         $link_data['img'] = Config::get('app.path').$name.'.'.$suffix;
+        }
 
         $res= Link::create($link_data);
 
@@ -112,32 +113,36 @@ class LinksController extends Controller
     {
         //获取用户输入的信息
         $link_data = $request -> except('_token');
-         //创建文件上传对象
-        if($request->hasFile('img') == true){
-            $img = $request -> file('img');
-            $temp_name = time()+rand(10000,99999);
-            $hz = $img -> getClientOriginalExtension();
-            $filename = $temp_name.'.'.$hz;
-            $as = $img -> move('/admin/guanggao',$filename);//执行上传
-            $link_data['img'] = $as;
+        //创建文件上传对象
+        if($request->hasFile('img')){
+            //设置名字
+            $name = str_random(4).time();
+
+            //获取后缀
+            $suffix = $request->file('img')->getClientOriginalExtension();
+
+            //移动
+            $request->file('img')->move('./uploads/',$name.'.'.$suffix);
+
+        $link_data['img'] = Config::get('app.path').$name.'.'.$suffix;
             $res = Link::find($id)->update(['name'=>$link_data['name'],'url'=>$link_data['url'],'img'=>$link_data['img']]);
-            if($res){
-            return redirect('/admin/link')->with('success','修改成功'); //跳转 并且附带信息
-        }else{
-            return back()->with('error','修改失败'); //跳转 并且附带信息
-        }   
+                if($res){
+                    return redirect('/admin/link')->with('success','修改成功'); //跳转 并且附带信息
+                }else{
+                    return back()->with('error','修改失败'); //跳转 并且附带信息
+                }   
 
-        }else{
-            //如果不修改头像 查出数据库原有的图片
-            $data = Link::find($id);
-            $res = Link::find($id)->update(['name'=>$link_data['name'],'url'=>$link_data['url'],'img'=>$data['img']]);
-            if($res){
-            return redirect('/admin/link')->with('success','修改成功'); //跳转 并且附带信息
+            }else{
+                    //如果不修改头像 查出数据库原有的图片
+                    $data = Link::find($id);
+                    $res = Link::find($id)->update(['name'=>$link_data['name'],'url'=>$link_data['url'],'img'=>$data['img']]);
+                if($res){
+                    return redirect('/admin/link')->with('success','修改成功'); //跳转 并且附带信息
 
-             }else{
-                 return back()->with('error','修改失败');
-             }
-        }
+                     }else{
+                         return back()->with('error','修改失败');
+                    }
+                }
     }
 
     /**

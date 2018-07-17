@@ -17,15 +17,15 @@ class OrderController extends Controller
      */
     public function index(Request $request)
     {   
-         $order = Orders::orderBy('id','ace')
+         $order = Orders::orderBy('oid','ace')
             ->where(function($query) use($request){
                  //检测关键字和邮箱
-                $id = $request->input('id');
+                $id = $request->input('oid');
                 $name = $request->input('name');
 
                 //如果订单号不为空
                 if(!empty($id)) {
-                    $query->where('id','like','%'.$id.'%');
+                    $query->where('oid','like','%'.$id.'%');
                 }
                 //如果收货人不为空
                 if(!empty($name)) {
@@ -80,9 +80,12 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        $res = Orders::find($id);
+    public function edit($oid)
+    {   
+        // echo '12113';
+        // $res = Orders::find($oid);
+        $res = Orders::where('oid',$oid)->first();
+        // dd($res);
         return view('admin.order.edit',['title'=>'修改订单','res'=>$res]);
     }
 
@@ -98,13 +101,13 @@ class OrderController extends Controller
 
         $res = $request ->except('_token','_method');
         try{
-            $data = Orders::where('id',$res['id'])->update($res);
+            $data = Orders::where('oid',$res['oid'])->update($res);
             if($data){
                 return redirect('/admin/order')->with('success','修改成功');
             }
         }catch(\Exception $e){
 
-            return back();
+             return back();
 
         }
         
@@ -116,28 +119,26 @@ class OrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($oid)
     {   
-        $res = Orders::find($id);
+        $res = Orders::where('oid',$oid)->delete();
 
-        $res->delete();
-
-        $data = $res->odeta()->delete();
+        $data = Odetails::where('oid',$oid)->delete();;
         
         if($data){
 
             return redirect('/admin/order')->with('success','删除成功');
 
-        }
+        } 
     }
 
-    public function details(Request $request ,$id)
+    public function details(Request $request ,$oid)
     {   
 
-         $deta = Odetails::where('o_id',$id)->orderBy('id','ace')
+         $deta = Odetails::where('oid',$oid)->orderBy('oid','ace')
             ->where(function($query) use($request){
                  //检测关键字
-                $id = $request->input('id');
+                $id = $request->input('oid');
                 $gname = $request->input('gname');
                 //如果收货人不为空
                 if(!empty($gname)) {
@@ -153,5 +154,11 @@ class OrderController extends Controller
             'deta'=>$deta,
             'request'=>$request
             ]);
+    }
+
+    public function fa($oid)
+    {   
+        $data =Orders::where('oid',$oid)->update(['status'=>'2']);
+        return redirect('/admin/order');
     }
 }

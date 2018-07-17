@@ -104,7 +104,7 @@
               <tr>
               	<td>&nbsp;</td>
                 <td style="font-size:12px; padding-top:20px;">
-                    <span class="fr"><a href="#" style="color:#ff4e00;">忘记密码</a></span>
+                    <span class="fr"><a href="/home/back" style="color:#ff4e00;">忘记密码</a></span>
                 </td>
               </tr>
               <tr height="60">

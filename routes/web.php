@@ -45,7 +45,8 @@ Route::group(['middleware'=>'login'],function(){
 
 	//订单
 	Route::resource('/admin/order','admin\OrderController');
-	Route::get('/admin/details/{id}','admin\OrderController@details');
+	Route::get('/admin/details/{oid}','admin\OrderController@details');
+	Route::get('/admin/fa/{oid}','admin\OrderController@fa');
 
 	//站点
 	Route::resource('admin/site','admin\SiteController');
@@ -64,6 +65,11 @@ Route::group(['middleware'=>'login'],function(){
 	// 新闻
 	Route::resource('admin/news','admin\NewsController');
 
+	//评论管理
+	Route::get('admin/comment','admin\CommentController@index');
+	Route::post('admin/comment/ajaxStatu','admin\CommentController@ajaxStatu');
+
+
 
 
 });
@@ -77,12 +83,24 @@ Route::group([],function(){
 	Route::any('/home/cate','home\GoodsController@index');
 	
 
-	
+
+	//个人中心
+	Route::any('home/ucenter','home\UcenterController@ucenter');
+	Route::any('home/update/{id}','home\UcenterController@update');
+
+	//退出登录
+	Route::any('home/logout','home\LoginController@logout');
+
+
+
 });
 
 //前台购物车
 Route::resource('/home/cart','home\CartController');
 Route::any('/home/ajaxcart','home\CartController@ajaxcart');
+Route::any('/home/ajaxjia','home\CartController@ajaxjia');
+Route::any('/home/ajaxjian','home\CartController@ajaxjian');
+Route::any('/home/ajaxdx','home\CartController@ajaxdx');
 
 //前台订单
 Route::resource('/home/order','home\OrderController');
@@ -93,6 +111,7 @@ Route::resource('/home/addr','home\AddrController');
 
 //前台我的收藏
 Route::resource('/home/collect','home\CollectController');
+Route::any('/home/delete/{id}','home\CollectController@delete');
 
 //前台我的订单
 Route::resource('/home/grorder','home\GrOrderController');
@@ -104,14 +123,33 @@ Route::resource('/home/grorder','home\GrOrderController');
  */
 Route::any('home/login','home\LoginController@login');
 Route::any('home/dologin','home\LoginController@dologin');
+/**
+ * 前台注册
+ */
 Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
 
-Route::any('home/captcha','home\RegistController@captcha');
-Route::any('home/jihuo','home\RegistController@jihuo');
+/**
+ * 前台验证码
+ */
 
+Route::any('home/captcha','home\RegistController@captcha');
+/**
+ * 前台账号激活
+ */
+Route::any('home/jihuo','home\RegistController@jihuo');
 
 
 //新闻详情页
 Route::get('/home/news/detail','admin\NewsController@detail');
+
+/**
+ * 找回密码
+ */
+Route::any('home/back','home\BackController@index');
+Route::any('home/tel','home\BackController@tel');
+Route::any('home/code','home\BackController@code');
+Route::any('home/npwd','home\BackController@npwd');
+Route::any('home/pwd','home\BackController@pwd');
+
 

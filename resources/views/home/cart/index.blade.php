@@ -72,11 +72,11 @@
           </tr>
           @foreach($res as $k => $v)
           <tr>
-            <td align="center">
-               <input type="checkbox">
+            <td align="center" name="{{$v->id}}">
+               <input type="checkbox" name="{{$v->id}}" />
             </td>
             <td>
-            	<div class="c_s_img"><img src="{{$v->gimg}}" width="73" height="73" /></div>
+            	<div class="c_s_img"><img src="{{$v->gimg}}" width="73px" height="100px" /></div>
             </td>
             <td align="center"> {{$v->name}}</td>
             <td align="center">{{$v->color}}{{$v->size}}</td>
@@ -84,7 +84,7 @@
             ￥<span class="price">{{$v->price}}</span>
             </td>
             <td align="center">
-            	<div class="c_num">
+            	<div class="c_num" name="{{$v->id}}">
                     <input type="button" value="-"  class="car_btn_1" />
                 	  <input type="text" value="{{$v->cnt}}" name="cnt" class="car_ipt" />  
                     <input type="button" value="+"  class="car_btn_2" />
@@ -107,7 +107,7 @@
           </tr>
           <tr valign="top" height="150">
           	<td colspan="8" align="right">
-            	<a href="/"><img src="images/buy1.gif" /></a>&nbsp; &nbsp; <button><a class="shu" href="/home/order"><img id="tj" src="images/buy2.gif" /></a></button>
+            	<a href="/"><img src="images/buy1.gif" /></a>&nbsp; &nbsp; <a class="shu" href="/home/order"><img id="tj" src="images/buy2.gif" /></a>
             </td>
           </tr>
 
@@ -175,78 +175,121 @@
   //加法运算
   $('.car_btn_2').click(function(){
 
-    //获取数量
-    var num = $(this).prev().val();
+    //获取点击加的数据ID
+    var jia = $(this).parent().attr('name');
+    // console.log(jia);
+    var th = $(this);
 
-    num++;
-    //加完之后让数量发生改变
-    $(this).prev().val(num);
+    $.post('/home/ajaxjia',{xxoo:jia},function(data){
 
+        // console.log(data);
+        if (data == 1) {
 
-    function accMul(arg1, arg2) {
+          //获取数量
+          var cnt = th.prev().val();
 
-          var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
+          cnt++;
+          //加完之后让数量发生改变
+          th.prev().val(cnt);
 
-          try { m += s1.split(".")[1].length } catch (e) { }
+          function accMul(arg1, arg2) {
 
-          try { m += s2.split(".")[1].length } catch (e) { }
+                var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
 
-          return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m)
+                try { m += s1.split(".")[1].length } catch (e) { }
 
-    }
+                try { m += s2.split(".")[1].length } catch (e) { }
 
-    //获取单价
-    var pc = $(this).parents('tr').find('.price').text();
+                return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m)
+          }
 
-    //加完之后让小计发生改变
+          //获取单价
+          var pc = th.parents('tr').find('.price').text();
 
-    $(this).parents('tr').find('.xiaoji').text(accMul(pc,num));
-  
-    totals();
+          //加完之后让小计发生改变
+
+          th.parents('tr').find('.xiaoji').text(accMul(pc,cnt));
+        
+          totals();
+        } else {
+          alsert('网络错误');
+        }
+
+    })
   })
 
   //减法运算
   $('.car_btn_1').click(function(){
 
-    var mins = $(this).next().val();
+    var jian = $(this).parent().attr('name');
+    // console.log(jian);
+    var tth = $(this);
 
-    mins--;
-    if(mins <= 1){
+    $.post('/home/ajaxjian',{ooxx:jian},function(data){
 
-      mins = 1;
-    }
+        if (data) {
 
-    //减完让数量发生改变
-    $(this).next().val(mins);
+         var mins = tth.next().val();
 
-    //减完让小计发生改变
-    //获取单价
-    var pc = $(this).parents('tr').find('.price').text();
+          mins--;
+          if(mins <= 1){
 
-    function accMul(arg1, arg2) {
+            mins = 1;
+          }
 
-          var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
+          //减完让数量发生改变
+          tth.next().val(mins);
 
-          try { m += s1.split(".")[1].length } catch (e) { }
+          //减完让小计发生改变
+          //获取单价
+          var pc = tth.parents('tr').find('.price').text();
 
-          try { m += s2.split(".")[1].length } catch (e) { }
+          function accMul(arg1, arg2) {
 
-          return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m)
+                var m = 0, s1 = arg1.toString(), s2 = arg2.toString();
 
-    }
+                try { m += s1.split(".")[1].length } catch (e) { }
 
-    //加完之后让小计发生改变
+                try { m += s2.split(".")[1].length } catch (e) { }
 
-    $(this).parents('tr').find('.xiaoji').text(accMul(pc,mins));
+                return Number(s1.replace(".", "")) * Number(s2.replace(".", "")) / Math.pow(10, m)
 
-    totals();
+          }
 
+          //加完之后让小计发生改变
+
+          tth.parents('tr').find('.xiaoji').text(accMul(pc,mins));
+
+          totals();
+        } else {
+            alsert('网络错误');
+        }
+
+
+    })
+   
   })
 
   //单击多选框让总价发生改变
   $(':checkbox').click(function(){
 
     totals();
+
+    var che = this.checked;
+
+    var bb = $(this).parent().attr('name');
+      // console.log(bb);
+      $.post('/home/ajaxdx',{xuan:bb},function(data){
+        console.log(data);
+      })
+
+      if (che) {
+        var dd = $(this).attr('name');
+
+        $.post('/home/ajaxdx',{dan:dd},function(data){
+          console.log(data);
+        })
+      }
 
   })
 
@@ -332,16 +375,5 @@
     })
 
   })
- 
-  /* $('#tj').click(function(){
-    var id = $('.shuid').attr('idc');
-    console.log(id);
-     var cnt = $('input[type=text][name=cnt]').val();
-   $.post('',{cnt:cnt}function(data){
-
-    })
-    })*/
-
- 
 </script>
 @endsection

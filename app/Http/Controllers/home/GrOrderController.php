@@ -60,9 +60,9 @@ class GrOrderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($oid)
     {
-        $data = Orders::where('id',$id)->first();
+       /* $data = Orders::where('id',$id)->first();
         $data['status'] = 2;
         $add['id'] = $data['id'];
         $add['u_id'] = $data['u_id'];
@@ -73,14 +73,15 @@ class GrOrderController extends Controller
         $add['create_at'] = $data['create_at'];
         $add['sum'] = $data['sum'];
         $add['umsg'] = $data['umsg'];
-        $add['status'] = $data['status'];
+        $add['status'] = $data['status'];*/
         // dump($data);
        
-         // dump($add);
+         // dump($add);$data =
+          
         try{
-            $res = Orders::where('id',$id)->update($add);
-            if($str){
-                 return redirect('home.grorder');
+            $res = Orders::where('oid',$oid)->update(['status'=>'3']);
+            if($res){
+                 return redirect('/home/grorder');
             }
         }catch(\Exception $e){
 
