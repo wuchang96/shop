@@ -17,9 +17,13 @@
     				<label class="mws-form-label">广告类别</label>
     				<div class="mws-form-item">
     					<select name="cid" lay-filter="aihao">
+
 				        <option value="0">----请选择----</option>
-				        <option value="1">商品推广</option>
-				        <option value="2">公益广告</option>
+
+                        @foreach($res as $k=>$v)
+                        <option value="{{$v->id}}">{{$v->title}}</option>
+                        @endforeach
+                        
 				      </select>
     				</div>
     			</div>

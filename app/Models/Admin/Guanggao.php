@@ -10,5 +10,11 @@ class Guanggao extends Model
     public $primaryKey = 'id';
     // public $timestamps = false;
     public $guarded = [];
+
     
+  	public function gc()
+    {
+        return $this->hasOne('App\Models\Admin\Gcate','id','cid');
+    }  
 }
+ 

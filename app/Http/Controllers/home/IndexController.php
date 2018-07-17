@@ -37,7 +37,9 @@ class IndexController extends Controller
         // 获取广告表信息
         $guang = Guanggao::get();
 
+
         return view('home.index.index',['title'=>'尤洪','lunbo'=>$lunbo,'news'=>$news,'guang'=>$guang,'link'=>$link]);
+
 
     }
 

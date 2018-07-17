@@ -31,10 +31,17 @@ class GuangController extends Controller
         if(isset($cid) && !empty($cid)){
           $Guanggao =  $Guanggao->where('cid',$cid);
         }
+       
+        $res = Guanggao::with('gc')->paginate($page_count);
 
-        $data = $Guanggao->paginate($page_count);
-
-        return view('admin.guanggao.index',['title'=>'广告位','count'=>$count,'data'=>$data,'search'=>$request->all(),'cid'=>$cid,'request'=>$request]);
+        return view('admin.guanggao.index',[
+                'title'=>'广告位',
+                'count'=>$count,
+                'search'=>$request->all(),
+                'cid'=>$cid,
+                'res'=>$res,  
+                'request'=>$request
+            ]);
 
     }
 
@@ -46,8 +53,12 @@ class GuangController extends Controller
      */
     public function create()
     {
+        $res = Gcate::get();
 
-        return view('admin.guanggao.create',['title'=>'广告位添加']);
+        return view('admin.guanggao.create',[
+            'title'=>'广告位添加',
+            'res'=>$res
+            ]);
     }
 
     /**
@@ -60,6 +71,7 @@ class GuangController extends Controller
     {   
         //接受数据
         $data = $request -> except('_token','fileupload');
+
 
         if($request->hasFile('pic')){
             //设置名字
@@ -117,10 +129,19 @@ class GuangController extends Controller
     {
         //获取所有修改信息
         $data = Guanggao::find($id);
-        
 
-        // dd($data);
-        return view('admin.guanggao.edit',['data'=>$data,'title'=>'修改广告']);
+        $cid = $data['cid'];
+
+        
+        
+        $res = Gcate::get();
+
+        // dd($res);die;
+        return view('admin.guanggao.edit',[
+            'title'=>'修改广告',
+            'data'=>$data,
+            'res'=>$res        
+        ]);
     }
 
     /**
@@ -136,7 +157,6 @@ class GuangController extends Controller
         $all = Guanggao::find($id);
         //接回修改提交信息
         $data = $request -> except('_token','_method');
-        // dd($data);
 
         if($request->hasFile('pic')){
             //设置名字
