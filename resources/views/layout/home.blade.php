@@ -3,8 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-    <link type="text/css" rel="stylesheet" href="/home/css/style.css" />   
-
+    <link type="text/css" rel="stylesheet" href="/home/css/style.css" />
     <!--[if IE 6]>
     <script src="js/iepng.js" type="text/javascript"></script>
         <script type="text/javascript">
@@ -38,21 +37,8 @@
 <!--Begin Header Begin-->
 <div class="soubg">
     <div class="sou">
-
         <span class="fr">
-            
-            <span class="fl">
-                @if(empty(Session::get('user')))
-                   你好,请<a href="/home/login">登录</a>
-                @else
-                    你好,{{session('user.nickname')}}
-                    <a href="/home/ucenter">个人中心</a>
-                    <a href="/home/logout">退出</a> 
-                @endif
-                <a href="/home/regist" style="color:#ff4e00;">免费注册</a>
-                |
-                <a href="/home/grorder">我的订单</a>
-            </span>
+            <span class="fl">你好，请{{Session::get('uname')}}<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
             <span class="ss">
                 <div class="ss_list">
                     <a href="#">收藏夹</a>
@@ -60,7 +46,7 @@
                         <div class="s_city_t"></div>
                         <div class="ss_list_c">
                             <ul>
-                                <li><a href="/home/collect">我的收藏夹</a></li>
+                                <li><a href="#">我的收藏夹</a></li>
                             </ul>
                         </div>
                     </div>     
@@ -74,7 +60,9 @@
 </div>
 <div class="top">
 
+
     <div class="logo"><a href="Index.html"><img src="/home/images/logo.png" /></a></div>
+
 
     <div class="search">
         <form>
@@ -82,6 +70,35 @@
             <input type="submit" value="搜索" class="s_btn" />
         </form>                      
         <span class="fl"><a href="#">咖啡</a><a href="#">iphone 6S</a><a href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a href="#">连衣裙</a></span>
+    </div>
+    <div class="i_car">
+        <div class="car_t">购物车 [ <span>3</span> ]</div>
+        <div class="car_bg">
+            <!--Begin 购物车未登录 Begin-->
+            <div class="un_login">还未登录！<a href="Login.html" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
+            <!--End 购物车未登录 End-->
+            <!--Begin 购物车已登录 Begin-->
+            <ul class="cars">
+                <li>
+                    <div class="img"><a href="#"><img src="/home/images/car1.jpg" width="58" height="58" /></a></div>
+                    <div class="name"><a href="#">法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只</a></div>
+                    <div class="price"><font color="#ff4e00">￥399</font> X1</div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
+                    <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
+                    <div class="price"><font color="#ff4e00">￥399</font> X1</div>
+                </li>
+                <li>
+                    <div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
+                    <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
+                    <div class="price"><font color="#ff4e00">￥399</font> X1</div>
+                </li>
+            </ul>
+            <div class="price_sum">共计&nbsp; <font color="#ff4e00">￥</font><span>1058</span></div>
+            <div class="price_a"><a href="#">去购物车结算</a></div>
+            <!--End 购物车已登录 End-->
+        </div>
     </div>
 </div>
 <!--End Header End--> 
@@ -92,6 +109,7 @@
         <div class="nav">
             @php
                 $data = App\Models\Admin\Cate::getsubcate(0);
+                $guang = App\Models\Admin\Guanggao::get();
             @endphp
             <div class="nav_t">全部商品分类</div>
             <div class="leftNav">
@@ -106,11 +124,17 @@
                             <div class="zj_l">
                                 @foreach($v->sub as $kk)
                                 <div class="zj_l_c">
-                                    <h2>{{$kk->title}}</h2>
-                                    @foreach($kk->sub as $ks)
-                                    <a href="/home/cate?id={{$ks->id}}">{{$ks->title}}</a>|
-                                    @endforeach
-                                </div>
+                                <h2>{{$kk->title}}</h2>
+                                @foreach($kk->sub as $ks)
+                                <a href="/home/cate?id={{$ks->id}}">{{$ks->title}}</a>|
+                                @endforeach
+                            </div>
+                            @endforeach
+                            </div>
+                            <div class="zj_r">
+                                @foreach($guang as $k=>$v)
+                                <a href="{{$v['url']}}"><img src="{{$v['pic']}}" width="236" height="200" /></a>
+                                
                                 @endforeach
                             </div>
                         </div>
@@ -120,8 +144,7 @@
             </div>
         </div>  
         <!--End 商品分类详情 End-->                                                 
-        <ul class="menu_r"> 
-            <li><a href="Index.html">首页</a></li>
+        <ul class="menu_r">                                                                                                                                      <li><a href="Index.html">首页</a></li>
             <li><a href="Food.html">美食</a></li>
             <li><a href="Fresh.html">生鲜</a></li>
             <li><a href="HomeDecoration.html">家居</a></li>
@@ -210,7 +233,32 @@
             <div class="b_er_c"><img src="/home/images/er.gif" width="118" height="118" /></div>
             <img src="/home/images/ss.png" />
         </div>
-    </div>    
+    </div>
+
+    <!-- 友情链接-->
+    <div style="margin:0px 155px">
+        <p style="height: 100%;">
+    @if(!empty($link))
+    @foreach($link as $k=>$v)
+        @if($v['img'])
+        <a target="_blank" href="https://{{$v['url']}}" style="float:left;">
+            <span style="display:bloak;">
+                <img  src="{{URL::asset($v['img'])}}" style="width:70px;height:30px;border-radius:4px" /> 
+                <b>|</b>
+            </span>
+        </a>
+        
+        @else
+        <a target="_blank" href="https://{{$v['url']}}">
+            <span style="margin-left:5px;">{{$v['name']}}</span>
+        </a>
+        <b>|</b>
+        @endif
+    @endforeach
+    @endif
+    </p>
+    </div>
+
     <div class="btmbg">
         <div class="btm">
             备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
