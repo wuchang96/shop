@@ -5,6 +5,7 @@ namespace App\Http\Controllers\home;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Orders;
+use App\Models\Admin\Odetails;
 use DB;
 use Session;
 
@@ -110,5 +111,12 @@ class GrOrderController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function grorderxq($oid)
+    {
+       $data = Odetails::where('oid',$oid)->get();
+       // dd($data);
+       return view('/home/grorder/grorderxq',['data'=>$data]);
     }
 }

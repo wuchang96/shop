@@ -14,43 +14,16 @@
     <script type="text/javascript" src="/home/js/menu.js"></script>    
         
     <script type="text/javascript" src="/home/js/select.js"></script>
-     
-
-
-
+        
     
 <title>尤洪</title>
 </head>
-<body>
-
-<script type="text/javascript">
-
-var Gid  = document.getElementById ;
-
-var showArea = function(){
-
-  Gid('show').innerHTML = "<h3>省" + Gid('s_province').value + " - 市" +  
-
-  Gid('s_city').value + " - 县/区" + 
-
-  Gid('s_county').value + "</h3>"
-
-              }
-
-Gid('s_county').setAttribute('onchange','showArea()');
-
-</script>
-
-
-
-
-
+<body>  
 <!--Begin Header Begin-->
 <div class="soubg">
     <div class="sou">
-        
         <span class="fr">
-            <span class="fl">你好，请{{Session::get('user.uname')}}<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+            <span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
             <span class="ss">
                 <div class="ss_list">
                     <a href="#">收藏夹</a>
@@ -59,50 +32,25 @@ Gid('s_county').setAttribute('onchange','showArea()');
                         <div class="ss_list_c">
                             <ul>
                                 <li><a href="#">我的收藏夹</a></li>
-                                <li><a href="#">我的收藏夹</a></li>
                             </ul>
                         </div>
                     </div>     
                 </div>
-                <div class="ss_list">
-                    <a href="#">客户服务</a>
-                    <div class="ss_list_bg">
-                        <div class="s_city_t"></div>
-                        <div class="ss_list_c">
-                            <ul>
-                                <li><a href="#">客户服务</a></li>
-                                <li><a href="#">客户服务</a></li>
-                                <li><a href="#">客户服务</a></li>
-                            </ul>
-                        </div>
-                    </div>    
-                </div>
-                <div class="ss_list">
-                    <a href="#">网站导航</a>
-                    <div class="ss_list_bg">
-                        <div class="s_city_t"></div>
-                        <div class="ss_list_c">
-                            <ul>
-                                <li><a href="#">网站导航</a></li>
-                                <li><a href="#">网站导航</a></li>
-                            </ul>
-                        </div>
-                    </div>    
-                </div>
             </span>
             <span class="fl">|&nbsp;关注我们：</span>
             <span class="s_sh"><a href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span>
-            <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="images/s_tel.png" align="absmiddle" /></a></span>
+            <span class="fr">|&nbsp;<a href="#">手机版&nbsp;<img src="/home/images/s_tel.png" align="absmiddle" /></a></span>
         </span>
     </div>
 </div>
 <div class="m_top_bg">
     <div class="top">
-        <div class="m_logo"><a href="Index.html"><img src="images/logo1.png" /></a></div>
+        <div class="m_logo"><a href="Index.html"><img src="/home/images/logo1.png" /></a></div>
         <div class="m_search">
+            <form>
                 <input type="text" value="" class="m_ipt" />
                 <input type="submit" value="搜索" class="m_btn" />
-                              
+            </form>                      
             <span class="fl"><a href="#">咖啡</a><a href="#">iphone 6S</a><a href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a href="#">连衣裙</a></span>
         </div>
         <div class="i_car">
@@ -114,17 +62,17 @@ Gid('s_county').setAttribute('onchange','showArea()');
                 <!--Begin 购物车已登录 Begin-->
                 <ul class="cars">
                     <li>
-                        <div class="img"><a href="#"><img src="images/car1.jpg" width="58" height="58" /></a></div>
+                        <div class="img"><a href="#"><img src="/home/images/car1.jpg" width="58" height="58" /></a></div>
                         <div class="name"><a href="#">法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只</a></div>
                         <div class="price"><font color="#ff4e00">￥399</font> X1</div>
                     </li>
                     <li>
-                        <div class="img"><a href="#"><img src="images/car2.jpg" width="58" height="58" /></a></div>
+                        <div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
                         <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
                         <div class="price"><font color="#ff4e00">￥399</font> X1</div>
                     </li>
                     <li>
-                        <div class="img"><a href="#"><img src="images/car2.jpg" width="58" height="58" /></a></div>
+                        <div class="img"><a href="#"><img src="/home/images/car2.jpg" width="58" height="58" /></a></div>
                         <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
                         <div class="price"><font color="#ff4e00">￥399</font> X1</div>
                     </li>
@@ -145,103 +93,41 @@ Gid('s_county').setAttribute('onchange','showArea()');
             <div class="left_m">
                 <div class="left_m_t t_bg1">订单中心</div>
                 <ul>
-                    <li><a href="/home/grorder">我的订单</a></li>
-                    <li><a href="/home/addr" class="now">收货地址</a></li>
+                    <li><a href="Member_Order.html" class="now">我的订单</a></li>
+                    <li><a href="Member_Address.html">收货地址</a></li>
                 </ul>
             </div>
             <div class="left_m">
                 <div class="left_m_t t_bg2">会员中心</div>
                 <ul>
                     <li><a href="Member_User.html">用户信息</a></li>
-                    <li><a href="/home/collect">我的收藏</a></li>
+                    <li><a href="Member_Collect.html">我的收藏</a></li>
                 </ul>
             </div>
-            
         </div>
         <div class="m_right">
             <p></p>
-            <div class="mem_tit">收货地址</div>
-            <div class="address">
-                <!-- <div class="a_close"><a href="#"><img src="images/a_close.png" /></a></div> -->
-                <table border="0" class="add_t" align="center" style="width:98%; margin:10px auto;" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td colspan="2" style="font-size:14px; color:#ff4e00;">你好:&nbsp; &nbsp; {{Session::get('user.uname')}}</td>
-                  </tr>
-                  <!--  @foreach($res as $k => $v)
-                                    <tr>
-                   <td align="right" width="80">收货人姓名：</td>
-                   <td>{{$v->name}}</td>
-                                    </tr>
-                                    <tr>
-                   <td align="right">收货地址：</td>
-                   <td>{{$v->addr}}</td>
-                                    </tr>
-                                    <tr>
-                   <td align="right">手机：</td>
-                   <td>{{$v->tel}}</td>
-                                    </tr>
-                                    <tr>
-                   <td align="right">邮编：</td>
-                   <td>{{$v->zip}}</td>
-                                    </tr>
-                                    <tr>
-                   <td align="right">是否为默认：</td>
-                   <td>
-                       @if ($v->status == 0)
-                             是
-                       @else
-                             <a href="#" style="color:#ff4e00;">设为默认</a>
-                       @endif
-                   </td>
-                                    </tr>
-                                    <tr>
-                   <td align="right"></td>
-                   <td><br></td>
-                                    </tr>
-                                    @endforeach -->
-                </table>
-                <table border="0" class="add_t" align="center" style="width:98%; margin:10px auto;" cellspacing="0" cellpadding="0">
-                    <tr>
-                        <td>收货人姓名</td>
-                        <td>收货地址</td>
-                        <td>收货人电话</td>
-                        <td>邮政编码</td>
-                        <td>是否为默认</td>
-                        <td> &nbsp; &nbsp;  &nbsp; &nbsp;   &nbsp; &nbsp;操作</td>
-                    </tr>
-                     @foreach($res as $k => $v)
-                    <tr>
-                        <td>{{$v->name}}</td>
-                        <td>{{$v->addr}}</td>
-                        <td>{{$v->tel}}</td>
-                        <td>{{$v->zip}}</td>
-                        <td> 
-                        @if ($v->status == 0)
-                              是
-                        @else
-                             否 <!-- <a href="#" style="color:#ff4e00;">设为默认</a> -->
-                        @endif
-                        </td>
-                        <td>
-                        @if($v->status == 1)
-                        <a href="/home/addrmo/{{$v->id}}" onclick="return confirm('确定要把此地址设为默认吗?')">设为默认</a>
-                        @endif
-                         &nbsp; &nbsp; 
-                        <a href="/home/addrsc/{{$v->id}}" onclick="return confirm('确定删除吗?')">删除</a>
-                         &nbsp; &nbsp; 
-                        <a href="/home/addr/{{$v->id}}/edit">修改</a>
-                        </td>
-                    </tr>
-                    @endforeach
-                     {{method_field('DELETE')}}
-                </table>
-              <div class="mem_tit">
-              <a href="/home/addr/add"><img src="images/add.png" /></a> &nbsp; &nbsp; 
-            </div>
-                
-            <table></table>
-
-            </div>
+            <div class="mem_tit">我的订单</div>
+                <table border="0" class="order_tab" style="width:930px;" cellspacing="0" cellpadding="0">
+              <tr>                                     
+                <td align="center" width="80">商品图片</td>
+                <td align="center" width="420">商品名称</td>
+                <td align="center" width="180">价格</td>
+                <td align="center" width="180">数量</td>
+              </tr>
+            @foreach($data as $k => $v)
+              <tr>
+                <td style="font-family:'宋体';">
+                    <div class="sm_img"><img src="{{$v->pic}}" width="48" height="48" /></div>
+                </td>
+                <td align="center">{{$v->gname}}</td>
+                <td align="center">￥{{$v->price}}</td>
+                <td align="center">{{$v->cnt}}</td>
+              </tr>
+            @endforeach
+            </table>
+            <br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="/home/grorder"><img src="/home/images/2333.png"></a>
         </div>
     </div>
     <!--End 用户中心 End--> 
@@ -250,25 +136,25 @@ Gid('s_county').setAttribute('onchange','showArea()');
         <div class="b_btm">
             <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="72"><img src="images/b1.png" width="62" height="62" /></td>
+                <td width="72"><img src="/home/images/b1.png" width="62" height="62" /></td>
                 <td><h2>正品保障</h2>正品行货  放心购买</td>
               </tr>
             </table>
             <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="72"><img src="images/b2.png" width="62" height="62" /></td>
+                <td width="72"><img src="/home/images/b2.png" width="62" height="62" /></td>
                 <td><h2>满38包邮</h2>满38包邮 免运费</td>
               </tr>
             </table>
             <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="72"><img src="images/b3.png" width="62" height="62" /></td>
+                <td width="72"><img src="/home/images/b3.png" width="62" height="62" /></td>
                 <td><h2>天天低价</h2>天天低价 畅选无忧</td>
               </tr>
             </table>
             <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
               <tr>
-                <td width="72"><img src="images/b4.png" width="62" height="62" /></td>
+                <td width="72"><img src="/home/images/b4.png" width="62" height="62" /></td>
                 <td><h2>准时送达</h2>收货时间由你做主</td>
               </tr>
             </table>
@@ -316,14 +202,39 @@ Gid('s_county').setAttribute('onchange','showArea()');
             </p>
         </div>
         <div class="b_er">
-            <div class="b_er_c"><img src="images/er.gif" width="118" height="118" /></div>
-            <img src="images/ss.png" />
+            <div class="b_er_c"><img src="/home/images/er.gif" width="118" height="118" /></div>
+            <img src="/home/images/ss.png" />
         </div>
-    </div>    
+    </div>  
+
+    <!-- 友情链接-->
+    <div style="margin:0px 155px">
+        <p style="height: 100%;">
+    @if(!empty($link))
+    @foreach($link as $k=>$v)
+        @if($v['img'])
+        <a target="_blank" href="https://{{$v['url']}}" style="float:left;">
+            <span style="display:bloak;">
+                <img  src="{{URL::asset($v['img'])}}" style="width:70px;height:30px;border-radius:4px" /> 
+                <b>|</b>
+            </span>
+        </a>
+        
+        @else
+        <a target="_blank" href="https://{{$v['url']}}">
+            <span style="margin-left:5px;">{{$v['name']}}</span>
+        </a>
+        <b>|</b>
+        @endif
+    @endforeach
+    @endif
+    </p>
+    </div>
+      
     <div class="btmbg">
         <div class="btm">
             备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
-            <img src="images/b_1.gif" width="98" height="33" /><img src="images/b_2.gif" width="98" height="33" /><img src="images/b_3.gif" width="98" height="33" /><img src="images/b_4.gif" width="98" height="33" /><img src="images/b_5.gif" width="98" height="33" /><img src="images/b_6.gif" width="98" height="33" />
+            <img src="/home/images/b_1.gif" width="98" height="33" /><img src="/home/images/b_2.gif" width="98" height="33" /><img src="/home/images/b_3.gif" width="98" height="33" /><img src="/home/images/b_4.gif" width="98" height="33" /><img src="/home/images/b_5.gif" width="98" height="33" /><img src="/home/images/b_6.gif" width="98" height="33" />
         </div>      
     </div>
     <!--End Footer End -->    

@@ -93,7 +93,7 @@
                     <input type="button" value="" onclick="addUpdate(jq(this));" class="n_btn_1" />
                     <input type="button" value="" onclick="jianUpdate(jq(this));" class="n_btn_2" />   
                 </div>
-                <span class="fl"><a onclick="ShowDiv_1('MyDiv1','fade1')"><img src="/home/images/j_car.png" /></a></span>
+                <span class="fl"><a href="/home/cart/{{$v->id}}"><img src="/home/images/j_car.png" /></a></span>
             </div>            
         </div>    
         

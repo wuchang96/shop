@@ -35,7 +35,7 @@ class OrderController extends Controller
         foreach ($res as $k=> $v) {
             
             $totals += $v['cnt']*$v['price'];
-            $sums += $v['sum'];
+            $sums += $v['cnt'];
 
         }
         /*$request -> session() -> put('info1',$res);

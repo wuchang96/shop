@@ -132,8 +132,9 @@
                 </td>
 
                 <td>
+                    <a href="/home/grorderxq/{{$v->oid}}">详情</a>
                     @if($v->status == '0')
-                        催单
+                        <a href=""  onclick="return confirm('已通知商家!!!')">催单</a>
                     @elseif($v->status == '2') 
                         <a href="/home/grorder/{{$v->oid}}/edit">确认签收</a>
                     @elseif($v->status == '3')
