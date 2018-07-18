@@ -30,7 +30,6 @@
                 <div id="tsImgSArrL" onclick="tsScrollArrLeft()"></div>
                 <div id="tsImgSCon">
                     <ul>
-                        @foreach($add as $k=>$v)
                        	
 
                         <li onclick="showPic(1)" rel="MagicZoom"><img src="{{$v->gs[0]->gpic}}" tsImgS="" width="79" height="79" /></li>
@@ -38,7 +37,6 @@
                         <li onclick="showPic(1)" rel="MagicZoom"><img src="{{$v->gs[0]->gpic}}" tsImgS="" width="79" height="79" /></li>
                         <li onclick="showPic(1)" rel="MagicZoom"><img src="{{$v->gs[0]->gpic}}" tsImgS="" width="79" height="79" /></li>
                         
-                        @endforeach
                     </ul>
                 </div>
                 <div id="tsImgSArrR" onclick="tsScrollArrRight()"></div>
@@ -226,26 +224,26 @@
                 <table border="0" class="jud_tab" cellspacing="0" cellpadding="0">
                   <tr>
                     <td width="175" class="jud_per">
-                    	<p>80.0%</p>好评度
+                    	<p>80%</p>好评度
                     </td>
                     <td width="300">
                     	<table border="0" style="width:100%;" cellspacing="0" cellpadding="0">
                           <tr>
-                            <td width="90">好评<font color="#999999">（80%）</font></td>
+                            <td width="90">好评<font color="#999999">80%</font></td>
                             <td><img src="/home/images/pl.gif" align="absmiddle" /></td>
                           </tr>
                           <tr>
-                            <td>中评<font color="#999999">（20%）</font></td>
+                            <td>中评<font color="#999999">20%</font></td>
                             <td><img src="/home/images/pl.gif" align="absmiddle" /></td>
                           </tr>
                           <tr>
-                            <td>差评<font color="#999999">（0%）</font></td>
+                            <td>差评<font color="#999999">0%</font></td>
                             <td><img src="/home/images/pl.gif" align="absmiddle" /></td>
                           </tr>
                         </table>
                     </td>
                     <td width="185" class="jud_bg">
-                    	购买过雅诗兰黛第六代特润精华露50ml的顾客，在收到商品才可以对该商品发表评论
+                    	购买过在收到商品才可以对该商品发表评论
                     </td>
                     <td class="jud_bg">您可对已购买商品进行评价<br /><a href="#"><img src="/home/images/btn_jud.gif" /></a></td>
                   </tr>
@@ -254,50 +252,20 @@
                 
                 				
                 <table border="0" class="jud_list" style="width:100%; margin-top:30px;" cellspacing="0" cellpadding="0">
+                 
+                  
                   <tr valign="top">
-                    <td width="160"><img src="/home/images/peo1.jpg" width="20" height="20" align="absmiddle" />&nbsp;向死而生</td>
+                    <td width="160"><img src="/home/images/peo3.jpg" width="20" height="20" align="absmiddle" />&nbsp;</td>
                     <td width="180">
-                    	颜色分类：<font color="#999999">粉色</font> <br />
-                        型号：<font color="#999999">50ml</font>
+                    	商品：<font color="#999999"></font> <br />
+                        星级评价：<font color="#999999"></font>
                     </td>
                     <td>
-                    	产品很好，香味很喜欢，必须给赞。 <br />
-                        <font color="#999999">2015-09-24</font>
+                    	<br />
+                        <font color="#999999"></font>
                     </td>
                   </tr>
-                  <tr valign="top">
-                    <td width="160"><img src="/home/images/peo2.jpg" width="20" height="20" align="absmiddle" />&nbsp;就是这么想的</td>
-                    <td width="180">
-                    	颜色分类：<font color="#999999">粉色</font> <br />
-                        型号：<font color="#999999">50ml</font>
-                    </td>
-                    <td>
-                    	送朋友，她很喜欢，大爱。 <br />
-                        <font color="#999999">2015-09-24</font>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td width="160"><img src="/home/images/peo3.jpg" width="20" height="20" align="absmiddle" />&nbsp;墨镜墨镜</td>
-                    <td width="180">
-                    	颜色分类：<font color="#999999">粉色</font> <br />
-                        型号：<font color="#999999">50ml</font>
-                    </td>
-                    <td>
-                    	大家都说不错<br />
-                        <font color="#999999">2015-09-24</font>
-                    </td>
-                  </tr>
-                  <tr valign="top">
-                    <td width="160"><img src="/home/images/peo4.jpg" width="20" height="20" align="absmiddle" />&nbsp;那*****洋 <br /><font color="#999999">（匿名用户）</font></td>
-                    <td width="180">
-                    	颜色分类：<font color="#999999">粉色</font> <br />
-                        型号：<font color="#999999">50ml</font>
-                    </td>
-                    <td>
-                    	下次还会来买，推荐。<br />
-                        <font color="#999999">2015-09-24</font>
-                    </td>
-                  </tr>
+                  
                 </table>
 
                 	
