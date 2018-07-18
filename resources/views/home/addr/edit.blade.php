@@ -92,17 +92,17 @@ Gid('s_county').setAttribute('onchange','showArea()');
    		<div class="m_left">
         	<div class="left_n">管理中心</div>
             <div class="left_m">
-            	<div class="left_m_t t_bg1">订单中心</div>
+                <div class="left_m_t t_bg1">订单中心</div>
                 <ul>
-                	<li><a href="Member_Order.html">我的订单</a></li>
-                    <li><a href="Member_Address.html" class="now">收货地址</a></li>
+                    <li><a href="/home/grorder">我的订单</a></li>
+                    <li><a href="javascript:void(0)" class="now">收货地址</a></li>
                 </ul>
             </div>
             <div class="left_m">
-            	<div class="left_m_t t_bg2">个人中心</div>
+                <div class="left_m_t t_bg2">会员中心</div>
                 <ul>
-                	<li><a href="Member_User.html">用户信息</a></li>
-                    <li><a href="Member_Collect.html">我的收藏</a></li>
+                    <li><a href="/home/ucenter">用户信息</a></li>
+                    <li><a href="/home/collect">我的收藏</a></li>
                 </ul>
             </div>
         </div>

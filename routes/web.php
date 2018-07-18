@@ -99,6 +99,7 @@ Route::group(['middleware'=>'homelogin'],function(){
 
 	//前台我的订单
 	Route::resource('/home/grorder','home\GrOrderController');
+	Route::any('/home/grorderxq/{oid}','home\GrOrderController@grorderxq');
 	//新闻详情页
 	Route::get('/home/news/detail','admin\NewsController@detail');
 

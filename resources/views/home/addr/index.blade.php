@@ -50,30 +50,30 @@ Gid('s_county').setAttribute('onchange','showArea()');
     <div class="sou">
         
         <span class="fr">
-            <span class="fl">
-                @if(empty(Session::get('user')))
-                   你好,请<a href="/home/login">登录</a>
-                @else
-                    你好,{{session('user.nickname')}}
-                    <a href="/home/ucenter">个人中心</a>
-                    <a href="/home/logout">退出</a> 
-                @endif 
+                <span class="fl">
+                    @if(empty(Session::get('user')))
+                       你好,请<a href="/home/login">登录</a>
+                    @else
+                        你好,{{session('user.nickname')}}
+                        <a href="/home/ucenter">个人中心</a>
+                        <a href="/home/logout">退出</a> 
+                    @endif 
 
-                <a href="/home/regist" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/home/grorder">我的订单</a>&nbsp;|
-            </span>
-            <span class="ss">
-                <div class="ss_list">
-                    <a href="#">收藏夹</a>
-                    <div class="ss_list_bg">
-                        <div class="s_city_t"></div>
-                        <div class="ss_list_c">
-                            <ul>
-                                <li><a href="/home/collect">我的收藏夹</a></li>
-                            </ul>
-                        </div>
-                    </div>     
-                </div>
-            </span>
+                    <a href="/home/regist" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/home/grorder">我的订单</a>&nbsp;|
+                </span>
+                <span class="ss">
+                    <div class="ss_list">
+                        <a href="#">收藏夹</a>
+                        <div class="ss_list_bg">
+                            <div class="s_city_t"></div>
+                            <div class="ss_list_c">
+                                <ul>
+                                    <li><a href="/home/collect">我的收藏夹</a></li>
+                                </ul>
+                            </div>
+                        </div>     
+                    </div>
+                </span>
                 <div class="ss_list">
                     <a href="#">客户服务</a>
                     <div class="ss_list_bg">
