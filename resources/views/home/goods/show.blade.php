@@ -59,17 +59,16 @@
             <div class="des_choice">
             	<span class="fl">型号选择：</span>
                 <ul>
-                	<li class="checked">30ml<div class="ch_img"></div></li>
-                    <li>50ml<div class="ch_img"></div></li>
-                    <li>100ml<div class="ch_img"></div></li>
+                	<li class="checked">唯一<div class="ch_img"></div></li>
+                    
                 </ul>
             </div>
             <div class="des_choice">
             	<span class="fl">颜色选择：</span>
                 <ul>
-                	<li>红色<div class="ch_img"></div></li>
+                	
                     <li class="checked">{{$v->color}}<div class="ch_img"></div></li>
-                    <li>黑色<div class="ch_img"></div></li>
+                   
                 </ul>
             </div>
             <div class="des_share">
@@ -95,10 +94,7 @@
             </div>            
         </div>    
         
-        <div class="s_brand">
-        	<div class="s_brand_img"><img src="" width="188" height="132" /></div>
-            <div class="s_brand_c"><a href="#">进入品牌专区</a></div>
-        </div>    
+          
         
         
     </div>
@@ -164,6 +160,7 @@
                         
 
                       </tr>
+
                       <tr>
                         
                         <td>商品产地：法国</td>
@@ -176,8 +173,16 @@
                             
                             @endif
                         </td>
+                        <tr>
+                        <td>商品库存：{{$v->stock}}</td>
+                        
+                        
+                        
+
+                        </tr>
                         <td>&nbsp;</td>
                       </tr>
+                      
                       
                     </table>                                               
                                             

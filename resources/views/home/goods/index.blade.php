@@ -93,7 +93,7 @@
                     </a>
                     <a href="#">新品</a>
                 </span>
-                <span class="fr">共发现120件</span>
+                
             </div>
             <div class="list_c">
             	
@@ -113,9 +113,7 @@
                    @endforeach
                 </ul>
                 
-                <div class="pages">
-                	<a href="#" class="p_pre">上一页</a><a href="#" class="cur">1</a><a href="#">2</a><a href="#">3</a>...<a href="#">20</a><a href="#" class="p_pre">下一页</a>
-                </div>
+                
                 
                 
                 
