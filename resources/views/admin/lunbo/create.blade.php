@@ -24,48 +24,19 @@
     	<form action="/admin/lunbo" method='post' class="mws-form" enctype='multipart/form-data'>
     		<div class="mws-form-inline">
 
-
     			<div class="mws-form-row">
-    				<label class="mws-form-label">轮播图①</label>
+    				<label class="mws-form-label">轮播图</label>
     				<div class="mws-form-item">
-    					<input type="file" name='pic_1' class="fileinput-preview">
+    					<input type="file" name='pic' class="fileinput-preview">
     				</div>
     			</div>
 
     			<div class="mws-form-row">
-    				<label class="mws-form-label">跳转地址①</label>
+    				<label class="mws-form-label">跳转地址</label>
     				<div class="mws-form-item clearfix">
-                        <input id="myform" type="text"  name="url_1" class="layui-input">
+                        <input id="myform" type="text"  name="url" class="layui-input">
     				</div>
     			</div>
-
-                <div class="mws-form-row">
-                    <label class="mws-form-label">轮播图②</label>
-                    <div class="mws-form-item">
-                        <input type="file" name='pic_2' class="fileinput-preview">
-                    </div>
-                </div>
-
-                <div class="mws-form-row">
-                    <label class="mws-form-label">跳转地址②</label>
-                    <div class="mws-form-item clearfix">
-                        <input id="myform" type="text"  name="url_2" class="layui-input">
-                    </div>
-                </div>
-
-                <div class="mws-form-row">
-                    <label class="mws-form-label">轮播图③</label>
-                    <div class="mws-form-item">
-                        <input type="file" name='pic_3' class="fileinput-preview">
-                    </div>
-                </div>
-
-                <div class="mws-form-row">
-                    <label class="mws-form-label">跳转地址③</label>
-                    <div class="mws-form-item clearfix">
-                        <input id="myform" type="text"  name="url_3" class="layui-input">
-                    </div>
-                </div>
 
     		</div>
     		<div class="mws-button-row">

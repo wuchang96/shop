@@ -48,55 +48,24 @@ class LunboController extends Controller
         $data = $request ->except('_token');
 
         //创建轮播图上传对象①
-        if($request->hasFile('pic_1') == true){
-            $pic_1 = $request -> file('pic_1');
+        if($request->hasFile('pic') == true){
+            $pic = $request -> file('pic');
             $temp_name = time()+rand(10000,99999);
-            $hz = $pic_1 -> getClientOriginalExtension();
+            $hz = $pic -> getClientOriginalExtension();
             $filename = $temp_name.'.'.$hz;
             //执行上传
-            $aa = $pic_1 -> move('./admin/imglunbo',$filename);
-            $data['pic_1'] = $aa;
+            $aa = $pic -> move('./admin/imglunbo',$filename);
+            $data['pic'] = $aa;
         }
-
-        //创建轮播图上传对象②
-        if($request->hasFile('pic_2') == true){
-            $pic_2 = $request -> file('pic_2');
-            $temp_name = time()+rand(10000,99999);
-            $hz = $pic_2 -> getClientOriginalExtension();
-            $filename = $temp_name.'.'.$hz;
-            //执行上传
-            $bb = $pic_2 -> move('./admin/imglunbo',$filename);
-            $data['pic_2'] = $bb;
-        }
-
-        //创建轮播图上传对象③
-        if($request->hasFile('pic_3') == true){
-            $pic_3 = $request -> file('pic_3');
-            $temp_name = time()+rand(10000,99999);
-            $hz = $pic_3 -> getClientOriginalExtension();
-            $filename = $temp_name.'.'.$hz;
-            //执行上传
-            $cc = $pic_3 -> move('./admin/imglunbo',$filename);
-            $data['pic_3'] = $cc;
-        }
-
 
         //实例化模型 添加数据
         $car_data = new Lunbo;    
-        if(!isset($data['pic_1']) && !isset($data['pic_2']) && !isset($data['pic_3'])){
-            $data['pic_1'] = './admin/imglunbo/1531361714.jpg';
-            $data['pic_2'] = './admin/imglunbo/1531361714.jpg';
-            $data['pic_3'] = './admin/imglunbo/1531361714.jpg';
-
+        if(!isset($data['pic'])){
+            $data['pic'] = './admin/imglunbo/1531361714.jpg';
         }else{
-            $car_data -> pic_1 = $data['pic_1'];
-            $car_data -> pic_2 = $data['pic_2'];
-            $car_data -> pic_3 = $data['pic_3'];
-
+            $car_data -> pic = $data['pic'];
         }
-        $car_data -> url_1 = $data['url_1'];
-        $car_data -> url_2 = $data['url_2'];
-        $car_data -> url_3 = $data['url_3'];
+        $car_data -> url = $data['url'];
 
         $res = $car_data -> save();
 
@@ -147,43 +116,31 @@ class LunboController extends Controller
         $data = $request ->except('_token');
 
         //创建轮播图上传对象①
-        if($request->hasFile('pic_1') == true){
-            $pic_1 = $request -> file('pic_1');
+        if($request->hasFile('pic') == true){
+            $pic= $request -> file('pic');
             $temp_name = time()+rand(10000,99999);
-            $hz = $pic_1 -> getClientOriginalExtension();
+            $hz = $pic -> getClientOriginalExtension();
             $filename = $temp_name.'.'.$hz;
             //执行上传
-            $aa = $pic_1 -> move('./admin/imglunbo',$filename);
-            $data['pic_1'] = $aa;
-        }
-
-        //创建轮播图上传对象②
-        if($request->hasFile('pic_2') == true){
-            $pic_2 = $request -> file('pic_2');
-            $temp_name = time()+rand(10000,99999);
-            $hz = $pic_2 -> getClientOriginalExtension();
-            $filename = $temp_name.'.'.$hz;
-            //执行上传
-            $bb = $pic_2 -> move('./admin/imglunbo',$filename);
-            $data['pic_2'] = $bb;
-        }
-
-        //创建轮播图上传对象③
-        if($request->hasFile('pic_3') == true){
-            $pic_3 = $request -> file('pic_3');
-            $temp_name = time()+rand(10000,99999);
-            $hz = $pic_3 -> getClientOriginalExtension();
-            $filename = $temp_name.'.'.$hz;
-            //执行上传
-            $cc = $pic_3 -> move('./admin/imglunbo',$filename);
-            $data['pic_3'] = $cc;
-        }
+            $aa = $pic -> move('./admin/imglunbo',$filename);
+            $data['pic'] = $aa;
  
-        $res = Lunbo::find($id)->update(['pic_1' => $data['pic_1'],'pic_2' => $data['pic_2'],'pic_3' => $data['pic_3']]);
+            $res = Lunbo::find($id)->update(['pic' => $data['pic']]);
+            if($res){
+                return redirect('/admin/lunbo')->with('success','修改成功'); //跳转 并且附带信息
+            }else{
+                return back()->with('error','修改失败'); //跳转 并且附带信息
+            }
+        }else{
+            //如果不修改头像 查出数据库原有的图片
+            $data = Lunbo::find($id);
+            $res = Lunbo::find($id)->update(['pic'=>$data['pic'],'url'=>$data['url']]);
         if($res){
             return redirect('/admin/lunbo')->with('success','修改成功'); //跳转 并且附带信息
-        }else{
-            return back()->with('error','修改失败'); //跳转 并且附带信息
+
+             }else{
+                 return back()->with('error','修改失败');
+            }
         }
     }
 

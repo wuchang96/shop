@@ -159,7 +159,7 @@
                               {{method_field('DELETE')}}
                               <button href="" class='btn btn-warning' style='margin:15px'>删除</button>
                           </form>
-                          <a class="btn btn-success" href="/admin/news/{{$v->id}}">文章详情</a>
+                          <a class="btn btn-success" href="/admin/news/{{$v->id}}">新闻详情</a>
                         </td>
 
                     </tr>

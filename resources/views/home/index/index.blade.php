@@ -9,20 +9,10 @@
                 <ul class="slide_box bxslider">
                     @foreach($lunbo as $k=>$v)
                     <li>
-                        <a href="{{$v['url_1']}}">
-                        <img src="{{$v['pic_1']}}" width="740" height="401" />
+                        <a href="{{$v['url']}}">
+                        <img src="{{$v['pic']}}" width="740" height="401" />
                         </a>
                     </li>
-                    <li>
-                        <a href="{{$v['url_2']}}">
-                        <img src="{{$v['pic_2']}}" width="740" height="401" />
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="{{$v['url_3']}}">
-                        <img src="{{$v['pic_3']}}" width="740" height="401" />
-                        </a>
-                    </li> 
                     @endforeach
                 </ul>	
                 <div class="op_btns clearfix">
@@ -180,9 +170,9 @@
     	<div class="i_sell">
             <div id="imgPlay">
                 <ul class="imgs" id="actor">
-                    <li><a href="http://www.shop.com/home/goods/create?id=25"><img src="home/images/tm_r1.jpg" width="211" height="357" /></a></li>
-                    <li><a href="http://www.shop.com/home/goods/create?id=43"><img src="home/images/tm_r2.jpg" width="211" height="357" /></a></li>
-                    
+                    <li><a href="#"><img src="home/images/tm_r.jpg" width="211" height="357" /></a></li>
+                    <li><a href="#"><img src="home/images/tm_r.jpg" width="211" height="357" /></a></li>
+                    <li><a href="#"><img src="home/images/tm_r.jpg" width="211" height="357" /></a></li>
                 </ul>
                 <div class="previ">上一张</div>
                 <div class="nexti">下一张</div>
