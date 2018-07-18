@@ -10,7 +10,7 @@ use App\Models\admin\News;
 use App\Models\admin\Guanggao;
 use App\Models\admin\link;
 use DB;
-
+use Session;
 
 class IndexController extends Controller
 {
@@ -37,8 +37,23 @@ class IndexController extends Controller
         // 获取广告表信息
         $guang = Guanggao::get();
 
+        // 网站表信息
+        $site = DB::table('site')->first();
 
-        return view('home.index.index',['title'=>'尤洪','lunbo'=>$lunbo,'news'=>$news,'guang'=>$guang,'link'=>$link]);
+        // session(['site'=>$site]);
+
+        session(['logo'=>$site->logo]);
+        session(['daddr'=>$site->daddr]);
+        session(['detial'=>$site->detial]);
+
+
+        return view('home.index.index',[
+            'title'=>'尤洪',
+            'lunbo'=>$lunbo,
+            'news'=>$news,
+            'guang'=>$guang,
+            'link'=>$link
+        ]);
 
 
     }

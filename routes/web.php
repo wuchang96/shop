@@ -73,9 +73,8 @@ Route::group(['middleware'=>'login'],function(){
 });
 
 
-Route::group([],function(){
-	//前台路由
-	Route::resource('/','home\IndexController');
+Route::group(['middleware'=>'homelogin'],function(){
+	
 	//商品的列表页
 	Route::resource('/home/goods','home\GoodsController');
 	Route::any('/home/cate','home\GoodsController@index');
@@ -107,14 +106,19 @@ Route::group([],function(){
 	//新闻详情页
 	Route::get('/home/news/detail','admin\NewsController@detail');
 
+	//前台购物车
+	Route::resource('/home/cart','home\CartController');
+	Route::any('/home/ajaxcart','home\CartController@ajaxcart');
+	Route::any('/home/ajaxjia','home\CartController@ajaxjia');
+	Route::any('/home/ajaxjian','home\CartController@ajaxjian');
+	Route::any('/home/ajaxdx','home\CartController@ajaxdx');
+
+
 });
 
-//前台购物车
-Route::resource('/home/cart','home\CartController');
-Route::any('/home/ajaxcart','home\CartController@ajaxcart');
-Route::any('/home/ajaxjia','home\CartController@ajaxjia');
-Route::any('/home/ajaxjian','home\CartController@ajaxjian');
-Route::any('/home/ajaxdx','home\CartController@ajaxdx');
+
+//前台路由
+Route::resource('/','home\IndexController');
 
 /**
  * 前台登录
