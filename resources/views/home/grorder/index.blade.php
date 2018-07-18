@@ -32,7 +32,7 @@
                     <a href="/home/logout">退出</a> 
                 @endif 
 
-                <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/home/grorder">我的订单</a>&nbsp;|
+                <a href="/home/regist" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/home/grorder">我的订单</a>&nbsp;|
             </span>
         	<span class="ss">
             	<div class="ss_list">
@@ -74,7 +74,7 @@
             <div class="left_m">
             	<div class="left_m_t t_bg2">会员中心</div>
                 <ul>
-                	<li><a href="home/ucenter">用户信息</a></li>
+                	<li><a href="/home/ucenter">用户信息</a></li>
                     <li><a href="/home/collect">我的收藏</a></li>
                 </ul>
             </div>
