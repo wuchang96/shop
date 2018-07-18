@@ -23,7 +23,16 @@
 <div class="soubg">
 	<div class="sou">
         <span class="fr">
-        	<span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+            <span class="fl">
+                @if(empty(Session::get('user')))
+                       你好,请<a href="/home/login">登录</a>
+                @else
+                    你好,{{session('user.nickname')}}
+                    <a href="/home/ucenter">个人中心</a>
+                    <a href="/home/logout">退出</a> 
+                @endif 
+
+            <a href="/home/regist" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/home/grorder">我的订单</a>&nbsp;|</span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">收藏夹</a>
@@ -31,8 +40,7 @@
                     	<div class="s_city_t"></div>
                         <div class="ss_list_c">
                         	<ul>
-                            	<li><a href="#">我的收藏夹</a></li>
-                                <li><a href="#">我的收藏夹</a></li>
+                            	<li><a href="/home/collect">我的收藏夹</a></li>
                             </ul>
                         </div>
                     </div>     
@@ -46,43 +54,7 @@
 </div>
 <div class="m_top_bg">
     <div class="top">
-        <div class="m_logo"><a href="Index.html"><img src="images/logo1.png" /></a></div>
-        <div class="m_search">
-            <form>
-                <input type="text" value="" class="m_ipt" />
-                <input type="submit" value="搜索" class="m_btn" />
-            </form>                      
-            <span class="fl"><a href="#">咖啡</a><a href="#">iphone 6S</a><a href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a href="#">连衣裙</a></span>
-        </div>
-        <div class="i_car">
-            <div class="car_t">购物车 [ <span>3</span> ]</div>
-            <div class="car_bg">
-                <!--Begin 购物车未登录 Begin-->
-                <div class="un_login">还未登录！<a href="Login.html" style="color:#ff4e00;">马上登录</a> 查看购物车！</div>
-                <!--End 购物车未登录 End-->
-                <!--Begin 购物车已登录 Begin-->
-                <ul class="cars">
-                    <li>
-                        <div class="img"><a href="#"><img src="images/car1.jpg" width="58" height="58" /></a></div>
-                        <div class="name"><a href="#">法颂浪漫梦境50ML 香水女士持久清新淡香 送2ML小样3只</a></div>
-                        <div class="price"><font color="#ff4e00">￥399</font> X1</div>
-                    </li>
-                    <li>
-                        <div class="img"><a href="#"><img src="images/car2.jpg" width="58" height="58" /></a></div>
-                        <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
-                        <div class="price"><font color="#ff4e00">￥399</font> X1</div>
-                    </li>
-                    <li>
-                        <div class="img"><a href="#"><img src="images/car2.jpg" width="58" height="58" /></a></div>
-                        <div class="name"><a href="#">香奈儿（Chanel）邂逅活力淡香水50ml</a></div>
-                        <div class="price"><font color="#ff4e00">￥399</font> X1</div>
-                    </li>
-                </ul>
-                <div class="price_sum">共计&nbsp; <font color="#ff4e00">￥</font><span>1058</span></div>
-                <div class="price_a"><a href="#">去购物车结算</a></div>
-                <!--End 购物车已登录 End-->
-            </div>
-        </div>
+        <div class="m_logo"><a href="Index.html"><img src="{{session('logo')}}" /></a></div>
     </div>
 </div>
 <!--End Header End--> 
@@ -94,15 +66,15 @@
             <div class="left_m">
             	<div class="left_m_t t_bg1">订单中心</div>
                 <ul>
-                	<li><a href="Member_Order.html">我的订单</a></li>
-                    <li><a href="Member_Address.html">收货地址</a></li>
+                	<li><a href="/home/grorder">我的订单</a></li>
+                    <li><a href="/home/addr">收货地址</a></li>
                 </ul>
             </div>
             <div class="left_m">
             	<div class="left_m_t t_bg2">会员中心</div>
                 <ul>
-                	<li><a href="Member_User.html">用户信息</a></li>
-                    <li><a href="Member_Collect.html" class="now">我的收藏</a></li>
+                	<li><a href="/home/ucenter">用户信息</a></li>
+                    <li><a href="avascript:void(0)" class="now">我的收藏</a></li>
                 </ul>
             </div>
         </div>
@@ -248,7 +220,7 @@
      
     <div class="btmbg">
 		<div class="btm">
-        	备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
+        	备案/许可证编号：{{session('detial')}} 尤洪商城网: {{session('daddr')}}. 复制必究<br />
             <img src="images/b_1.gif" width="98" height="33" /><img src="images/b_2.gif" width="98" height="33" /><img src="images/b_3.gif" width="98" height="33" /><img src="images/b_4.gif" width="98" height="33" /><img src="images/b_5.gif" width="98" height="33" /><img src="images/b_6.gif" width="98" height="33" />
         </div>    	
     </div>

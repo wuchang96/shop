@@ -48,7 +48,7 @@
                     <a href="/home/logout">退出</a> 
                 @endif 
 
-                <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/home/grorder">我的订单</a>&nbsp;|
+                <a href="/home/regist" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/home/grorder">我的订单</a>&nbsp;|
             </span>
             <span class="ss">
                 <div class="ss_list">
@@ -129,16 +129,15 @@
         </div>  
         <!--End 商品分类详情 End-->                                                 
         <ul class="menu_r">
-            <li><a href="Index.html">首页</a></li>
-            <li><a href="Food.html">美食</a></li>
-            <li><a href="Fresh.html">生鲜</a></li>
-            <li><a href="HomeDecoration.html">家居</a></li>
-            <li><a href="SuitDress.html">女装</a></li>
-            <li><a href="MakeUp.html">美妆</a></li>
-            <li><a href="Digital.html">数码</a></li>
-            <li><a href="GroupBuying.html">团购</a></li>
+            <li><a href="javascript:void(0)">首页</a></li>
+            <li><a href="javascript:void(0)">美食</a></li>
+            <li><a href="javascript:void(0)">生鲜</a></li>
+            <li><a href="javascript:void(0)">家居</a></li>
+            <li><a href="javascript:void(0)">女装</a></li>
+            <li><a href="javascript:void(0)">美妆</a></li>
+            <li><a href="javascript:void(0)">数码</a></li>
+            <li><a href="javascript:void(0)">团购</a></li>
         </ul>
-        <div class="m_ad">中秋送好礼！</div>
     </div>
 </div>
 <!--End Menu End--> 
