@@ -64,28 +64,22 @@ Route::group(['middleware'=>'login'],function(){
 	// 新闻
 	Route::resource('admin/news','admin\NewsController');
 
-<<<<<<< HEAD
+
 	//评论管理
 	Route::get('admin/comment','admin\CommentController@index');
 	Route::post('admin/comment/ajaxStatu','admin\CommentController@ajaxStatu');
 
-=======
->>>>>>> origin/wjc
+
 });
 
 
-Route::group([],function(){
-	//前台路由
-	Route::resource('/','home\IndexController');
+Route::group(['middleware'=>'homelogin'],function(){
+	
 	//商品的列表页
 	Route::resource('/home/goods','home\GoodsController');
 	Route::any('/home/cate','home\GoodsController@index');
-<<<<<<< HEAD
 
 
-=======
-	
->>>>>>> origin/wjc
 	//个人中心
 	Route::any('home/ucenter','home\UcenterController@ucenter');
 	Route::any('home/update/{id}','home\UcenterController@update');
@@ -108,18 +102,19 @@ Route::group([],function(){
 	//新闻详情页
 	Route::get('/home/news/detail','admin\NewsController@detail');
 
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/wjc
+	//前台购物车
+	Route::resource('/home/cart','home\CartController');
+	Route::any('/home/ajaxcart','home\CartController@ajaxcart');
+	Route::any('/home/ajaxjia','home\CartController@ajaxjia');
+	Route::any('/home/ajaxjian','home\CartController@ajaxjian');
+	Route::any('/home/ajaxdx','home\CartController@ajaxdx');
+
 });
 
-//前台购物车
-Route::resource('/home/cart','home\CartController');
-Route::any('/home/ajaxcart','home\CartController@ajaxcart');
-Route::any('/home/ajaxjia','home\CartController@ajaxjia');
-Route::any('/home/ajaxjian','home\CartController@ajaxjian');
-Route::any('/home/ajaxdx','home\CartController@ajaxdx');
+
+//前台路由
+Route::resource('/','home\IndexController');
 
 /**
  * 前台登录
@@ -131,35 +126,16 @@ Route::any('home/dologin','home\LoginController@dologin');
  */
 Route::any('home/regist','home\RegistController@regist');
 Route::any('home/store','home\RegistController@store');
-<<<<<<< HEAD
-/**
- * 前台验证码
- */
-
 
 /**
  * 前台验证码
  */
-=======
 
-/**
- * 前台验证码
- */
->>>>>>> origin/wjc
 Route::any('home/captcha','home\RegistController@captcha');
 /**
  * 前台账号激活
  */
 Route::any('home/jihuo','home\RegistController@jihuo');
-<<<<<<< HEAD
-
-
-
-
-
-=======
-
->>>>>>> origin/wjc
 
 /**
  * 找回密码
@@ -170,10 +146,5 @@ Route::any('home/code','home\BackController@code');
 Route::any('home/npwd','home\BackController@npwd');
 Route::any('home/pwd','home\BackController@pwd');
 
-<<<<<<< HEAD
-=======
 
-//新闻详情页
-Route::get('/home/news/detail','admin\NewsController@detail');
 
->>>>>>> origin/wjc
