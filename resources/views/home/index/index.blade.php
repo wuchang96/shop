@@ -9,20 +9,10 @@
                 <ul class="slide_box bxslider">
                     @foreach($lunbo as $k=>$v)
                     <li>
-                        <a href="{{$v['url_1']}}">
-                        <img src="{{$v['pic_1']}}" width="740" height="401" />
+                        <a href="{{$v['url']}}">
+                        <img src="{{$v['pic']}}" width="740" height="401" />
                         </a>
                     </li>
-                    <li>
-                        <a href="{{$v['url_2']}}">
-                        <img src="{{$v['pic_2']}}" width="740" height="401" />
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="{{$v['url_3']}}">
-                        <img src="{{$v['pic_3']}}" width="740" height="401" />
-                        </a>
-                    </li> 
                     @endforeach
                 </ul>	
                 <div class="op_btns clearfix">
@@ -50,7 +40,6 @@
             	<li><span>[ 公告 ]</span><a href="/home/news/detail?id={{$v['id']}}">{{$v['title']}}</a></li>
                 @endforeach
             </ul>
-
         </div>
     </div>
     <!--End 母婴玩具 End-->

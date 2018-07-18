@@ -26,32 +26,22 @@
                         </th>
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" style="width: 100px;" aria-label="Browser: activate to sort column ascending">
-                           轮播图①
+                           轮播图
                         </th>
                         
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" style="width: 80px;" aria-label="Engine version: activate to sort column ascending">
-                            跳转路径①
+                            跳转路径
                         </th>
 
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" style="width: 100px;" aria-label="Browser: activate to sort column ascending">
-                           轮播图②
+                           创建时间
                         </th>
                         
                         <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
                         rowspan="1" colspan="1" style="width: 80px;" aria-label="Engine version: activate to sort column ascending">
-                            跳转路径②
-                        </th>
-
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 100px;" aria-label="Browser: activate to sort column ascending">
-                           轮播图③
-                        </th>
-                        
-                        <th class="sorting" role="columnheader" tabindex="0" aria-controls="DataTables_Table_1"
-                        rowspan="1" colspan="1" style="width: 80px;" aria-label="Engine version: activate to sort column ascending">
-                            跳转路径③
+                            修改时间
                         </th>
 
                         
@@ -66,15 +56,10 @@
           @foreach($data as $k =>$v)
             <tr>
                 <td>{{$v['id']}}</td>
-                <td><img src="{{URL::asset($v['pic_1'])}}" style="width: 80px;height: 80px;"></td>
-                <td><a>{{$v['url_1']}}</a></td>
-
-                <td><img src="{{URL::asset($v['pic_2'])}}" style="width: 80px;height: 80px;"></td>
-                <td><a>{{$v['url_2']}}</a></td>
-
-                <td><img src="{{URL::asset($v['pic_3'])}}" style="width: 80px;height: 80px;"></td>
-                <td><a>{{$v['url_3']}}</a></td>
-
+                <td><img src="{{URL::asset($v['pic'])}}" style="width: 80px;height: 80px;"></td>
+                <td><a>{{$v['url']}}</a></td>
+                <td>{{$v['created_at']}}</td>
+                <td>{{$v['updated_at']}}</td>
 
                   <td class=" ">
                       <a href="/admin/lunbo/{{$v->id}}/edit" class='btn btn-info'>修改</a>
