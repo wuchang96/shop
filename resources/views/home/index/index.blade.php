@@ -23,22 +23,6 @@
                         <img src="{{$v['pic_3']}}" width="740" height="401" />
                         </a>
                     </li> 
-                    <li>
-                        <a href="{{$v['url_4']}}">
-                        <img src="{{$v['pic_4']}}" width="740" height="401" />
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="{{$v['url_5']}}">
-                        <img src="{{$v['pic_5']}}" width="740" height="401" />
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="{{$v['url_6']}}">
-                        <img src="{{$v['pic_6']}}" width="740" height="401" />
-                        </a>
-                    </li> 
-
                     @endforeach
                 </ul>	
                 <div class="op_btns clearfix">
@@ -66,9 +50,9 @@
             	<li><span>[ 公告 ]</span><a href="/home/news/detail?id={{$v['id']}}">{{$v['title']}}</a></li>
                 @endforeach
             </ul>
+
         </div>
     </div>
-    
     <!--End 母婴玩具 End-->
     <!--Begin 家居生活 Begin-->
     <div class="i_t mar_10">

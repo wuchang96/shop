@@ -64,6 +64,7 @@ class NewsController extends Controller
         $news = new News;
         $news -> title = $news_data['title'];
         $news -> apic = $news_data['apic'];
+        $news -> aurl = $news_data['aurl'];
         $news -> content = $news_data['content'];
         $news -> author = $news_data['author'];
         $res = $news -> save();

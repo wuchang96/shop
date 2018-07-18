@@ -42,6 +42,13 @@
             </div>
 
             <div class="mws-form-row">
+                    <label class="mws-form-label">修改跳转</label>
+                    <div class="mws-form-item clearfix">
+                        <input id="myform" type="text"  name="aurl" class="layui-input" value="{{$data->aurl}}">
+                    </div>
+            </div>
+
+            <div class="mws-form-row">
                 <label  class="mws-form-label">
                    新闻内容:
                 </label>
