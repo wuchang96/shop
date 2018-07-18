@@ -71,6 +71,7 @@ class CartController extends Controller
         $str['price'] = $goods['price'];
         $str['gimg'] = $goods->gs[0]->gpic;
         $str['cnt'] = 1;
+
            $cart = Cart::create($str);
             // dd($cart);
             return redirect('/home/cart');

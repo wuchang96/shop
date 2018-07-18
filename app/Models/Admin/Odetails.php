@@ -23,7 +23,7 @@ class Odetails extends Model
      *
      * @var array
      */
-    protected $fillable = ['oid','gname','price','cnt','pic'];
+    protected $fillable = ['oid','gid','gname','price','cnt','pic'];
 
    /* public function orders()
     {   

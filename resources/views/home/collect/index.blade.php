@@ -130,7 +130,7 @@
                  <td align="center">{{$v->color}}</td>
                 <td align="center">￥{{$v->price}}</td>
                 <td align="center">
-                    <a href="/home/cart/{{$v->id}}" style="color:#ff4e00;">加入购物车</a>&nbsp; &nbsp;
+                    <a href="/home/goods/create?id={{$v->g_id}}" style="color:#ff4e00;">查看详情</a>&nbsp; &nbsp;
                     <a href="/home/delete/{{$v->id}}" onclick="return confirm('确定要删除吗?')">删除</a>
                 </td>
 
