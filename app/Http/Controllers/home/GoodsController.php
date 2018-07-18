@@ -23,6 +23,8 @@ class GoodsController extends Controller
 
         $goods=Goods::with('gs')->where("c_id",$id)->get();
 
+       
+
         return view('home.goods.index',['title'=>'商品列表页','goods'=>$goods]);
     }
 
@@ -39,24 +41,50 @@ class GoodsController extends Controller
 
         $add = Goods::with('gs')->where("id",$id)->get();
         
-       
-          /* $arr = explode('"',$add['descr']);
-           
-           $str=[];
-           $str[] = $arr['1'];
-           $str[] = $arr['3'];
-           $str[] = $arr['5'];
+            //dd($add['descr']);
+
+           // $arr = explode('<p><img src="',$add['descr']);
+           //$arr=implode(',',$arr);
+           //$arr=explode('style="" title="',$arr);
+           //dump($add['descr']);
+           // unset($arr[0]);
+           // dd($arr);
+
+           // $str=[];
+           // $str[] = $arr['1'];
+           // $str[] = $arr['3'];
+           // $str[] = $arr['5'];
            // dd($str);
 
-           $trs = explode('/',$str['0']);
-           $aa ='/'.$trs['1'].'/'.$trs['2'].'/'.$trs['3'].'/'.$trs['4'].'/';*/
+           // $trs = explode('/',$str['0']);
+           // $aa ='/'.$trs['1'].'/'.$trs['2'].'/'.$trs['3'].'/'.$trs['4'].'/';
            // dd($str);
            // $trs[]=$str['1'];
+            //查询商品评论表
+
+            // $commentTot=DB::table("comment")->where("gid",$id)->count();
+            // $goodTot=DB::table("comment")->where("start",">",4)->count();
+            // $chaTot=DB::table("comment")->where("start","<=",2)->count();
+            // $zhongTot=$commentTot-$goodTot-$chaTot;
+
+            
+
+            // $arr=array(
+            //     "commentTot"=>$commentTot,
+            //     "goodTot"=>$goodTot,
+            //     "chaTot"=>$chaTot,
+            //     "zhongTot"=>$zhongTot
+                
+            // );
+
+            // $comment=DB::table("comment")->where("gid",$id)->get();
 
        
         return view('home.goods.show',[
             'title'=>'商品的详情页',
             'add'=>$add
+            // 'arr'=>$arr
+            // 'comment'=>$comment
         ]);
     }
 
