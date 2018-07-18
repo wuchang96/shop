@@ -107,6 +107,7 @@ Gid('s_county').setAttribute('onchange','showArea()');
             </div>
         </div>
 		<div class="m_right">
+         <form action="/home/addr" method='post'>
             <p></p>
             <div class="mem_tit">添加收货地址</div>
             <table border="0" class="add_tab" style="width:930px;"  cellspacing="0" cellpadding="0">
@@ -143,7 +144,7 @@ Gid('s_county').setAttribute('onchange','showArea()');
                              <input type="radio" value='1' name="status" />否
             </p>
            	<p align="right">
-              <a href="#">删除</a>&nbsp; &nbsp; <input type="submit" value="确认">&nbsp; &nbsp; &nbsp; &nbsp; 
+              &nbsp; &nbsp; <input type="submit" value="确认">&nbsp; &nbsp; &nbsp; &nbsp; 
             </p>
                         {{csrf_field()}}
             </form>
