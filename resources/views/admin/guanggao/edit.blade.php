@@ -71,6 +71,13 @@
             </div>     
 
             <div class="mws-form-row">
+                    <label class="mws-form-label">修改下架时间:</label>
+                    <div class="mws-form-item clearfix">
+                        <input type="date" name="date_max" placeholder="" autocomplete="off" class="layui-input">
+                    </div>
+            </div>
+
+            <div class="mws-form-row">
                 <label  class="mws-form-label">
                    修改价格:
                 </label>

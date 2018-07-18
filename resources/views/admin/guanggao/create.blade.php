@@ -53,9 +53,8 @@
     			</div>
 
     			<div class="mws-form-row">
-    				<label class="mws-form-label">上架时间:</label>
+    				<label class="mws-form-label">下架时间:</label>
     				<div class="mws-form-item clearfix">
-                        <input type="date" name="date_min" placeholder="" autocomplete="off" class="layui-input">
                         <input type="date" name="date_max" placeholder="" autocomplete="off" class="layui-input">
     				</div>
     			</div>

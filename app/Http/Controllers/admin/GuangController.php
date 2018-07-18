@@ -76,15 +76,11 @@ class GuangController extends Controller
 
 
         //处理时间戳
-        $data['created_at'] = date('Y-m-d H:i:s',time());
-        if (!empty($data['date_min']) && isset($data['date_min'])) {
-            $data['date_min'] = strtotime($data['date_min']);
-        }
+
         if (!empty($data['date_max']) && isset($data['date_max'])) {
             $data['date_max'] = strtotime($data['date_max']);
         }
 
-        // $data['date_max'] = strtotime($data['date_max']);
         // dd($data);
         // 执行添加
         $res= Guanggao::create($data);
@@ -153,6 +149,12 @@ class GuangController extends Controller
         //若没有上传新图片,则获取原来相应的旧图片重新添加
         if ($data['pic'] == null) {
             $data['pic'] = $all->pic;
+        }
+
+        //处理时间戳
+
+        if (!empty($data['date_max']) && isset($data['date_max'])) {
+            $data['date_max'] = strtotime($data['date_max']);
         }
 
         // dd($data);

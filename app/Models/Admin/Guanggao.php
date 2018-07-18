@@ -8,7 +8,7 @@ class Guanggao extends Model
 {
     public $table = 'advresing';
     public $primaryKey = 'id';
-    // public $timestamps = false;
+    public $timestamps = false;
     public $guarded = [];
     
 }

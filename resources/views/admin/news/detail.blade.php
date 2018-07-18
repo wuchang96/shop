@@ -102,7 +102,9 @@
 					<span style="float: right;">作者：{{$content_data['author']}}</span>
 				</span>
 				<div style="width: 725px;height: 100%;margin:auto;margin-top: 50px;">
+                <a href="{{$content_data['aurl']}}">
 				<img src="{{$content_data['apic']}}" width="300" height="300" />
+                </a>
 				</div>
 				<div style="width: 725px;height: 100%;margin:auto;margin-top: 50px;">
 					{{$content_data['content']}}

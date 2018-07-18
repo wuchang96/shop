@@ -23,22 +23,6 @@
                         <img src="{{$v['pic_3']}}" width="740" height="401" />
                         </a>
                     </li> 
-                    <li>
-                        <a href="{{$v['url_4']}}">
-                        <img src="{{$v['pic_4']}}" width="740" height="401" />
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="{{$v['url_5']}}">
-                        <img src="{{$v['pic_5']}}" width="740" height="401" />
-                        </a>
-                    </li> 
-                    <li>
-                        <a href="{{$v['url_6']}}">
-                        <img src="{{$v['pic_6']}}" width="740" height="401" />
-                        </a>
-                    </li> 
-
                     @endforeach
                 </ul>	
                 <div class="op_btns clearfix">
@@ -196,9 +180,9 @@
     	<div class="i_sell">
             <div id="imgPlay">
                 <ul class="imgs" id="actor">
-                    <li><a href="#"><img src="home/images/tm_r.jpg" width="211" height="357" /></a></li>
-                    <li><a href="#"><img src="home/images/tm_r.jpg" width="211" height="357" /></a></li>
-                    <li><a href="#"><img src="home/images/tm_r.jpg" width="211" height="357" /></a></li>
+                    <li><a href="http://www.shop.com/home/goods/create?id=25"><img src="home/images/tm_r1.jpg" width="211" height="357" /></a></li>
+                    <li><a href="http://www.shop.com/home/goods/create?id=43"><img src="home/images/tm_r2.jpg" width="211" height="357" /></a></li>
+                    
                 </ul>
                 <div class="previ">上一张</div>
                 <div class="nexti">下一张</div>

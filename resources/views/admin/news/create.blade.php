@@ -38,6 +38,13 @@
     				</div>
     			</div>
 
+                <div class="mws-form-row">
+                    <label class="mws-form-label">新闻跳转</label>
+                    <div class="mws-form-item clearfix">
+                        <input id="myform" type="text"  name="aurl" class="layui-input">
+                    </div>
+                </div>
+
     			<div class="mws-form-row">
     				<label class="mws-form-label">新闻内容</label>
     				<div class="mws-form-item clearfix">
