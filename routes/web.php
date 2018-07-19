@@ -78,6 +78,8 @@ Route::group(['middleware'=>'homelogin'],function(){
 	//商品的列表页
 	Route::resource('/home/goods','home\GoodsController');
 	Route::any('/home/cate','home\GoodsController@index');
+	//搜索
+	Route::get('/home/search','home\SearchController@search');
 
 
 	//个人中心

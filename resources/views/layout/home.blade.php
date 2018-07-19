@@ -77,14 +77,17 @@
 
 
     <div class="search">
-        <form>
-            <input type="text" value="" class="s_ipt" />
-            <input type="submit" value="搜索" class="s_btn" />
-        </form>                      
+        <form action="/home/search" method="get">
+            {{ csrf_field() }}
+            <input type="text" value="@if(!empty($keyword)){{$keyword}}@endif" name="key"  class="s_ipt keyword" placeholder="" />
+            <input type="submit" value="搜索" class="s_btn" id = "isearch">
+        </form>                  
         <span class="fl">
         <a href="#">咖啡</a><a href="#">iphone 6S</a><a href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a href="#">连衣裙</a></span>
     </div>
+
 </div>
+
 <!--End Header End--> 
 <!--Begin Menu Begin-->
 <div class="menu_bg">

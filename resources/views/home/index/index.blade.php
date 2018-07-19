@@ -56,7 +56,7 @@
     <!--End 母婴玩具 End-->
     <!--Begin 家居生活 Begin-->
     <div class="i_t mar_10">
-    	<span class="floor_num">5F</span>
+    	
     	<span class="fl">家居生活</span>                                
         <span class="i_mores fr"><a href="#">床上用品</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">家纺布艺</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">餐具</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">沙发</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">汽车用品</a></span>                                              
     </div>
@@ -135,7 +135,7 @@
     <!--End 家居生活 End-->
     <!--Begin 数码家电 Begin-->
     <div class="i_t mar_10">
-    	<span class="floor_num">6F</span>
+    	
     	<span class="fl">数码家电</span>                                
         <span class="i_mores fr"><a href="#">手机</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">苹果</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">华为手机</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">洗衣机</a>&nbsp; &nbsp; | &nbsp; &nbsp;<a href="#">数码配件</a></span>                                               
     </div>
