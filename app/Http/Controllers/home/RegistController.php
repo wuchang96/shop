@@ -46,7 +46,6 @@ class RegistController extends Controller
         $phone = User::where('tel',$res['tel'])->first();
         if ($phone) {
              return back()->with('error','应手机号已绑定');
-            // return redirect('home/regist')->with('error','应手机号已绑定');
         }
 
         $res['password'] = Hash::make($request->input('password'));

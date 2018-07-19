@@ -21,18 +21,18 @@
 <body>  
 <!--Begin Header Begin-->
 <div class="soubg">
-	<div class="sou">
-    	<!--Begin 所在收货地区 Begin-->
-    	<span class="s_city_b">
-        	<span class="fl">送货至：</span>
-            <span class="s_city">
-            	<span>四川</span>
-                
-            </span>
-        </span>
-        <!--End 所在收货地区 End-->
         <span class="fr">
-        	<span class="fl">你好，请<a href="Login.html">登录</a>&nbsp; <a href="Regist.html" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="#">我的订单</a>&nbsp;|</span>
+        	<span class="fl">
+                    @if(empty(Session::get('user')))
+                       你好,请<a href="/home/login">登录</a>
+                    @else
+                        你好,{{session('user.nickname')}}
+                        <a href="/home/ucenter">个人中心</a>
+                        <a href="/home/logout">退出</a> 
+                    @endif 
+
+                    <a href="/home/regist" style="color:#ff4e00;">免费注册</a>&nbsp;|&nbsp;<a href="/home/grorder">我的订单</a>&nbsp;|
+                </span>
         	<span class="ss">
             	<div class="ss_list">
                 	<a href="#">收藏夹</a>
@@ -40,37 +40,13 @@
                     	<div class="s_city_t"></div>
                         <div class="ss_list_c">
                         	<ul>
-                            	<li><a href="#">我的收藏夹</a></li>
-                                <li><a href="#">我的收藏夹</a></li>
+                            	<li><a href="/home/collect">我的收藏夹</a></li>
                             </ul>
                         </div>
                     </div>     
                 </div>
-                <div class="ss_list">
-                	<a href="#">客户服务</a>
-                    <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
-                        <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">客户服务</a></li>
-                                <li><a href="#">客户服务</a></li>
-                                <li><a href="#">客户服务</a></li>
-                            </ul>
-                        </div>
-                    </div>    
-                </div>
-                <div class="ss_list">
-                	<a href="#">网站导航</a>
-                    <div class="ss_list_bg">
-                    	<div class="s_city_t"></div>
-                        <div class="ss_list_c">
-                        	<ul>
-                            	<li><a href="#">网站导航</a></li>
-                                <li><a href="#">网站导航</a></li>
-                            </ul>
-                        </div>
-                    </div>    
-                </div>
+                
+                
             </span>
             <span class="fl">|&nbsp;关注我们：</span>
             <span class="s_sh"><a href="#" class="sh1">新浪</a><a href="#" class="sh2">微信</a></span>
@@ -81,7 +57,7 @@
 
 <div class="m_top_bg">
     <div class="top">
-        <div class="m_logo"><a href="/"><img src="/home/images/logo1.png" /></a></div>
+        <div class="m_logo"><a href="/"><img src="{{session('logo')}}" width="150px" /></a></div>
          
     </div>
 </div>
@@ -214,7 +190,7 @@
     </div>  
     <div class="btmbg">
 		<div class="btm">
-        	备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
+        	备案/许可证编号：{{session('detial')}} 尤洪商城网: {{session('daddr')}}. 复制必究<br />
             <img src="/home/images/b_1.gif" width="98" height="33" /><img src="/home/images/b_2.gif" width="98" height="33" /><img src="/home/images/b_3.gif" width="98" height="33" /><img src="/home/images/b_4.gif" width="98" height="33" /><img src="/home/images/b_5.gif" width="98" height="33" /><img src="/home/images/b_6.gif" width="98" height="33" />
         </div>    	
     </div>
