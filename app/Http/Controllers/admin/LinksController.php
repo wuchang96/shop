@@ -22,7 +22,7 @@ class LinksController extends Controller
         $search = $request -> input('search','');
         //查数据
         $count = DB::table('links')->count();
-        $page_count = $request->input('page_count',2); 
+        $page_count = $request->input('page_count',4); 
          //获取数据
         $link = new Link();
         if(isset($search) && !empty($search)){
@@ -153,6 +153,14 @@ class LinksController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //执行删除
+        $aa =Link::find($id);
+         $res = $aa->delete();
+        if($res){
+            return redirect($_SERVER['HTTP_REFERER'])->with('success','删除成功');
+
+        }else{
+            return back()->with('error','删除失败');
+        }
     }
 }

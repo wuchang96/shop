@@ -25,7 +25,6 @@ class GoodsController extends Controller
 
         $goods=Goods::with('gs')->where("c_id",$id)->get();
 
-       
         
         //获取当前分类 名称
         $count = Goods::where('c_id',$id)->count();
@@ -39,7 +38,7 @@ class GoodsController extends Controller
 
         return view('home.goods.index',['title'=>'商品列表页','goods'=>$goods,'prename'=>$prename,'count'=>$count,'aa'=>$aa
             
-    ]);
+    ]);            
     }
 
     /**

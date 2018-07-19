@@ -71,14 +71,14 @@
                         显示
                         <select name="page_count" size="1" aria-controls="DataTables_Table_1">
 
-                            <option value="2" @if($request->page_count == 2)   selected="selected" @endif>
-                                2
-                            </option>
-                            <option value="4" @if($request->page_count == 4)   selected="selected" @endif>
-                                4
+                            <option value="3" @if($request->page_count == 3)   selected="selected" @endif>
+                                3
                             </option>
                             <option value="6" @if($request->page_count == 6)   selected="selected" @endif>
                                 6
+                            </option>
+                            <option value="9" @if($request->page_count == 9)   selected="selected" @endif>
+                                9
                             </option>
                            
                             
@@ -179,14 +179,14 @@
                         <td class=" ">
                           <a href="/admin/guanggao/{{$v->id}}/edit" class='btn btn-info'>修改</a>
 
-                          <form action="/admin/guanggao/{{$v->id}}" method='post' style='display:inline'>
+                        <form action="/admin/guanggao/{{$v->id}}" method='post' style='display:inline'>
                               
-                              {{csrf_field()}}
+                            {{csrf_field()}}
 
-                              {{method_field('DELETE')}}
-                              <button href="" class='btn btn-warning'>删除</button>
+                            {{method_field('DELETE')}}
+                            <button href="" class='btn btn-warning'>删除</button>
 
-                          </form>
+                        </form>
      
                         </td>
                     </tr>

@@ -71,14 +71,14 @@
                         显示
                         <select name="page_count" size="1" aria-controls="DataTables_Table_1">
 
-                            <option value="2" @if($request->page_count == 2)   selected="selected" @endif>
-                                2
-                            </option>
                             <option value="4" @if($request->page_count == 4)   selected="selected" @endif>
                                 4
                             </option>
-                            <option value="6" @if($request->page_count == 6)   selected="selected" @endif>
-                                6
+                            <option value="8" @if($request->page_count == 8)   selected="selected" @endif>
+                                8
+                            </option>
+                            <option value="12" @if($request->page_count == 12)   selected="selected" @endif>
+                                12
                             </option>
                            
                             

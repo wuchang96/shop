@@ -22,14 +22,14 @@ class GuangController extends Controller
        $search = $request -> input('search','');//接收的广告名称
        $cid = $request -> input('cid','');//接收广告类别
        $count = DB::table('advresing')->count();
-       $page_count = $request->input('page_count',2);
+       $page_count = $request->input('page_count',3);
 
        $Guanggao =new Guanggao(); //创建数据对象
         if(isset($search) && !empty($search)){
           $Guanggao =  $Guanggao::where('acustomer','like','%'.$search.'%');
         } 
         if(isset($cid) && !empty($cid)){
-          $Guanggao =  $Guanggao->where('cid',$cid);
+          $Guanggao = $Guanggao->where('cid',$cid);
         }
        
         $res = $Guanggao->paginate($page_count);
@@ -163,12 +163,8 @@ class GuangController extends Controller
 
             //移动
             $request->file('pic')->move('./uploads/',$name.'.'.$suffix);
-        }
 
-        $data['pic'] = Config::get('app.path').$name.'.'.$suffix;
-        //若没有上传新图片,则获取原来相应的旧图片重新添加
-        if ($data['pic'] == null) {
-            $data['pic'] = $all->pic;
+            $data['pic'] = Config::get('app.path').$name.'.'.$suffix;
         }
 
         //处理时间戳
@@ -202,7 +198,8 @@ class GuangController extends Controller
             return redirect($_SERVER['HTTP_REFERER'])->with('success','删除成功');
         }else{
             return back()->with('error','删除失败');
-        }    }
+        }    
+    }
 
     /**
      * 修改状态
@@ -210,25 +207,5 @@ class GuangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function change(Request $request)
-    {
-        $all = $request -> except('_token');
-        if ($all['astatus']==1) {
-           $res = Guanggao::where('id',$all['id'])->update(['astatus'=>0]);
-             if ($res) {
-                $arr = ['status'=>0,'msg'=>'已下架'];
-            } else{
-                $arr = ['status'=>2,'msg'=>'状态修改失败'];
-            } 
-        } else {
-            $res = Ad::where('id',$all['id'])->update(['astatus'=>1]);
-             if ($res) {
-                $arr = ['status'=>1,'msg'=>'已上架'];
-            } else{
-                $arr = ['status'=>2,'msg'=>'状态修改失败'];
-            }  
-        } 
-        return $arr;
-    }
 
 }

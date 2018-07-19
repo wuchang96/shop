@@ -48,7 +48,6 @@ Gid('s_county').setAttribute('onchange','showArea()');
 <!--Begin Header Begin-->
 <div class="soubg">
     <div class="sou">
-        
         <span class="fr">
                 <span class="fl">
                     @if(empty(Session::get('user')))
@@ -109,7 +108,6 @@ Gid('s_county').setAttribute('onchange','showArea()');
 <div class="m_top_bg">
     <div class="top">
         <div class="m_logo"><a href="/"><img src="{{session('logo')}}" width="150px" /></a></div>
-
     </div>
 </div>
 <!--End Header End--> 
