@@ -47,7 +47,7 @@
 
             </table>
             <div class="two_t">
-              <span class="fr"><a href="/home/addr/{{$data['id']}}/edit">修改</a></span>收货人信息
+              <span class="fr"><a href="/home/addr">修改</a></span>收货人信息
             </div>
             <table border="0" class="peo_tab" style="width:1110px;" cellspacing="0" cellpadding="0">
            

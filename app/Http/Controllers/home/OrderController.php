@@ -7,6 +7,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Home\Cart;
 use App\Models\home\Addr;
 use App\Models\Admin\Orders;
+use App\Models\Admin\Odetails;
+use App\Models\Admin\Goods;
 use Session;
 use DB;
 
@@ -35,7 +37,7 @@ class OrderController extends Controller
         foreach ($res as $k=> $v) {
             
             $totals += $v['cnt']*$v['price'];
-            $sums += $v['sum'];
+            $sums += $v['cnt'];
 
         }
         /*$request -> session() -> put('info1',$res);
@@ -103,10 +105,11 @@ class OrderController extends Controller
         $aa[$k]['pic'] = $v['gimg'];
         $aa[$k]['price'] = $v['price'];
         $aa[$k]['cnt'] = $v['cnt'];
+        $aa[$k]['gid'] = $v['g_id'];
          $cnt += $v['cnt'];
          $sum += $v->price * $v->cnt;
       }
-
+      // dd($aa['gid']);
       $str = Addr::where('uid',$id)->where('status','0')->first();
   
       $res =  explode(",",$str['addr']);
@@ -123,17 +126,30 @@ class OrderController extends Controller
       $add['cnt'] = $cnt;
       $add['create_at'] = $create_at;
       $add['sum'] = $sum;
-
-      // dd($add);
-
       $order = Orders::create($add);
       // dump($order);die;
       $data = $order->odeta()->createMany($aa);
-      // dd($data);
-
-     //删除购物车
-      $data = Cart::where('biaoji','1')->where('u_id',$id)->delete();
       
+       
+     //删除购物车
+      $datas = Cart::where('biaoji','1')->where('u_id',$id)->delete();
+      //减去商品库存
+     
+      $jian = Odetails::where('oid',$add['oid'])->get();
+      
+      $id = [];
+      $cnt = [];
+      foreach ($jian as $k => $v) {
+        $id[] = $v->gid;
+        $cnt[] = $v->cnt;
+      }
+      $res = array_combine($id, $cnt);
+
+      foreach ($res as $kk => $vv) {
+        $goods = Goods::where('id',$kk)->first();
+        $shul = $goods->stock;
+        $xg = $goods->update(['stock'=>$shul-$vv]);
+      }
       return view('home/order/cheng',['order'=>$order]);
 
 

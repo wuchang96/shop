@@ -71,14 +71,14 @@
                         显示
                         <select name="page_count" size="1" aria-controls="DataTables_Table_1">
 
-                            <option value="2" @if($request->page_count == 2)   selected="selected" @endif>
-                                2
-                            </option>
-                            <option value="4" @if($request->page_count == 4)   selected="selected" @endif>
-                                4
+                            <option value="3" @if($request->page_count == 3)   selected="selected" @endif>
+                                3
                             </option>
                             <option value="6" @if($request->page_count == 6)   selected="selected" @endif>
                                 6
+                            </option>
+                            <option value="9" @if($request->page_count == 9)   selected="selected" @endif>
+                                9
                             </option>
                            
                             
@@ -92,9 +92,10 @@
 
                     <label class="layui-form-label"></font>广告分类:　</label>
                         <select name="cid" lay-filter="aihao">
-                        <option value="0" @if($cid==0) selected @endif>----请选择----</option>
-                        <option value="1" @if($cid==1) selected @endif>商品推广</option>
-                        <option value="2" @if($cid==2) selected @endif>公益广告</option>
+                            <option value="0">----请选择----</option>
+                            @foreach($res as $k=>$v)
+                                <option value="{{$v->gc['id']}}">{{$v->gc['title']}}</option>
+                            @endforeach
                         </select>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                     <button class='btn btn-info'>搜索</button>
@@ -150,15 +151,11 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($data as $v)
+                    @foreach($res as $v)
                     <tr>
                         <td class="td">{{$v->id}}</td>
                         <td>
-                            @if($v->cid==1)
-                            商品推广
-                            @elseif($v->cid==2)
-                            公益广告
-                            @endif
+                            {{$v->gc['title']}}
                         </td>
                         <td>
                             {{$v->acustomer}}
@@ -182,14 +179,14 @@
                         <td class=" ">
                           <a href="/admin/guanggao/{{$v->id}}/edit" class='btn btn-info'>修改</a>
 
-                          <form action="/admin/guanggao/{{$v->id}}" method='post' style='display:inline'>
+                        <form action="/admin/guanggao/{{$v->id}}" method='post' style='display:inline'>
                               
-                              {{csrf_field()}}
+                            {{csrf_field()}}
 
-                              {{method_field('DELETE')}}
-                              <button href="" class='btn btn-warning'>删除</button>
+                            {{method_field('DELETE')}}
+                            <button href="" class='btn btn-warning'>删除</button>
 
-                          </form>
+                        </form>
      
                         </td>
                     </tr>
@@ -204,7 +201,7 @@
             <div class="dataTables_paginate paging_full_numbers" id="paginate">
 
 
-             {{ $data->links()}}
+             {{ $res->links()}}
             </div>
 
         </div>

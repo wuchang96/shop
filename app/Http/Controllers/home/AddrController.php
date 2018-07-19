@@ -17,14 +17,9 @@ class AddrController extends Controller
     public function index(Request $request)
     {
         $uid = Session::get('user.id');
-        $res = Addr::where('uid',$uid)->where('status','0')->get();
-        $id = '';
-        foreach ($res as $k => $v) {
-           $id = $v->id;
-        }
-        
+        $res = Addr::where('uid',$uid)->get();
         // dd($id);
-        return view('home.addr.index',['res'=>$res,'id'=>$id]);
+        return view('home.addr.index',['res'=>$res]);
     }
 
     /**
@@ -46,6 +41,7 @@ class AddrController extends Controller
     public function store(Request $request)
     {   
         $uid = Session::get('user.id');
+        $datas = Addr::where('uid',$uid)->update(['status'=>"1"]);
         $data = $request->except('_token');
 
         $data['uid']  = $uid;
@@ -134,5 +130,20 @@ class AddrController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function addrmo($id)
+    {
+        //查询所有收货地址 将状态更改为1
+        $uid = Session::get('user.id');
+        $datas = Addr::where('uid',$uid)->update(['status'=>"1"]);
+        //获取点击设为默认的id
+        $res = Addr::where('id',$id)->update(['status'=>"0"]);
+        return redirect('/home/addr');
+    }
+    public function addrsc($id)
+    {
+        $data = Addr::where('id',$id)->delete();
+        return redirect('/home/addr');
     }
 }

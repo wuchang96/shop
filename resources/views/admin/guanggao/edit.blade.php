@@ -28,9 +28,10 @@
                 </label>
                 <div class="mws-form-item">
                     <select name="cid" lay-filter="aihao">
-                    <option value="0" @if($data->cate==0) selected @endif>----请选择----</option>
-                    <option value="1" @if($data->cate==1) selected @endif>商品推广</option>
-                    <option value="2" @if($data->cate==2) selected @endif>公益广告</option>
+
+                        @foreach($res as $k=>$v)
+                        <option value="{{$v['id']}}" @if($v->id == $data->cid) selected @endif>{{$v['title']}}</option>
+                        @endforeach
                   </select>
                 </div>
             </div>

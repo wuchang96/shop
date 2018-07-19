@@ -133,8 +133,8 @@ class LunboController extends Controller
             }
         }else{
             //如果不修改头像 查出数据库原有的图片
-            $data = Lunbo::find($id);
-            $res = Lunbo::find($id)->update(['pic'=>$data['pic'],'url'=>$data['url']]);
+            $l_data = Lunbo::find($id);
+            $res = Lunbo::find($id)->update(['pic'=>$l_data['pic'],'url'=>$data['url']]);
         if($res){
             return redirect('/admin/lunbo')->with('success','修改成功'); //跳转 并且附带信息
 

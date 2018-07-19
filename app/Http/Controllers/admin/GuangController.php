@@ -22,19 +22,26 @@ class GuangController extends Controller
        $search = $request -> input('search','');//接收的广告名称
        $cid = $request -> input('cid','');//接收广告类别
        $count = DB::table('advresing')->count();
-       $page_count = $request->input('page_count',2);
+       $page_count = $request->input('page_count',3);
 
        $Guanggao =new Guanggao(); //创建数据对象
         if(isset($search) && !empty($search)){
           $Guanggao =  $Guanggao::where('acustomer','like','%'.$search.'%');
         } 
         if(isset($cid) && !empty($cid)){
-          $Guanggao =  $Guanggao->where('cid',$cid);
+          $Guanggao = $Guanggao->where('cid',$cid);
         }
+       
+        $res = $Guanggao->paginate($page_count);
 
-        $data = $Guanggao->paginate($page_count);
-
-        return view('admin.guanggao.index',['title'=>'广告位','count'=>$count,'data'=>$data,'search'=>$request->all(),'cid'=>$cid,'request'=>$request]);
+        return view('admin.guanggao.index',[
+                'title'=>'广告位',
+                'count'=>$count,
+                'search'=>$request->all(),
+                'cid'=>$cid,
+                'res'=>$res,  
+                'request'=>$request
+            ]);
 
     }
 
@@ -46,8 +53,12 @@ class GuangController extends Controller
      */
     public function create()
     {
+        $res = Gcate::get();
 
-        return view('admin.guanggao.create',['title'=>'广告位添加']);
+        return view('admin.guanggao.create',[
+            'title'=>'广告位添加',
+            'res'=>$res
+            ]);
     }
 
     /**
@@ -60,6 +71,7 @@ class GuangController extends Controller
     {   
         //接受数据
         $data = $request -> except('_token','fileupload');
+
 
         if($request->hasFile('pic')){
             //设置名字
@@ -113,10 +125,19 @@ class GuangController extends Controller
     {
         //获取所有修改信息
         $data = Guanggao::find($id);
-        
 
-        // dd($data);
-        return view('admin.guanggao.edit',['data'=>$data,'title'=>'修改广告']);
+        $cid = $data['cid'];
+
+        
+        
+        $res = Gcate::get();
+
+        // dd($res);die;
+        return view('admin.guanggao.edit',[
+            'title'=>'修改广告',
+            'data'=>$data,
+            'res'=>$res        
+        ]);
     }
 
     /**
@@ -132,7 +153,6 @@ class GuangController extends Controller
         $all = Guanggao::find($id);
         //接回修改提交信息
         $data = $request -> except('_token','_method');
-        // dd($data);
 
         if($request->hasFile('pic')){
             //设置名字
@@ -143,12 +163,8 @@ class GuangController extends Controller
 
             //移动
             $request->file('pic')->move('./uploads/',$name.'.'.$suffix);
-        }
 
-        $data['pic'] = Config::get('app.path').$name.'.'.$suffix;
-        //若没有上传新图片,则获取原来相应的旧图片重新添加
-        if ($data['pic'] == null) {
-            $data['pic'] = $all->pic;
+            $data['pic'] = Config::get('app.path').$name.'.'.$suffix;
         }
 
         //处理时间戳
@@ -182,7 +198,8 @@ class GuangController extends Controller
             return redirect($_SERVER['HTTP_REFERER'])->with('success','删除成功');
         }else{
             return back()->with('error','删除失败');
-        }    }
+        }    
+    }
 
     /**
      * 修改状态
@@ -190,25 +207,5 @@ class GuangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function change(Request $request)
-    {
-        $all = $request -> except('_token');
-        if ($all['astatus']==1) {
-           $res = Guanggao::where('id',$all['id'])->update(['astatus'=>0]);
-             if ($res) {
-                $arr = ['status'=>0,'msg'=>'已下架'];
-            } else{
-                $arr = ['status'=>2,'msg'=>'状态修改失败'];
-            } 
-        } else {
-            $res = Ad::where('id',$all['id'])->update(['astatus'=>1]);
-             if ($res) {
-                $arr = ['status'=>1,'msg'=>'已上架'];
-            } else{
-                $arr = ['status'=>2,'msg'=>'状态修改失败'];
-            }  
-        } 
-        return $arr;
-    }
 
 }
