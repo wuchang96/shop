@@ -82,7 +82,7 @@
                         <a href="#"><img src="/home/images/sh_5.gif" /></a>
                     </div>
                 </div>
-                <div class="d_care"><a onclick="ShowDiv('MyDiv','fade')">关注商品</a></div>
+                <div class="d_care"><a href="/home/cart/{{$v->id}}" onclick="ShowDiv('MyDiv','fade')">关注商品</a></div>
             </div>
             <div class="des_join">
             	<div class="j_nums">
@@ -102,42 +102,17 @@
     	<div class="l_history">
         	<div class="fav_t">用户还喜欢</div>
         	<ul>
-            	<li>
-                    <div class="img"><a href="#"><img src="/home/images/his_1.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                    <div class="price">
-                    	<font>￥<span>368.00</span></font> &nbsp; 18R
-                    </div>
-                </li>
+                @foreach($guang as $v)
                 <li>
-                    <div class="img"><a href="#"><img src="/home/images/his_2.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="img"><a href="{{$v['url']}}"><img src="{{$v['pic']}}" width="185" height="162" /></a></div>
+                    <div class="name"><a href="#">{{$v['atitle']}}</a></div>
                     <div class="price">
-                    	<font>￥<span>768.00</span></font> &nbsp; 18R
+                        <font>￥<span>{{$v['aprice']}}</span></font> &nbsp; 
                     </div>
                 </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/his_3.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                    <div class="price">
-                    	<font>￥<span>680.00</span></font> &nbsp; 18R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/his_4.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                    <div class="price">
-                    	<font>￥<span>368.00</span></font> &nbsp; 18R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/his_5.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                    <div class="price">
-                    	<font>￥<span>368.00</span></font> &nbsp; 18R
-                    </div>
-                </li>
-        	</ul>
+                @endforeach
+                
+            </ul>
         </div>
         <div class="l_list">        	
            
@@ -340,9 +315,7 @@
     </div>    
     <!--End 弹出层-加入购物车 End-->
     
-    
-    
-    <!--Begin Footer Begin -->
+
 
 <script src="/home/js/ShopShow.js"></script>
 

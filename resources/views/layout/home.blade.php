@@ -114,10 +114,8 @@
                             @endforeach
                             </div>
                             <div class="zj_r">
-                                @foreach($guang as $k=>$v)
-                                <a href="{{$v['url']}}"><img src="{{$v['pic']}}" width="236" height="200" /></a>
-                                
-                                @endforeach
+                                <a href="http://www.shop.com/home/goods/create?id=66"><img src="/uploads/3qmU1531791199.jpg" width="236" height="200" /></a>
+                                <a href="http://www.shop.com/home/goods/create?id=55"><img src="/uploads/72hlh7OtBn1531998741.png" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
