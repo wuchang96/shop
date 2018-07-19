@@ -34,13 +34,16 @@ class GuangController extends Controller
        
         $res = $Guanggao->paginate($page_count);
 
+        $data = Gcate::get();
+
         return view('admin.guanggao.index',[
                 'title'=>'广告位',
                 'count'=>$count,
                 'search'=>$request->all(),
                 'cid'=>$cid,
                 'res'=>$res,  
-                'request'=>$request
+                'request'=>$request,
+                'data'=>$data
             ]);
 
     }

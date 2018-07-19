@@ -93,8 +93,8 @@
                     <label class="layui-form-label"></font>广告分类:　</label>
                         <select name="cid" lay-filter="aihao">
                             <option value="0">----请选择----</option>
-                            @foreach($res as $k=>$v)
-                                <option value="{{$v->gc['id']}}">{{$v->gc['title']}}</option>
+                            @foreach($data as $k=>$v)
+                                <option value="{{$v['id']}}">{{$v['title']}}</option>
                             @endforeach
                         </select>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
