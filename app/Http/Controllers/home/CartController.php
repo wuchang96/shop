@@ -171,15 +171,18 @@ class CartController extends Controller
        if($data){
 
         $res = Cart::find($data);
-        $res->biaoji = '1';
-        $res = $res -> save();
+        $data = Cart::where('id',$res->id)->update(['biaoji'=>'1']);
+        echo $data;
+        /*$res->biaoji = '1';
+        $res = $res -> save();*/
             
        } 
        if(!$data && $dete) {
 
        $res = Cart::find($dete);
-       $res->biaoji = '0';
-       $res = $res -> save();
+       $data = Cart::where('id',$res->id)->update(['biaoji'=>'0']);
+      /* $res->biaoji = '0';
+       $res = $res -> save();*/
        }
 
     }

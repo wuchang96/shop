@@ -72,7 +72,7 @@
 <div class="top">
 
 
-    <div class="logo"><a href="/"><img src="{{session('logo')}}" /></a></div>
+    <div class="logo"><a href="/"><img src="{{session('logo')}}" width="170px" /></a></div>
                                             
 
 

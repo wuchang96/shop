@@ -31,7 +31,7 @@
 <!--Begin Login Begin-->
 <div class="log_bg">
     <div class="top">
-        <div class="logo"><a href="Index.html"><img src="{{session('logo')}}" /></a></div>
+        <div class="logo"><a href="Index.html"><img src="{{session('logo')}}" width="170px"/></a></div>
     </div>
 	<div class="regist">
     	<div class="log_img"><img src="/home/images/l_img.png" width="611" height="425" /></div>

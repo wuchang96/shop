@@ -82,7 +82,7 @@ Gid('s_county').setAttribute('onchange','showArea()');
 </div>
 <div class="m_top_bg">
     <div class="top">
-        <div class="m_logo"><a href="Index.html"><img src="{{session('logo')}}" /></a></div>
+        <div class="m_logo"><a href="/"><img src="{{session('logo')}}" width="150px"/></a></div>
     </div>
 </div>
 <!--End Header End--> 
@@ -107,6 +107,7 @@ Gid('s_county').setAttribute('onchange','showArea()');
             </div>
         </div>
 		<div class="m_right">
+         <form action="/home/addr/{{$data['id']}}" method='post'>
             <p></p>
             <div class="mem_tit">添加收货地址</div>
             <table border="0" class="add_tab" style="width:930px;"  cellspacing="0" cellpadding="0">

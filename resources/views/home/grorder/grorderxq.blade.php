@@ -55,7 +55,7 @@
 </div>
 <div class="m_top_bg">
     <div class="top">
-        <div class="m_logo"><a href="/"><img src="{{session('logo')}}" /></a></div>
+        <div class="m_logo"><a href="/"><img src="{{session('logo')}}" width="150px"/></a></div>
     </div>
 </div>
 <!--End Header End--> 

@@ -92,7 +92,9 @@ Route::group(['middleware'=>'homelogin'],function(){
 
 	//前台收货地址
 	Route::resource('/home/addr','home\AddrController');
-
+	Route::get('/home/addrmo/{id}','home\AddrController@addrmo');
+	Route::get('/home/addrsc/{id}','home\AddrController@addrsc');
+	
 	//前台我的收藏
 	Route::resource('/home/collect','home\CollectController');
 	Route::any('/home/delete/{id}','home\CollectController@delete');

@@ -59,14 +59,17 @@ class CollectController extends Controller
         $data = Goods::where('id',$id)->first();
         $str = Goodspic::where('gid',$id)->first();
          
+        $datas = Collect::where('g_id',$data['id'])->get();
+        if ($datas) {
+           return back();
+        }
+
         $add['g_id'] = $data['id']; 
         $add['u_id'] = $uid; 
         $add['name'] = $data['gname']; 
         $add['pic'] = $str['gpic'];
         $add['price'] = $data['price'];
         $add['color'] = $data['color'];
-        // dump($add);
-            // dd($res);
         try{
             $res = Collect::create($add);
             if($res){
