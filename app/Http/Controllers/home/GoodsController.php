@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use DB;
 use App\Models\Admin\Goods;
+use App\Models\Admin\Guanggao;
+use App\Models\Admin\Link;
+
+use App\Models\Admin\Cate ;
 
 
 class GoodsController extends Controller
@@ -23,9 +27,25 @@ class GoodsController extends Controller
 
         $goods=Goods::with('gs')->where("c_id",$id)->get();
 
-       
+        // 获取广告表信息
+        $guang = Guanggao::get();
 
-        return view('home.goods.index',['title'=>'商品列表页','goods'=>$goods]);
+        // 获取友情链接表信息
+        $link = Link::get();
+        
+        //获取当前分类 名称
+        $count = Goods::where('c_id',$id)->count();
+        $aa =Cate::find($id)->title;
+
+        //获取当前顶级分类的名称
+        $pid = Cate::find($id)->pid;
+        $prename =Cate::find($pid)->title;
+
+        
+
+        return view('home.goods.index',['title'=>'商品列表页','goods'=>$goods,'prename'=>$prename,'count'=>$count,'aa'=>$aa,'guang'=>$guang,'link'=>$link
+            
+    ]);            
     }
 
     /**
@@ -40,6 +60,12 @@ class GoodsController extends Controller
         $id = $data['id'];
 
         $add = Goods::with('gs')->where("id",$id)->get();
+
+        // 获取广告表信息
+        $guang = Guanggao::get();
+
+        // 获取友情链接表信息
+        $link = Link::get();
         
             //dd($add['descr']);
 
@@ -82,7 +108,9 @@ class GoodsController extends Controller
        
         return view('home.goods.show',[
             'title'=>'商品的详情页',
-            'add'=>$add
+            'add'=>$add,
+            'guang'=>$guang,
+            'link'=>$link
             // 'arr'=>$arr
             // 'comment'=>$comment
         ]);

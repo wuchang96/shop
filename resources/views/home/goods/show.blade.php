@@ -82,7 +82,7 @@
                         <a href="#"><img src="/home/images/sh_5.gif" /></a>
                     </div>
                 </div>
-                <div class="d_care"><a onclick="ShowDiv('MyDiv','fade')">关注商品</a></div>
+                <div class="d_care"><a href="/home/cart/{{$v->id}}" onclick="ShowDiv('MyDiv','fade')">关注商品</a></div>
             </div>
             <div class="des_join">
             	<div class="j_nums">
@@ -102,42 +102,17 @@
     	<div class="l_history">
         	<div class="fav_t">用户还喜欢</div>
         	<ul>
-            	<li>
-                    <div class="img"><a href="#"><img src="/home/images/his_1.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                    <div class="price">
-                    	<font>￥<span>368.00</span></font> &nbsp; 18R
-                    </div>
-                </li>
+                @foreach($guang as $v)
                 <li>
-                    <div class="img"><a href="#"><img src="/home/images/his_2.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
+                    <div class="img"><a href="{{$v['url']}}"><img src="{{$v['pic']}}" width="185" height="162" /></a></div>
+                    <div class="name"><a href="#">{{$v['atitle']}}</a></div>
                     <div class="price">
-                    	<font>￥<span>768.00</span></font> &nbsp; 18R
+                        <font>￥<span>{{$v['aprice']}}</span></font> &nbsp; 
                     </div>
                 </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/his_3.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                    <div class="price">
-                    	<font>￥<span>680.00</span></font> &nbsp; 18R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/his_4.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                    <div class="price">
-                    	<font>￥<span>368.00</span></font> &nbsp; 18R
-                    </div>
-                </li>
-                <li>
-                    <div class="img"><a href="#"><img src="/home/images/his_5.jpg" width="185" height="162" /></a></div>
-                	<div class="name"><a href="#">Dior/迪奥香水2件套装</a></div>
-                    <div class="price">
-                    	<font>￥<span>368.00</span></font> &nbsp; 18R
-                    </div>
-                </li>
-        	</ul>
+                @endforeach
+                
+            </ul>
         </div>
         <div class="l_list">        	
            
@@ -342,114 +317,7 @@
     
     
     
-    <!--Begin Footer Begin -->
-    <div class="b_btm_bg bg_color">
-        <div class="b_btm">
-            <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="72"><img src="/home/images/b1.png" width="62" height="62" /></td>
-                <td><h2>正品保障</h2>正品行货  放心购买</td>
-              </tr>
-            </table>
-			<table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="72"><img src="/home/images/b2.png" width="62" height="62" /></td>
-                <td><h2>满38包邮</h2>满38包邮 免运费</td>
-              </tr>
-            </table>
-            <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="72"><img src="/home/images/b3.png" width="62" height="62" /></td>
-                <td><h2>天天低价</h2>天天低价 畅选无忧</td>
-              </tr>
-            </table>
-            <table border="0" style="width:210px; height:62px; float:left; margin-left:75px; margin-top:30px;" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="72"><img src="/home/images/b4.png" width="62" height="62" /></td>
-                <td><h2>准时送达</h2>收货时间由你做主</td>
-              </tr>
-            </table>
-        </div>
-    </div>
-    <div class="b_nav">
-    	<dl>                                                                                            
-        	<dt><a href="#">新手上路</a></dt>
-            <dd><a href="#">售后流程</a></dd>
-            <dd><a href="#">购物流程</a></dd>
-            <dd><a href="#">订购方式</a></dd>
-            <dd><a href="#">隐私声明</a></dd>
-            <dd><a href="#">推荐分享说明</a></dd>
-        </dl>
-        <dl>
-        	<dt><a href="#">配送与支付</a></dt>
-            <dd><a href="#">货到付款区域</a></dd>
-            <dd><a href="#">配送支付查询</a></dd>
-            <dd><a href="#">支付方式说明</a></dd>
-        </dl>
-        <dl>
-        	<dt><a href="#">会员中心</a></dt>
-            <dd><a href="#">资金管理</a></dd>
-            <dd><a href="#">我的收藏</a></dd>
-            <dd><a href="#">我的订单</a></dd>
-        </dl>
-        <dl>
-        	<dt><a href="#">服务保证</a></dt>
-            <dd><a href="#">退换货原则</a></dd>
-            <dd><a href="#">售后服务保证</a></dd>
-            <dd><a href="#">产品质量保证</a></dd>
-        </dl>
-        <dl>
-        	<dt><a href="#">联系我们</a></dt>
-            <dd><a href="#">网站故障报告</a></dd>
-            <dd><a href="#">购物咨询</a></dd>
-            <dd><a href="#">投诉与建议</a></dd>
-        </dl>
-        <div class="b_tel_bg">
-        	<a href="#" class="b_sh1">新浪微博</a>            
-        	<a href="#" class="b_sh2">腾讯微博</a>
-            <p>
-            服务热线：<br />
-            <span>400-123-4567</span>
-            </p>
-        </div>
-        <div class="b_er">
-            <div class="b_er_c"><img src="/home/images/er.gif" width="118" height="118" /></div>
-            <img src="/home/images/ss.png" />
-        </div>
-    </div> 
 
-    <!-- 友情链接-->
-    <div style="margin:0px 155px">
-        <p style="height: 100%;">
-    @if(!empty($link))
-    @foreach($link as $k=>$v)
-        @if($v['img'])
-        <a target="_blank" href="https://{{$v['url']}}" style="float:left;">
-            <span style="display:bloak;">
-                <img  src="{{URL::asset($v['img'])}}" style="width:70px;height:30px;border-radius:4px" /> 
-                <b>|</b>
-            </span>
-        </a>
-        
-        @else
-        <a target="_blank" href="https://{{$v['url']}}">
-            <span style="margin-left:5px;">{{$v['name']}}</span>
-        </a>
-        <b>|</b>
-        @endif
-    @endforeach
-    @endif
-    </p>
-    </div>
-       
-    <div class="btmbg">
-		<div class="btm">
-        	备案/许可证编号：蜀ICP备12009302号-1-www.dingguagua.com   Copyright © 2015-2018 尤洪商城网 All Rights Reserved. 复制必究 , Technical Support: Dgg Group <br />
-            <img src="/home/images/b_1.gif" width="98" height="33" /><img src="/home/images/b_2.gif" width="98" height="33" /><img src="/home/images/b_3.gif" width="98" height="33" /><img src="/home/images/b_4.gif" width="98" height="33" /><img src="/home/images/b_5.gif" width="98" height="33" /><img src="/home/images/b_6.gif" width="98" height="33" />
-        </div>    	
-    </div>
-    <!--End Footer End -->    
-</div>
 <script src="/home/js/ShopShow.js"></script>
 
 

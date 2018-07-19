@@ -65,8 +65,7 @@ class LinksController extends Controller
             //移动
             $request->file('img')->move('./uploads/',$name.'.'.$suffix);
         
-
-        $link_data['img'] = Config::get('app.path').$name.'.'.$suffix;
+            $link_data['img'] = Config::get('app.path').$name.'.'.$suffix;
         }
 
         $res= Link::create($link_data);

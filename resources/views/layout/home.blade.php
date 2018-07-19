@@ -70,21 +70,19 @@
     </div>
 </div>
 <div class="top">
-
-
-    <div class="logo"><a href="/"><img src="{{session('logo')}}" /></a></div>
-                                            
-
-
+    <div class="logo"><a href="/"><img src="{{session('logo')}}" width="170px" /></a></div>                              
     <div class="search">
-        <form>
-            <input type="text" value="" class="s_ipt" />
-            <input type="submit" value="搜索" class="s_btn" />
-        </form>                      
+        <form action="/home/search" method="get">
+            {{ csrf_field() }}
+            <input type="text" value="@if(!empty($keyword)){{$keyword}}@endif" name="key"  class="s_ipt keyword" placeholder="" />
+            <input type="submit" value="搜索" class="s_btn" id = "isearch">
+        </form>   
         <span class="fl">
         <a href="#">咖啡</a><a href="#">iphone 6S</a><a href="#">新鲜美食</a><a href="#">蛋糕</a><a href="#">日用品</a><a href="#">连衣裙</a></span>
     </div>
+
 </div>
+
 <!--End Header End--> 
 <!--Begin Menu Begin-->
 <div class="menu_bg">
@@ -116,10 +114,8 @@
                             @endforeach
                             </div>
                             <div class="zj_r">
-                                @foreach($guang as $k=>$v)
-                                <a href="{{$v['url']}}"><img src="{{$v['pic']}}" width="236" height="200" /></a>
-                                
-                                @endforeach
+                                <a href="http://www.shop.com/home/goods/create?id=66"><img src="/uploads/3qmU1531791199.jpg" width="236" height="200" /></a>
+                                <a href="http://www.shop.com/home/goods/create?id=55"><img src="/uploads/72hlh7OtBn1531998741.png" width="236" height="200" /></a>
                             </div>
                         </div>
                     </li>
