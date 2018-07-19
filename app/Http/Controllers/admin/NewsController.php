@@ -128,13 +128,8 @@ class NewsController extends Controller
 
             //移动
             $request->file('apic')->move('./uploads/',$name.'.'.$suffix);
-        }
 
-        $data['apic'] = Config::get('app.path').$name.'.'.$suffix;
-
-        //若没有上传新图片,则获取原来相应的旧图片重新添加
-        if ($data['apic'] == null) {
-            $data['apic'] = $all->apic;
+            $data['apic'] = Config::get('app.path').$name.'.'.$suffix;
         }
 
         // dd($data);
