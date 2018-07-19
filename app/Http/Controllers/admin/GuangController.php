@@ -32,7 +32,7 @@ class GuangController extends Controller
           $Guanggao =  $Guanggao->where('cid',$cid);
         }
        
-        $res = Guanggao::with('gc')->paginate($page_count);
+        $res = $Guanggao->paginate($page_count);
 
         return view('admin.guanggao.index',[
                 'title'=>'广告位',

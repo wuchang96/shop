@@ -90,11 +90,9 @@
                @endforeach
                 </tbody>
             </table>
-
             <div class="dataTables_info" id="DataTables_Table_1_info">
                 Showing 1 to 10 of 57 entries
             </div>
-
 			<style>
                 .pagination li{
                     float: left;
@@ -146,6 +144,7 @@
 
 
             <div class="dataTables_paginate paging_full_numbers" id="paginate">
+                <button type="button" class="btn btn-info"><a href="/admin/order">返回</a></button>
             </div>
         </div>
     </div>
