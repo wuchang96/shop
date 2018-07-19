@@ -55,7 +55,6 @@ class IndexController extends Controller
             'link'=>$link
         ]);
 
-
     }
 
     /**
